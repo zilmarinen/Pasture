@@ -8,6 +8,8 @@ import Cocoa
 
 class ModelCoordinator: Coordinator<ModelViewController> {
     
+    var currentModel: Model?
+    
     override init(controller: ModelViewController) {
         
         super.init(controller: controller)
@@ -18,5 +20,14 @@ class ModelCoordinator: Coordinator<ModelViewController> {
     required public init?(coder: NSCoder) {
         
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func start(with option: StartOption?) {
+        
+        super.start(with: option)
+        
+        guard let model = option as? Model else { fatalError("Invalid start option") }
+        
+        currentModel = model
     }
 }
