@@ -5,9 +5,11 @@
 //
 
 import Cocoa
-import SceneKit
+import Meadow
 
 class ModelViewController: NSViewController {
+    
+    @IBOutlet weak var scnView: SceneView!
     
     weak var coordinator: ModelCoordinator?
 }

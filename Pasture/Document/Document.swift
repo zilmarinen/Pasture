@@ -13,13 +13,14 @@ class Document: NSDocument {
         
         static let windowIndentifier = NSStoryboard.SceneIdentifier("WindowController")
         
+        static let meshWrapperIdentifier = "prop.mesh"
         static let modelWrapperIdentifier = "model.graph"
         static let textureWrapperIdentifier = "texture.png"
     }
     
     let coordinator: WindowCoordinator
     
-    var model: Model?
+    var model: ModelNode?
 
     override init() {
         
@@ -50,19 +51,24 @@ class Document: NSDocument {
         
         let decoder = JSONDecoder()
         
-        model = try decoder.decode(Model.self, from: modelGraph)
+        model = try decoder.decode(ModelNode.self, from: modelGraph)
     }
     
     override func fileWrapper(ofType typeName: String) throws -> FileWrapper {
         
-        guard let model = coordinator.splitViewCoordinator.modelCoordinator.currentModel else { throw NSError(domain: NSOSStatusErrorDomain, code: writErr, userInfo: nil) }
+        guard let model = coordinator.splitViewCoordinator.modelCoordinator.currentModel,
+              let mesh = model.mesh else { throw NSError(domain: NSOSStatusErrorDomain, code: writErr, userInfo: nil) }
         
         var wrappers: [String : FileWrapper] = [:]
         
         let encoder = JSONEncoder()
         
-        let modelGraph = try encoder.encode(model)
+        let modelJSON = Model(footprint: model.footprint, polygons: mesh.polygons)
         
+        let modelGraph = try encoder.encode(model)
+        let meshGraph = try encoder.encode(modelJSON)
+        
+        wrappers[Constants.meshWrapperIdentifier] = FileWrapper(regularFileWithContents: meshGraph)
         wrappers[Constants.modelWrapperIdentifier] = FileWrapper(regularFileWithContents: modelGraph)
         
         return FileWrapper(directoryWithFileWrappers: wrappers)

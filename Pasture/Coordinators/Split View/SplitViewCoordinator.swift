@@ -5,6 +5,7 @@
 //
 
 import Cocoa
+import Meadow
 
 class SplitViewCoordinator: Coordinator<SplitViewController> {
     
@@ -60,5 +61,30 @@ class SplitViewCoordinator: Coordinator<SplitViewController> {
         start(child: graphCoordinator, with: option)
         start(child: modelCoordinator, with: option)
         start(child: inspectorCoordinator, with: option)
+    }
+}
+
+extension SplitViewCoordinator {
+    
+    override var sceneView: SceneView? { modelCoordinator.controller.scnView }
+    
+    override var model: ModelNode? { modelCoordinator.currentModel }
+    
+    override func focus(node: GroupNode) {
+        
+        modelCoordinator.focus(node: node)
+        inspectorCoordinator.tabViewCoordinator.toggle(inspector: .group, with: node)
+    }
+    
+    override func addGroup() {
+        
+        modelCoordinator.addGroup()
+        graphCoordinator.controller.treeController.rearrangeObjects()
+    }
+    
+    override func add(primitive: Primitive.RawType) {
+        
+        modelCoordinator.add(primitive: primitive)
+        graphCoordinator.controller.treeController.rearrangeObjects()
     }
 }

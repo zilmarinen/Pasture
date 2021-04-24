@@ -3,15 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		181F2F8126344B5A008612CD /* ModelVertex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F2F8026344B5A008612CD /* ModelVertex.swift */; };
+		181F2F8626344BF0008612CD /* ModelPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F2F8526344BF0008612CD /* ModelPolygon.swift */; };
+		182749A62634433A000C31A7 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182749A52634433A000C31A7 /* Model.swift */; };
 		1827C2702619C60100CAEDE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1827C26F2619C60100CAEDE8 /* AppDelegate.swift */; };
 		1827C2722619C60100CAEDE8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1827C2712619C60100CAEDE8 /* ViewController.swift */; };
 		1827C2742619C60100CAEDE8 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1827C2732619C60100CAEDE8 /* Document.swift */; };
 		1827C2762619C60200CAEDE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1827C2752619C60200CAEDE8 /* Assets.xcassets */; };
 		1827C2792619C60200CAEDE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1827C2772619C60200CAEDE8 /* Main.storyboard */; };
+		182B716926316F50004F3708 /* GroupInspectorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B716826316F50004F3708 /* GroupInspectorViewModel.swift */; };
 		183E69E32619C7A30061ADC8 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E69E22619C7A30061ADC8 /* Coordinator.swift */; };
 		183E69E72619C7C00061ADC8 /* NSStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E69E62619C7C00061ADC8 /* NSStoryboard.swift */; };
 		183E69EB2619C7C90061ADC8 /* NSResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E69EA2619C7C90061ADC8 /* NSResponder.swift */; };
@@ -27,10 +31,21 @@
 		183E6A162619C9500061ADC8 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E6A152619C9500061ADC8 /* GraphViewController.swift */; };
 		183E6A192619CB8A0061ADC8 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E6A182619CB8A0061ADC8 /* WindowController.swift */; };
 		183E6A1C2619CBAC0061ADC8 /* WindowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E6A1B2619CBAC0061ADC8 /* WindowCoordinator.swift */; };
-		184809D52619D70000BFD4D1 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184809D42619D70000BFD4D1 /* Model.swift */; };
+		184809D52619D70000BFD4D1 /* ModelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184809D42619D70000BFD4D1 /* ModelNode.swift */; };
+		184F78CA262C507B00F371B2 /* Euclid in Frameworks */ = {isa = PBXBuildFile; productRef = 184F78C9262C507B00F371B2 /* Euclid */; };
+		18DE33DE2625B36500FB19EE /* Primitive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DE33DD2625B36500FB19EE /* Primitive.swift */; };
+		18DE33EA262724EF00FB19EE /* CoordinateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DE33E7262724EF00FB19EE /* CoordinateView.swift */; };
+		18DE33EB262724EF00FB19EE /* NumberStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DE33E9262724EF00FB19EE /* NumberStepper.swift */; };
+		18DE33EE2627258400FB19EE /* GroupInspectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DE33ED2627258400FB19EE /* GroupInspectorViewController.swift */; };
+		18DE33F1262725A800FB19EE /* GroupInspectorCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DE33F0262725A800FB19EE /* GroupInspectorCoordinator.swift */; };
+		18EA31BD261B24CA009D837D /* Meadow in Frameworks */ = {isa = PBXBuildFile; productRef = 18EA31BC261B24CA009D837D /* Meadow */; };
+		18EA31C0261B28D6009D837D /* GroupNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA31BF261B28D6009D837D /* GroupNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		181F2F8026344B5A008612CD /* ModelVertex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelVertex.swift; sourceTree = "<group>"; };
+		181F2F8526344BF0008612CD /* ModelPolygon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelPolygon.swift; sourceTree = "<group>"; };
+		182749A52634433A000C31A7 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		1827C26C2619C60100CAEDE8 /* Pasture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pasture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1827C26F2619C60100CAEDE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1827C2712619C60100CAEDE8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -39,6 +54,7 @@
 		1827C2782619C60200CAEDE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1827C27A2619C60200CAEDE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1827C27B2619C60200CAEDE8 /* Pasture.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pasture.entitlements; sourceTree = "<group>"; };
+		182B716826316F50004F3708 /* GroupInspectorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupInspectorViewModel.swift; sourceTree = "<group>"; };
 		183E69E22619C7A30061ADC8 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		183E69E62619C7C00061ADC8 /* NSStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSStoryboard.swift; sourceTree = "<group>"; };
 		183E69EA2619C7C90061ADC8 /* NSResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSResponder.swift; sourceTree = "<group>"; };
@@ -54,7 +70,15 @@
 		183E6A152619C9500061ADC8 /* GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
 		183E6A182619CB8A0061ADC8 /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 		183E6A1B2619CBAC0061ADC8 /* WindowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowCoordinator.swift; sourceTree = "<group>"; };
-		184809D42619D70000BFD4D1 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		184809D42619D70000BFD4D1 /* ModelNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelNode.swift; sourceTree = "<group>"; };
+		184F78C7262C505500F371B2 /* Euclid */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Euclid; path = ../Euclid; sourceTree = "<group>"; };
+		18DE33DD2625B36500FB19EE /* Primitive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Primitive.swift; sourceTree = "<group>"; };
+		18DE33E7262724EF00FB19EE /* CoordinateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinateView.swift; sourceTree = "<group>"; };
+		18DE33E9262724EF00FB19EE /* NumberStepper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberStepper.swift; sourceTree = "<group>"; };
+		18DE33ED2627258400FB19EE /* GroupInspectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupInspectorViewController.swift; sourceTree = "<group>"; };
+		18DE33F0262725A800FB19EE /* GroupInspectorCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupInspectorCoordinator.swift; sourceTree = "<group>"; };
+		18EA31B7261B23E8009D837D /* Meadow */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Meadow; path = ../Meadow; sourceTree = "<group>"; };
+		18EA31BF261B28D6009D837D /* GroupNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,17 +86,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				184F78CA262C507B00F371B2 /* Euclid in Frameworks */,
+				18EA31BD261B24CA009D837D /* Meadow in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		181F2F7F26344B4D008612CD /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				182749A52634433A000C31A7 /* Model.swift */,
+				181F2F8026344B5A008612CD /* ModelVertex.swift */,
+				181F2F8526344BF0008612CD /* ModelPolygon.swift */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
 		1827C2632619C60100CAEDE8 = {
 			isa = PBXGroup;
 			children = (
+				184F78C7262C505500F371B2 /* Euclid */,
+				18EA31B7261B23E8009D837D /* Meadow */,
 				1827C26E2619C60100CAEDE8 /* Pasture */,
 				1827C26D2619C60100CAEDE8 /* Products */,
+				18EA31BB261B24CA009D837D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,17 +126,27 @@
 		1827C26E2619C60100CAEDE8 /* Pasture */ = {
 			isa = PBXGroup;
 			children = (
-				184809D32619D6F800BFD4D1 /* Model */,
 				1827C26F2619C60100CAEDE8 /* AppDelegate.swift */,
 				1827C2752619C60200CAEDE8 /* Assets.xcassets */,
 				183E69D92619C73E0061ADC8 /* Controllers */,
 				183E69DB2619C7460061ADC8 /* Coordinators */,
 				183E69DF2619C7700061ADC8 /* Document */,
 				183E69E52619C7AF0061ADC8 /* Extensions */,
+				184809D32619D6F800BFD4D1 /* Model */,
 				183E69E02619C7790061ADC8 /* Storyboards */,
 				183E69D72619C7130061ADC8 /* Supporting Files */,
+				182B716726316F2D004F3708 /* View Models */,
+				18DE33E5262724C700FB19EE /* Views */,
 			);
 			path = Pasture;
+			sourceTree = "<group>";
+		};
+		182B716726316F2D004F3708 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				182B716826316F50004F3708 /* GroupInspectorViewModel.swift */,
+			);
+			path = "View Models";
 			sourceTree = "<group>";
 		};
 		183E69D72619C7130061ADC8 /* Supporting Files */ = {
@@ -222,6 +271,7 @@
 			isa = PBXGroup;
 			children = (
 				183E6A0E2619C93A0061ADC8 /* InspectorViewController.swift */,
+				18DE33ED2627258400FB19EE /* GroupInspectorViewController.swift */,
 			);
 			path = Inspector;
 			sourceTree = "<group>";
@@ -262,6 +312,7 @@
 			isa = PBXGroup;
 			children = (
 				183E6A022619C90E0061ADC8 /* InspectorCoordinator.swift */,
+				18DE33F0262725A800FB19EE /* GroupInspectorCoordinator.swift */,
 			);
 			path = Inspector;
 			sourceTree = "<group>";
@@ -269,9 +320,44 @@
 		184809D32619D6F800BFD4D1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				184809D42619D70000BFD4D1 /* Model.swift */,
+				181F2F7F26344B4D008612CD /* JSON */,
+				184809D42619D70000BFD4D1 /* ModelNode.swift */,
+				18EA31BF261B28D6009D837D /* GroupNode.swift */,
+				18DE33DD2625B36500FB19EE /* Primitive.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		18DE33E5262724C700FB19EE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				18DE33E6262724EF00FB19EE /* Coordinate View */,
+				18DE33E8262724EF00FB19EE /* NumberStepper */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		18DE33E6262724EF00FB19EE /* Coordinate View */ = {
+			isa = PBXGroup;
+			children = (
+				18DE33E7262724EF00FB19EE /* CoordinateView.swift */,
+			);
+			path = "Coordinate View";
+			sourceTree = "<group>";
+		};
+		18DE33E8262724EF00FB19EE /* NumberStepper */ = {
+			isa = PBXGroup;
+			children = (
+				18DE33E9262724EF00FB19EE /* NumberStepper.swift */,
+			);
+			path = NumberStepper;
+			sourceTree = "<group>";
+		};
+		18EA31BB261B24CA009D837D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,6 +376,10 @@
 			dependencies = (
 			);
 			name = Pasture;
+			packageProductDependencies = (
+				18EA31BC261B24CA009D837D /* Meadow */,
+				184F78C9262C507B00F371B2 /* Euclid */,
+			);
 			productName = Pasture;
 			productReference = 1827C26C2619C60100CAEDE8 /* Pasture.app */;
 			productType = "com.apple.product-type.application";
@@ -317,6 +407,8 @@
 				Base,
 			);
 			mainGroup = 1827C2632619C60100CAEDE8;
+			packageReferences = (
+			);
 			productRefGroup = 1827C26D2619C60100CAEDE8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -345,22 +437,32 @@
 			files = (
 				183E6A062619C9180061ADC8 /* GraphCoordinator.swift in Sources */,
 				183E69EF2619C82B0061ADC8 /* SplitViewCoordinator.swift in Sources */,
+				18DE33F1262725A800FB19EE /* GroupInspectorCoordinator.swift in Sources */,
+				18DE33EB262724EF00FB19EE /* NumberStepper.swift in Sources */,
 				183E6A092619C9250061ADC8 /* ModelCoordinator.swift in Sources */,
 				183E69E72619C7C00061ADC8 /* NSStoryboard.swift in Sources */,
 				183E69E32619C7A30061ADC8 /* Coordinator.swift in Sources */,
 				183E6A162619C9500061ADC8 /* GraphViewController.swift in Sources */,
+				182749A62634433A000C31A7 /* Model.swift in Sources */,
 				1827C2722619C60100CAEDE8 /* ViewController.swift in Sources */,
 				183E6A0F2619C93A0061ADC8 /* InspectorViewController.swift in Sources */,
+				181F2F8126344B5A008612CD /* ModelVertex.swift in Sources */,
+				18DE33DE2625B36500FB19EE /* Primitive.swift in Sources */,
 				183E6A032619C90E0061ADC8 /* InspectorCoordinator.swift in Sources */,
+				18EA31C0261B28D6009D837D /* GroupNode.swift in Sources */,
 				183E6A132619C9480061ADC8 /* ModelViewController.swift in Sources */,
+				181F2F8626344BF0008612CD /* ModelPolygon.swift in Sources */,
 				1827C2702619C60100CAEDE8 /* AppDelegate.swift in Sources */,
 				183E6A0C2619C92F0061ADC8 /* TabViewCoordinator.swift in Sources */,
+				18DE33EE2627258400FB19EE /* GroupInspectorViewController.swift in Sources */,
 				183E6A192619CB8A0061ADC8 /* WindowController.swift in Sources */,
 				1827C2742619C60100CAEDE8 /* Document.swift in Sources */,
 				183E6A1C2619CBAC0061ADC8 /* WindowCoordinator.swift in Sources */,
 				183E69FB2619C8DF0061ADC8 /* TabViewController.swift in Sources */,
-				184809D52619D70000BFD4D1 /* Model.swift in Sources */,
+				184809D52619D70000BFD4D1 /* ModelNode.swift in Sources */,
 				183E69EB2619C7C90061ADC8 /* NSResponder.swift in Sources */,
+				18DE33EA262724EF00FB19EE /* CoordinateView.swift in Sources */,
+				182B716926316F50004F3708 /* GroupInspectorViewModel.swift in Sources */,
 				183E69F42619C89C0061ADC8 /* SplitViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -502,6 +604,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Pasture/Supporting Files/Pasture.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "";
 				INFOPLIST_FILE = "Pasture/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -521,6 +624,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Pasture/Supporting Files/Pasture.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "";
 				INFOPLIST_FILE = "Pasture/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -554,6 +658,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		184F78C9262C507B00F371B2 /* Euclid */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Euclid;
+		};
+		18EA31BC261B24CA009D837D /* Meadow */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Meadow;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1827C2642619C60100CAEDE8 /* Project object */;
 }

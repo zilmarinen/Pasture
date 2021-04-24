@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "uvs.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

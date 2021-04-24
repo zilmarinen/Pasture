@@ -35,7 +35,7 @@ class WindowCoordinator: Coordinator<WindowController> {
         
         super.start(with: option)
         
-        let model = option as? Model ?? Model()
+        let model = option as? ModelNode ?? ModelNode()
         
         start(child: splitViewCoordinator, with: model)
     }
