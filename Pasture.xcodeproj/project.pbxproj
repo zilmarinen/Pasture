@@ -3,373 +3,328 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		181F2F8126344B5A008612CD /* ModelVertex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F2F8026344B5A008612CD /* ModelVertex.swift */; };
-		181F2F8626344BF0008612CD /* ModelPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F2F8526344BF0008612CD /* ModelPolygon.swift */; };
-		182749A62634433A000C31A7 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182749A52634433A000C31A7 /* Model.swift */; };
-		1827C2702619C60100CAEDE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1827C26F2619C60100CAEDE8 /* AppDelegate.swift */; };
-		1827C2722619C60100CAEDE8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1827C2712619C60100CAEDE8 /* ViewController.swift */; };
-		1827C2742619C60100CAEDE8 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1827C2732619C60100CAEDE8 /* Document.swift */; };
-		1827C2762619C60200CAEDE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1827C2752619C60200CAEDE8 /* Assets.xcassets */; };
-		1827C2792619C60200CAEDE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1827C2772619C60200CAEDE8 /* Main.storyboard */; };
-		182B716926316F50004F3708 /* GroupInspectorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B716826316F50004F3708 /* GroupInspectorViewModel.swift */; };
-		183E69E32619C7A30061ADC8 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E69E22619C7A30061ADC8 /* Coordinator.swift */; };
-		183E69E72619C7C00061ADC8 /* NSStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E69E62619C7C00061ADC8 /* NSStoryboard.swift */; };
-		183E69EB2619C7C90061ADC8 /* NSResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E69EA2619C7C90061ADC8 /* NSResponder.swift */; };
-		183E69EF2619C82B0061ADC8 /* SplitViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E69EE2619C82B0061ADC8 /* SplitViewCoordinator.swift */; };
-		183E69F42619C89C0061ADC8 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E69F32619C89C0061ADC8 /* SplitViewController.swift */; };
-		183E69FB2619C8DF0061ADC8 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E69FA2619C8DF0061ADC8 /* TabViewController.swift */; };
-		183E6A032619C90E0061ADC8 /* InspectorCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E6A022619C90E0061ADC8 /* InspectorCoordinator.swift */; };
-		183E6A062619C9180061ADC8 /* GraphCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E6A052619C9180061ADC8 /* GraphCoordinator.swift */; };
-		183E6A092619C9250061ADC8 /* ModelCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E6A082619C9250061ADC8 /* ModelCoordinator.swift */; };
-		183E6A0C2619C92F0061ADC8 /* TabViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E6A0B2619C92F0061ADC8 /* TabViewCoordinator.swift */; };
-		183E6A0F2619C93A0061ADC8 /* InspectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E6A0E2619C93A0061ADC8 /* InspectorViewController.swift */; };
-		183E6A132619C9480061ADC8 /* ModelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E6A122619C9480061ADC8 /* ModelViewController.swift */; };
-		183E6A162619C9500061ADC8 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E6A152619C9500061ADC8 /* GraphViewController.swift */; };
-		183E6A192619CB8A0061ADC8 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E6A182619CB8A0061ADC8 /* WindowController.swift */; };
-		183E6A1C2619CBAC0061ADC8 /* WindowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E6A1B2619CBAC0061ADC8 /* WindowCoordinator.swift */; };
-		184809D52619D70000BFD4D1 /* ModelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184809D42619D70000BFD4D1 /* ModelNode.swift */; };
-		184F78CA262C507B00F371B2 /* Euclid in Frameworks */ = {isa = PBXBuildFile; productRef = 184F78C9262C507B00F371B2 /* Euclid */; };
-		18DE33DE2625B36500FB19EE /* Primitive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DE33DD2625B36500FB19EE /* Primitive.swift */; };
-		18DE33EA262724EF00FB19EE /* CoordinateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DE33E7262724EF00FB19EE /* CoordinateView.swift */; };
-		18DE33EB262724EF00FB19EE /* NumberStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DE33E9262724EF00FB19EE /* NumberStepper.swift */; };
-		18DE33EE2627258400FB19EE /* GroupInspectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DE33ED2627258400FB19EE /* GroupInspectorViewController.swift */; };
-		18DE33F1262725A800FB19EE /* GroupInspectorCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DE33F0262725A800FB19EE /* GroupInspectorCoordinator.swift */; };
-		18EA31BD261B24CA009D837D /* Meadow in Frameworks */ = {isa = PBXBuildFile; productRef = 18EA31BC261B24CA009D837D /* Meadow */; };
-		18EA31C0261B28D6009D837D /* GroupNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA31BF261B28D6009D837D /* GroupNode.swift */; };
+		1800D0A22674BEF000146738 /* ModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1800D0A12674BEF000146738 /* ModelView.swift */; };
+		1800D0A82674C68200146738 /* TreeSpeciesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1800D0A72674C68200146738 /* TreeSpeciesView.swift */; };
+		1800D0AA2674C72A00146738 /* BeechTreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1800D0A92674C72A00146738 /* BeechTreeView.swift */; };
+		1800D0AC2674C99200146738 /* PalmTreeTrunkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1800D0AB2674C99200146738 /* PalmTreeTrunkView.swift */; };
+		18101D8B2677727300424CDC /* Euclid in Frameworks */ = {isa = PBXBuildFile; productRef = 18101D8A2677727300424CDC /* Euclid */; };
+		18101D92267778FC00424CDC /* Meadow in Frameworks */ = {isa = PBXBuildFile; productRef = 18101D91267778FC00424CDC /* Meadow */; };
+		18101D9526777F3700424CDC /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18101D9426777F3700424CDC /* Vector.swift */; };
+		18101D9826779AB100424CDC /* PalmTreeTrunk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18101D9726779AB100424CDC /* PalmTreeTrunk.swift */; };
+		18BD2A092679D5240048FDD1 /* Prop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD2A082679D5240048FDD1 /* Prop.swift */; };
+		18BD2A112679F5350048FDD1 /* TreeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD2A102679F5350048FDD1 /* TreeModel.swift */; };
+		18BD2A13267A46C60048FDD1 /* Chonk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD2A12267A46C60048FDD1 /* Chonk.swift */; };
+		18BD2A18267B339F0048FDD1 /* PalmTreeChonk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD2A17267B339F0048FDD1 /* PalmTreeChonk.swift */; };
+		18BD2A1A267B37B20048FDD1 /* PalmTreeChonkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD2A19267B37B20048FDD1 /* PalmTreeChonkView.swift */; };
+		18BD2A1C267C78BA0048FDD1 /* PineTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD2A1B267C78BA0048FDD1 /* PineTree.swift */; };
+		18BD2A1E267C793B0048FDD1 /* BeechTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD2A1D267C793B0048FDD1 /* BeechTree.swift */; };
+		18BD2A24267C7C400048FDD1 /* PalmTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD2A1F267C7C400048FDD1 /* PalmTree.swift */; };
+		18BD2A25267C7C400048FDD1 /* ChestnutTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD2A20267C7C400048FDD1 /* ChestnutTree.swift */; };
+		18BD2A26267C7C400048FDD1 /* WalnutTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD2A21267C7C400048FDD1 /* WalnutTree.swift */; };
+		18BD2A27267C7C400048FDD1 /* PoplarTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD2A22267C7C400048FDD1 /* PoplarTree.swift */; };
+		18BD2A28267C7C400048FDD1 /* OakTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD2A23267C7C400048FDD1 /* OakTree.swift */; };
+		18BD2A2F267C84220048FDD1 /* WalnutTreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD2A29267C84220048FDD1 /* WalnutTreeView.swift */; };
+		18BD2A30267C84220048FDD1 /* OakTreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD2A2A267C84220048FDD1 /* OakTreeView.swift */; };
+		18BD2A31267C84220048FDD1 /* ChestnutTreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD2A2B267C84220048FDD1 /* ChestnutTreeView.swift */; };
+		18BD2A32267C84220048FDD1 /* PoplarTreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD2A2C267C84220048FDD1 /* PoplarTreeView.swift */; };
+		18BD2A33267C84220048FDD1 /* PineTreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD2A2D267C84220048FDD1 /* PineTreeView.swift */; };
+		18BD2A34267C84220048FDD1 /* PalmTreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD2A2E267C84220048FDD1 /* PalmTreeView.swift */; };
+		18BD2A3A267CAF5C0048FDD1 /* PalmTreeFrond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD2A39267CAF5C0048FDD1 /* PalmTreeFrond.swift */; };
+		18BD2A3C267CAF650048FDD1 /* PalmTreeFrondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD2A3B267CAF650048FDD1 /* PalmTreeFrondView.swift */; };
+		18BD2A3F267CCA9A0048FDD1 /* Frond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD2A3E267CCA9A0048FDD1 /* Frond.swift */; };
+		18BD2A412680AD1D0048FDD1 /* PalmTreeFoliage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD2A402680AD1D0048FDD1 /* PalmTreeFoliage.swift */; };
+		18BD2A432680AF140048FDD1 /* PalmTreeFoliageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD2A422680AF140048FDD1 /* PalmTreeFoliageView.swift */; };
+		18E1A7532673A5F100A44C15 /* PastureApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1A7522673A5F100A44C15 /* PastureApp.swift */; };
+		18E1A7552673A5F100A44C15 /* PastureDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1A7542673A5F100A44C15 /* PastureDocument.swift */; };
+		18E1A7572673A5F100A44C15 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1A7562673A5F100A44C15 /* ContentView.swift */; };
+		18E1A7592673A5F200A44C15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18E1A7582673A5F200A44C15 /* Assets.xcassets */; };
+		18E1A75C2673A5F200A44C15 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18E1A75B2673A5F200A44C15 /* Preview Assets.xcassets */; };
+		18E1A7662673A64300A44C15 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1A7652673A64300A44C15 /* Model.swift */; };
+		18E1A7682673A65B00A44C15 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1A7672673A65B00A44C15 /* Tree.swift */; };
+		18E1A76A2673A8B700A44C15 /* ToolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1A7692673A8B700A44C15 /* ToolView.swift */; };
+		18E1A76C2673A9C900A44C15 /* TreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1A76B2673A9C900A44C15 /* TreeView.swift */; };
+		18E1A76E2673A9EE00A44C15 /* BuildingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1A76D2673A9EE00A44C15 /* BuildingView.swift */; };
+		18E1A7702673A9FE00A44C15 /* BushView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1A76F2673A9FE00A44C15 /* BushView.swift */; };
+		18E1A7722673AA0A00A44C15 /* RockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1A7712673AA0A00A44C15 /* RockView.swift */; };
+		18E1A7742673AA1F00A44C15 /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1A7732673AA1F00A44C15 /* Building.swift */; };
+		18E1A7762673AADF00A44C15 /* Bush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1A7752673AADF00A44C15 /* Bush.swift */; };
+		18E1A7782673AAF100A44C15 /* Rock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1A7772673AAF100A44C15 /* Rock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		181F2F8026344B5A008612CD /* ModelVertex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelVertex.swift; sourceTree = "<group>"; };
-		181F2F8526344BF0008612CD /* ModelPolygon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelPolygon.swift; sourceTree = "<group>"; };
-		182749A52634433A000C31A7 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		1827C26C2619C60100CAEDE8 /* Pasture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pasture.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1827C26F2619C60100CAEDE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1827C2712619C60100CAEDE8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1827C2732619C60100CAEDE8 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
-		1827C2752619C60200CAEDE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1827C2782619C60200CAEDE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		1827C27A2619C60200CAEDE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1827C27B2619C60200CAEDE8 /* Pasture.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pasture.entitlements; sourceTree = "<group>"; };
-		182B716826316F50004F3708 /* GroupInspectorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupInspectorViewModel.swift; sourceTree = "<group>"; };
-		183E69E22619C7A30061ADC8 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		183E69E62619C7C00061ADC8 /* NSStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSStoryboard.swift; sourceTree = "<group>"; };
-		183E69EA2619C7C90061ADC8 /* NSResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSResponder.swift; sourceTree = "<group>"; };
-		183E69EE2619C82B0061ADC8 /* SplitViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewCoordinator.swift; sourceTree = "<group>"; };
-		183E69F32619C89C0061ADC8 /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
-		183E69FA2619C8DF0061ADC8 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
-		183E6A022619C90E0061ADC8 /* InspectorCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectorCoordinator.swift; sourceTree = "<group>"; };
-		183E6A052619C9180061ADC8 /* GraphCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphCoordinator.swift; sourceTree = "<group>"; };
-		183E6A082619C9250061ADC8 /* ModelCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCoordinator.swift; sourceTree = "<group>"; };
-		183E6A0B2619C92F0061ADC8 /* TabViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewCoordinator.swift; sourceTree = "<group>"; };
-		183E6A0E2619C93A0061ADC8 /* InspectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectorViewController.swift; sourceTree = "<group>"; };
-		183E6A122619C9480061ADC8 /* ModelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelViewController.swift; sourceTree = "<group>"; };
-		183E6A152619C9500061ADC8 /* GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
-		183E6A182619CB8A0061ADC8 /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
-		183E6A1B2619CBAC0061ADC8 /* WindowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowCoordinator.swift; sourceTree = "<group>"; };
-		184809D42619D70000BFD4D1 /* ModelNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelNode.swift; sourceTree = "<group>"; };
-		184F78C7262C505500F371B2 /* Euclid */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Euclid; path = ../Euclid; sourceTree = "<group>"; };
-		18DE33DD2625B36500FB19EE /* Primitive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Primitive.swift; sourceTree = "<group>"; };
-		18DE33E7262724EF00FB19EE /* CoordinateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinateView.swift; sourceTree = "<group>"; };
-		18DE33E9262724EF00FB19EE /* NumberStepper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberStepper.swift; sourceTree = "<group>"; };
-		18DE33ED2627258400FB19EE /* GroupInspectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupInspectorViewController.swift; sourceTree = "<group>"; };
-		18DE33F0262725A800FB19EE /* GroupInspectorCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupInspectorCoordinator.swift; sourceTree = "<group>"; };
-		18EA31B7261B23E8009D837D /* Meadow */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Meadow; path = ../Meadow; sourceTree = "<group>"; };
-		18EA31BF261B28D6009D837D /* GroupNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupNode.swift; sourceTree = "<group>"; };
+		1800D0A12674BEF000146738 /* ModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelView.swift; sourceTree = "<group>"; };
+		1800D0A72674C68200146738 /* TreeSpeciesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeSpeciesView.swift; sourceTree = "<group>"; };
+		1800D0A92674C72A00146738 /* BeechTreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeechTreeView.swift; sourceTree = "<group>"; };
+		1800D0AB2674C99200146738 /* PalmTreeTrunkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalmTreeTrunkView.swift; sourceTree = "<group>"; };
+		18101D8F267778C900424CDC /* Meadow */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Meadow; path = ../../../../Volumes/Personal/Developer/Meadow; sourceTree = "<group>"; };
+		18101D9426777F3700424CDC /* Vector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vector.swift; sourceTree = "<group>"; };
+		18101D9726779AB100424CDC /* PalmTreeTrunk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalmTreeTrunk.swift; sourceTree = "<group>"; };
+		18BD2A082679D5240048FDD1 /* Prop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prop.swift; sourceTree = "<group>"; };
+		18BD2A102679F5350048FDD1 /* TreeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeModel.swift; sourceTree = "<group>"; };
+		18BD2A12267A46C60048FDD1 /* Chonk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chonk.swift; sourceTree = "<group>"; };
+		18BD2A17267B339F0048FDD1 /* PalmTreeChonk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalmTreeChonk.swift; sourceTree = "<group>"; };
+		18BD2A19267B37B20048FDD1 /* PalmTreeChonkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalmTreeChonkView.swift; sourceTree = "<group>"; };
+		18BD2A1B267C78BA0048FDD1 /* PineTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PineTree.swift; sourceTree = "<group>"; };
+		18BD2A1D267C793B0048FDD1 /* BeechTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeechTree.swift; sourceTree = "<group>"; };
+		18BD2A1F267C7C400048FDD1 /* PalmTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PalmTree.swift; sourceTree = "<group>"; };
+		18BD2A20267C7C400048FDD1 /* ChestnutTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChestnutTree.swift; sourceTree = "<group>"; };
+		18BD2A21267C7C400048FDD1 /* WalnutTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalnutTree.swift; sourceTree = "<group>"; };
+		18BD2A22267C7C400048FDD1 /* PoplarTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoplarTree.swift; sourceTree = "<group>"; };
+		18BD2A23267C7C400048FDD1 /* OakTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OakTree.swift; sourceTree = "<group>"; };
+		18BD2A29267C84220048FDD1 /* WalnutTreeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalnutTreeView.swift; sourceTree = "<group>"; };
+		18BD2A2A267C84220048FDD1 /* OakTreeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OakTreeView.swift; sourceTree = "<group>"; };
+		18BD2A2B267C84220048FDD1 /* ChestnutTreeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChestnutTreeView.swift; sourceTree = "<group>"; };
+		18BD2A2C267C84220048FDD1 /* PoplarTreeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoplarTreeView.swift; sourceTree = "<group>"; };
+		18BD2A2D267C84220048FDD1 /* PineTreeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PineTreeView.swift; sourceTree = "<group>"; };
+		18BD2A2E267C84220048FDD1 /* PalmTreeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PalmTreeView.swift; sourceTree = "<group>"; };
+		18BD2A39267CAF5C0048FDD1 /* PalmTreeFrond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalmTreeFrond.swift; sourceTree = "<group>"; };
+		18BD2A3B267CAF650048FDD1 /* PalmTreeFrondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalmTreeFrondView.swift; sourceTree = "<group>"; };
+		18BD2A3E267CCA9A0048FDD1 /* Frond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frond.swift; sourceTree = "<group>"; };
+		18BD2A402680AD1D0048FDD1 /* PalmTreeFoliage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalmTreeFoliage.swift; sourceTree = "<group>"; };
+		18BD2A422680AF140048FDD1 /* PalmTreeFoliageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalmTreeFoliageView.swift; sourceTree = "<group>"; };
+		18E1A74F2673A5F100A44C15 /* Pasture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pasture.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		18E1A7522673A5F100A44C15 /* PastureApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastureApp.swift; sourceTree = "<group>"; };
+		18E1A7542673A5F100A44C15 /* PastureDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastureDocument.swift; sourceTree = "<group>"; };
+		18E1A7562673A5F100A44C15 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		18E1A7582673A5F200A44C15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		18E1A75B2673A5F200A44C15 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		18E1A75D2673A5F200A44C15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18E1A7652673A64300A44C15 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		18E1A7672673A65B00A44C15 /* Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
+		18E1A7692673A8B700A44C15 /* ToolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolView.swift; sourceTree = "<group>"; };
+		18E1A76B2673A9C900A44C15 /* TreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeView.swift; sourceTree = "<group>"; };
+		18E1A76D2673A9EE00A44C15 /* BuildingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingView.swift; sourceTree = "<group>"; };
+		18E1A76F2673A9FE00A44C15 /* BushView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BushView.swift; sourceTree = "<group>"; };
+		18E1A7712673AA0A00A44C15 /* RockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RockView.swift; sourceTree = "<group>"; };
+		18E1A7732673AA1F00A44C15 /* Building.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Building.swift; sourceTree = "<group>"; };
+		18E1A7752673AADF00A44C15 /* Bush.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bush.swift; sourceTree = "<group>"; };
+		18E1A7772673AAF100A44C15 /* Rock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1827C2692619C60100CAEDE8 /* Frameworks */ = {
+		18E1A74C2673A5F100A44C15 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				184F78CA262C507B00F371B2 /* Euclid in Frameworks */,
-				18EA31BD261B24CA009D837D /* Meadow in Frameworks */,
+				18101D8B2677727300424CDC /* Euclid in Frameworks */,
+				18101D92267778FC00424CDC /* Meadow in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		181F2F7F26344B4D008612CD /* JSON */ = {
+		1800D0A32674C64600146738 /* Bush */ = {
 			isa = PBXGroup;
 			children = (
-				182749A52634433A000C31A7 /* Model.swift */,
-				181F2F8026344B5A008612CD /* ModelVertex.swift */,
-				181F2F8526344BF0008612CD /* ModelPolygon.swift */,
+				18E1A76F2673A9FE00A44C15 /* BushView.swift */,
 			);
-			path = JSON;
+			path = Bush;
 			sourceTree = "<group>";
 		};
-		1827C2632619C60100CAEDE8 = {
+		1800D0A42674C64B00146738 /* Building */ = {
 			isa = PBXGroup;
 			children = (
-				184F78C7262C505500F371B2 /* Euclid */,
-				18EA31B7261B23E8009D837D /* Meadow */,
-				1827C26E2619C60100CAEDE8 /* Pasture */,
-				1827C26D2619C60100CAEDE8 /* Products */,
-				18EA31BB261B24CA009D837D /* Frameworks */,
+				18E1A76D2673A9EE00A44C15 /* BuildingView.swift */,
 			);
+			path = Building;
 			sourceTree = "<group>";
 		};
-		1827C26D2619C60100CAEDE8 /* Products */ = {
+		1800D0A52674C65000146738 /* Rock */ = {
 			isa = PBXGroup;
 			children = (
-				1827C26C2619C60100CAEDE8 /* Pasture.app */,
+				18E1A7712673AA0A00A44C15 /* RockView.swift */,
 			);
-			name = Products;
+			path = Rock;
 			sourceTree = "<group>";
 		};
-		1827C26E2619C60100CAEDE8 /* Pasture */ = {
+		1800D0A62674C65500146738 /* Tree */ = {
 			isa = PBXGroup;
 			children = (
-				1827C26F2619C60100CAEDE8 /* AppDelegate.swift */,
-				1827C2752619C60200CAEDE8 /* Assets.xcassets */,
-				183E69D92619C73E0061ADC8 /* Controllers */,
-				183E69DB2619C7460061ADC8 /* Coordinators */,
-				183E69DF2619C7700061ADC8 /* Document */,
-				183E69E52619C7AF0061ADC8 /* Extensions */,
-				184809D32619D6F800BFD4D1 /* Model */,
-				183E69E02619C7790061ADC8 /* Storyboards */,
-				183E69D72619C7130061ADC8 /* Supporting Files */,
-				182B716726316F2D004F3708 /* View Models */,
-				18DE33E5262724C700FB19EE /* Views */,
+				1800D0AD2674CEE300146738 /* Species */,
+				18E1A76B2673A9C900A44C15 /* TreeView.swift */,
+				1800D0A72674C68200146738 /* TreeSpeciesView.swift */,
 			);
-			path = Pasture;
+			path = Tree;
 			sourceTree = "<group>";
 		};
-		182B716726316F2D004F3708 /* View Models */ = {
+		1800D0AD2674CEE300146738 /* Species */ = {
 			isa = PBXGroup;
 			children = (
-				182B716826316F50004F3708 /* GroupInspectorViewModel.swift */,
+				18BD2A36267C8FC90048FDD1 /* Palm */,
+				1800D0A92674C72A00146738 /* BeechTreeView.swift */,
+				18BD2A2B267C84220048FDD1 /* ChestnutTreeView.swift */,
+				18BD2A2A267C84220048FDD1 /* OakTreeView.swift */,
+				18BD2A2D267C84220048FDD1 /* PineTreeView.swift */,
+				18BD2A2C267C84220048FDD1 /* PoplarTreeView.swift */,
+				18BD2A29267C84220048FDD1 /* WalnutTreeView.swift */,
 			);
-			path = "View Models";
+			path = Species;
 			sourceTree = "<group>";
 		};
-		183E69D72619C7130061ADC8 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				1827C27A2619C60200CAEDE8 /* Info.plist */,
-				1827C27B2619C60200CAEDE8 /* Pasture.entitlements */,
-			);
-			path = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		183E69D92619C73E0061ADC8 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				183E69F62619C8B00061ADC8 /* Graph */,
-				183E69F82619C8B90061ADC8 /* Inspector */,
-				183E69F72619C8B50061ADC8 /* Model */,
-				183E69F22619C8830061ADC8 /* Split View */,
-				183E69F92619C8C20061ADC8 /* Tab View */,
-				1827C2712619C60100CAEDE8 /* ViewController.swift */,
-				183E69DE2619C7630061ADC8 /* Window */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		183E69DB2619C7460061ADC8 /* Coordinators */ = {
-			isa = PBXGroup;
-			children = (
-				183E69DC2619C74B0061ADC8 /* Coordinator */,
-				183E69FF2619C8FA0061ADC8 /* Graph */,
-				183E6A012619C9030061ADC8 /* Inspector */,
-				183E69FE2619C8F60061ADC8 /* Model */,
-				183E69ED2619C8110061ADC8 /* Split View */,
-				183E69FD2619C8EF0061ADC8 /* Tab View */,
-				183E69DD2619C7500061ADC8 /* Window */,
-			);
-			path = Coordinators;
-			sourceTree = "<group>";
-		};
-		183E69DC2619C74B0061ADC8 /* Coordinator */ = {
-			isa = PBXGroup;
-			children = (
-				183E69E22619C7A30061ADC8 /* Coordinator.swift */,
-			);
-			path = Coordinator;
-			sourceTree = "<group>";
-		};
-		183E69DD2619C7500061ADC8 /* Window */ = {
-			isa = PBXGroup;
-			children = (
-				183E6A1B2619CBAC0061ADC8 /* WindowCoordinator.swift */,
-			);
-			path = Window;
-			sourceTree = "<group>";
-		};
-		183E69DE2619C7630061ADC8 /* Window */ = {
-			isa = PBXGroup;
-			children = (
-				183E6A182619CB8A0061ADC8 /* WindowController.swift */,
-			);
-			path = Window;
-			sourceTree = "<group>";
-		};
-		183E69DF2619C7700061ADC8 /* Document */ = {
-			isa = PBXGroup;
-			children = (
-				1827C2732619C60100CAEDE8 /* Document.swift */,
-			);
-			path = Document;
-			sourceTree = "<group>";
-		};
-		183E69E02619C7790061ADC8 /* Storyboards */ = {
-			isa = PBXGroup;
-			children = (
-				1827C2772619C60200CAEDE8 /* Main.storyboard */,
-			);
-			path = Storyboards;
-			sourceTree = "<group>";
-		};
-		183E69E52619C7AF0061ADC8 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				183E69EA2619C7C90061ADC8 /* NSResponder.swift */,
-				183E69E62619C7C00061ADC8 /* NSStoryboard.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		183E69ED2619C8110061ADC8 /* Split View */ = {
-			isa = PBXGroup;
-			children = (
-				183E69EE2619C82B0061ADC8 /* SplitViewCoordinator.swift */,
-			);
-			path = "Split View";
-			sourceTree = "<group>";
-		};
-		183E69F22619C8830061ADC8 /* Split View */ = {
-			isa = PBXGroup;
-			children = (
-				183E69F32619C89C0061ADC8 /* SplitViewController.swift */,
-			);
-			path = "Split View";
-			sourceTree = "<group>";
-		};
-		183E69F62619C8B00061ADC8 /* Graph */ = {
-			isa = PBXGroup;
-			children = (
-				183E6A152619C9500061ADC8 /* GraphViewController.swift */,
-			);
-			path = Graph;
-			sourceTree = "<group>";
-		};
-		183E69F72619C8B50061ADC8 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				183E6A122619C9480061ADC8 /* ModelViewController.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		183E69F82619C8B90061ADC8 /* Inspector */ = {
-			isa = PBXGroup;
-			children = (
-				183E6A0E2619C93A0061ADC8 /* InspectorViewController.swift */,
-				18DE33ED2627258400FB19EE /* GroupInspectorViewController.swift */,
-			);
-			path = Inspector;
-			sourceTree = "<group>";
-		};
-		183E69F92619C8C20061ADC8 /* Tab View */ = {
-			isa = PBXGroup;
-			children = (
-				183E69FA2619C8DF0061ADC8 /* TabViewController.swift */,
-			);
-			path = "Tab View";
-			sourceTree = "<group>";
-		};
-		183E69FD2619C8EF0061ADC8 /* Tab View */ = {
-			isa = PBXGroup;
-			children = (
-				183E6A0B2619C92F0061ADC8 /* TabViewCoordinator.swift */,
-			);
-			path = "Tab View";
-			sourceTree = "<group>";
-		};
-		183E69FE2619C8F60061ADC8 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				183E6A082619C9250061ADC8 /* ModelCoordinator.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		183E69FF2619C8FA0061ADC8 /* Graph */ = {
-			isa = PBXGroup;
-			children = (
-				183E6A052619C9180061ADC8 /* GraphCoordinator.swift */,
-			);
-			path = Graph;
-			sourceTree = "<group>";
-		};
-		183E6A012619C9030061ADC8 /* Inspector */ = {
-			isa = PBXGroup;
-			children = (
-				183E6A022619C90E0061ADC8 /* InspectorCoordinator.swift */,
-				18DE33F0262725A800FB19EE /* GroupInspectorCoordinator.swift */,
-			);
-			path = Inspector;
-			sourceTree = "<group>";
-		};
-		184809D32619D6F800BFD4D1 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				181F2F7F26344B4D008612CD /* JSON */,
-				184809D42619D70000BFD4D1 /* ModelNode.swift */,
-				18EA31BF261B28D6009D837D /* GroupNode.swift */,
-				18DE33DD2625B36500FB19EE /* Primitive.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		18DE33E5262724C700FB19EE /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				18DE33E6262724EF00FB19EE /* Coordinate View */,
-				18DE33E8262724EF00FB19EE /* NumberStepper */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		18DE33E6262724EF00FB19EE /* Coordinate View */ = {
-			isa = PBXGroup;
-			children = (
-				18DE33E7262724EF00FB19EE /* CoordinateView.swift */,
-			);
-			path = "Coordinate View";
-			sourceTree = "<group>";
-		};
-		18DE33E8262724EF00FB19EE /* NumberStepper */ = {
-			isa = PBXGroup;
-			children = (
-				18DE33E9262724EF00FB19EE /* NumberStepper.swift */,
-			);
-			path = NumberStepper;
-			sourceTree = "<group>";
-		};
-		18EA31BB261B24CA009D837D /* Frameworks */ = {
+		18101D90267778FC00424CDC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		18101D9326777F2C00424CDC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				18101D9426777F3700424CDC /* Vector.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		18101D9626779AA600424CDC /* Tree */ = {
+			isa = PBXGroup;
+			children = (
+				18BD2A3D267CCA8D0048FDD1 /* Shapes */,
+				18BD2A0C2679DF290048FDD1 /* Species */,
+				18E1A7672673A65B00A44C15 /* Tree.swift */,
+			);
+			path = Tree;
+			sourceTree = "<group>";
+		};
+		18BD2A0C2679DF290048FDD1 /* Species */ = {
+			isa = PBXGroup;
+			children = (
+				18BD2A35267C8F730048FDD1 /* Palm */,
+				18BD2A1D267C793B0048FDD1 /* BeechTree.swift */,
+				18BD2A20267C7C400048FDD1 /* ChestnutTree.swift */,
+				18BD2A23267C7C400048FDD1 /* OakTree.swift */,
+				18BD2A1B267C78BA0048FDD1 /* PineTree.swift */,
+				18BD2A22267C7C400048FDD1 /* PoplarTree.swift */,
+				18BD2A21267C7C400048FDD1 /* WalnutTree.swift */,
+			);
+			path = Species;
+			sourceTree = "<group>";
+		};
+		18BD2A0F2679F5240048FDD1 /* Scene Models */ = {
+			isa = PBXGroup;
+			children = (
+				18BD2A102679F5350048FDD1 /* TreeModel.swift */,
+			);
+			path = "Scene Models";
+			sourceTree = "<group>";
+		};
+		18BD2A35267C8F730048FDD1 /* Palm */ = {
+			isa = PBXGroup;
+			children = (
+				18BD2A1F267C7C400048FDD1 /* PalmTree.swift */,
+				18BD2A17267B339F0048FDD1 /* PalmTreeChonk.swift */,
+				18BD2A39267CAF5C0048FDD1 /* PalmTreeFrond.swift */,
+				18101D9726779AB100424CDC /* PalmTreeTrunk.swift */,
+				18BD2A402680AD1D0048FDD1 /* PalmTreeFoliage.swift */,
+			);
+			path = Palm;
+			sourceTree = "<group>";
+		};
+		18BD2A36267C8FC90048FDD1 /* Palm */ = {
+			isa = PBXGroup;
+			children = (
+				18BD2A422680AF140048FDD1 /* PalmTreeFoliageView.swift */,
+				18BD2A3B267CAF650048FDD1 /* PalmTreeFrondView.swift */,
+				18BD2A19267B37B20048FDD1 /* PalmTreeChonkView.swift */,
+				1800D0AB2674C99200146738 /* PalmTreeTrunkView.swift */,
+				18BD2A2E267C84220048FDD1 /* PalmTreeView.swift */,
+			);
+			path = Palm;
+			sourceTree = "<group>";
+		};
+		18BD2A3D267CCA8D0048FDD1 /* Shapes */ = {
+			isa = PBXGroup;
+			children = (
+				18BD2A12267A46C60048FDD1 /* Chonk.swift */,
+				18BD2A3E267CCA9A0048FDD1 /* Frond.swift */,
+			);
+			path = Shapes;
+			sourceTree = "<group>";
+		};
+		18E1A7462673A5F100A44C15 = {
+			isa = PBXGroup;
+			children = (
+				18101D8F267778C900424CDC /* Meadow */,
+				18E1A7512673A5F100A44C15 /* Pasture */,
+				18E1A7502673A5F100A44C15 /* Products */,
+				18101D90267778FC00424CDC /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		18E1A7502673A5F100A44C15 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				18E1A74F2673A5F100A44C15 /* Pasture.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		18E1A7512673A5F100A44C15 /* Pasture */ = {
+			isa = PBXGroup;
+			children = (
+				18E1A7582673A5F200A44C15 /* Assets.xcassets */,
+				18101D9326777F2C00424CDC /* Extensions */,
+				18E1A75D2673A5F200A44C15 /* Info.plist */,
+				18E1A7632673A62300A44C15 /* Model */,
+				18E1A7522673A5F100A44C15 /* PastureApp.swift */,
+				18E1A7542673A5F100A44C15 /* PastureDocument.swift */,
+				18E1A75A2673A5F200A44C15 /* Preview Content */,
+				18BD2A0F2679F5240048FDD1 /* Scene Models */,
+				18E1A7642673A62700A44C15 /* Views */,
+			);
+			path = Pasture;
+			sourceTree = "<group>";
+		};
+		18E1A75A2673A5F200A44C15 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				18E1A75B2673A5F200A44C15 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		18E1A7632673A62300A44C15 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				18BD2A082679D5240048FDD1 /* Prop.swift */,
+				18101D9626779AA600424CDC /* Tree */,
+				18E1A7652673A64300A44C15 /* Model.swift */,
+				18E1A7732673AA1F00A44C15 /* Building.swift */,
+				18E1A7752673AADF00A44C15 /* Bush.swift */,
+				18E1A7772673AAF100A44C15 /* Rock.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		18E1A7642673A62700A44C15 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1800D0A42674C64B00146738 /* Building */,
+				1800D0A32674C64600146738 /* Bush */,
+				18E1A7562673A5F100A44C15 /* ContentView.swift */,
+				1800D0A12674BEF000146738 /* ModelView.swift */,
+				1800D0A52674C65000146738 /* Rock */,
+				18E1A7692673A8B700A44C15 /* ToolView.swift */,
+				1800D0A62674C65500146738 /* Tree */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1827C26B2619C60100CAEDE8 /* Pasture */ = {
+		18E1A74E2673A5F100A44C15 /* Pasture */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1827C27E2619C60200CAEDE8 /* Build configuration list for PBXNativeTarget "Pasture" */;
+			buildConfigurationList = 18E1A7602673A5F200A44C15 /* Build configuration list for PBXNativeTarget "Pasture" */;
 			buildPhases = (
-				1827C2682619C60100CAEDE8 /* Sources */,
-				1827C2692619C60100CAEDE8 /* Frameworks */,
-				1827C26A2619C60100CAEDE8 /* Resources */,
+				18E1A74B2673A5F100A44C15 /* Sources */,
+				18E1A74C2673A5F100A44C15 /* Frameworks */,
+				18E1A74D2673A5F100A44C15 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -377,111 +332,115 @@
 			);
 			name = Pasture;
 			packageProductDependencies = (
-				18EA31BC261B24CA009D837D /* Meadow */,
-				184F78C9262C507B00F371B2 /* Euclid */,
+				18101D8A2677727300424CDC /* Euclid */,
+				18101D91267778FC00424CDC /* Meadow */,
 			);
 			productName = Pasture;
-			productReference = 1827C26C2619C60100CAEDE8 /* Pasture.app */;
+			productReference = 18E1A74F2673A5F100A44C15 /* Pasture.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		1827C2642619C60100CAEDE8 /* Project object */ = {
+		18E1A7472673A5F100A44C15 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1240;
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
 				TargetAttributes = {
-					1827C26B2619C60100CAEDE8 = {
-						CreatedOnToolsVersion = 12.4;
+					18E1A74E2673A5F100A44C15 = {
+						CreatedOnToolsVersion = 13.0;
 					};
 				};
 			};
-			buildConfigurationList = 1827C2672619C60100CAEDE8 /* Build configuration list for PBXProject "Pasture" */;
-			compatibilityVersion = "Xcode 9.3";
+			buildConfigurationList = 18E1A74A2673A5F100A44C15 /* Build configuration list for PBXProject "Pasture" */;
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 1827C2632619C60100CAEDE8;
+			mainGroup = 18E1A7462673A5F100A44C15;
 			packageReferences = (
+				18101D892677727300424CDC /* XCRemoteSwiftPackageReference "Euclid" */,
 			);
-			productRefGroup = 1827C26D2619C60100CAEDE8 /* Products */;
+			productRefGroup = 18E1A7502673A5F100A44C15 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1827C26B2619C60100CAEDE8 /* Pasture */,
+				18E1A74E2673A5F100A44C15 /* Pasture */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		1827C26A2619C60100CAEDE8 /* Resources */ = {
+		18E1A74D2673A5F100A44C15 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1827C2762619C60200CAEDE8 /* Assets.xcassets in Resources */,
-				1827C2792619C60200CAEDE8 /* Main.storyboard in Resources */,
+				18E1A75C2673A5F200A44C15 /* Preview Assets.xcassets in Resources */,
+				18E1A7592673A5F200A44C15 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1827C2682619C60100CAEDE8 /* Sources */ = {
+		18E1A74B2673A5F100A44C15 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				183E6A062619C9180061ADC8 /* GraphCoordinator.swift in Sources */,
-				183E69EF2619C82B0061ADC8 /* SplitViewCoordinator.swift in Sources */,
-				18DE33F1262725A800FB19EE /* GroupInspectorCoordinator.swift in Sources */,
-				18DE33EB262724EF00FB19EE /* NumberStepper.swift in Sources */,
-				183E6A092619C9250061ADC8 /* ModelCoordinator.swift in Sources */,
-				183E69E72619C7C00061ADC8 /* NSStoryboard.swift in Sources */,
-				183E69E32619C7A30061ADC8 /* Coordinator.swift in Sources */,
-				183E6A162619C9500061ADC8 /* GraphViewController.swift in Sources */,
-				182749A62634433A000C31A7 /* Model.swift in Sources */,
-				1827C2722619C60100CAEDE8 /* ViewController.swift in Sources */,
-				183E6A0F2619C93A0061ADC8 /* InspectorViewController.swift in Sources */,
-				181F2F8126344B5A008612CD /* ModelVertex.swift in Sources */,
-				18DE33DE2625B36500FB19EE /* Primitive.swift in Sources */,
-				183E6A032619C90E0061ADC8 /* InspectorCoordinator.swift in Sources */,
-				18EA31C0261B28D6009D837D /* GroupNode.swift in Sources */,
-				183E6A132619C9480061ADC8 /* ModelViewController.swift in Sources */,
-				181F2F8626344BF0008612CD /* ModelPolygon.swift in Sources */,
-				1827C2702619C60100CAEDE8 /* AppDelegate.swift in Sources */,
-				183E6A0C2619C92F0061ADC8 /* TabViewCoordinator.swift in Sources */,
-				18DE33EE2627258400FB19EE /* GroupInspectorViewController.swift in Sources */,
-				183E6A192619CB8A0061ADC8 /* WindowController.swift in Sources */,
-				1827C2742619C60100CAEDE8 /* Document.swift in Sources */,
-				183E6A1C2619CBAC0061ADC8 /* WindowCoordinator.swift in Sources */,
-				183E69FB2619C8DF0061ADC8 /* TabViewController.swift in Sources */,
-				184809D52619D70000BFD4D1 /* ModelNode.swift in Sources */,
-				183E69EB2619C7C90061ADC8 /* NSResponder.swift in Sources */,
-				18DE33EA262724EF00FB19EE /* CoordinateView.swift in Sources */,
-				182B716926316F50004F3708 /* GroupInspectorViewModel.swift in Sources */,
-				183E69F42619C89C0061ADC8 /* SplitViewController.swift in Sources */,
+				18E1A7682673A65B00A44C15 /* Tree.swift in Sources */,
+				18BD2A13267A46C60048FDD1 /* Chonk.swift in Sources */,
+				18BD2A31267C84220048FDD1 /* ChestnutTreeView.swift in Sources */,
+				18E1A7722673AA0A00A44C15 /* RockView.swift in Sources */,
+				1800D0AA2674C72A00146738 /* BeechTreeView.swift in Sources */,
+				18E1A7782673AAF100A44C15 /* Rock.swift in Sources */,
+				18BD2A33267C84220048FDD1 /* PineTreeView.swift in Sources */,
+				18BD2A32267C84220048FDD1 /* PoplarTreeView.swift in Sources */,
+				18BD2A3F267CCA9A0048FDD1 /* Frond.swift in Sources */,
+				18BD2A24267C7C400048FDD1 /* PalmTree.swift in Sources */,
+				18E1A7702673A9FE00A44C15 /* BushView.swift in Sources */,
+				18BD2A1E267C793B0048FDD1 /* BeechTree.swift in Sources */,
+				18BD2A18267B339F0048FDD1 /* PalmTreeChonk.swift in Sources */,
+				18E1A7762673AADF00A44C15 /* Bush.swift in Sources */,
+				18E1A7742673AA1F00A44C15 /* Building.swift in Sources */,
+				1800D0A82674C68200146738 /* TreeSpeciesView.swift in Sources */,
+				18BD2A432680AF140048FDD1 /* PalmTreeFoliageView.swift in Sources */,
+				18BD2A112679F5350048FDD1 /* TreeModel.swift in Sources */,
+				18E1A7532673A5F100A44C15 /* PastureApp.swift in Sources */,
+				18E1A7552673A5F100A44C15 /* PastureDocument.swift in Sources */,
+				18BD2A28267C7C400048FDD1 /* OakTree.swift in Sources */,
+				18101D9526777F3700424CDC /* Vector.swift in Sources */,
+				18BD2A1A267B37B20048FDD1 /* PalmTreeChonkView.swift in Sources */,
+				18BD2A30267C84220048FDD1 /* OakTreeView.swift in Sources */,
+				18E1A7572673A5F100A44C15 /* ContentView.swift in Sources */,
+				18BD2A1C267C78BA0048FDD1 /* PineTree.swift in Sources */,
+				18E1A76A2673A8B700A44C15 /* ToolView.swift in Sources */,
+				18E1A76C2673A9C900A44C15 /* TreeView.swift in Sources */,
+				18BD2A26267C7C400048FDD1 /* WalnutTree.swift in Sources */,
+				1800D0AC2674C99200146738 /* PalmTreeTrunkView.swift in Sources */,
+				18E1A76E2673A9EE00A44C15 /* BuildingView.swift in Sources */,
+				18BD2A092679D5240048FDD1 /* Prop.swift in Sources */,
+				18BD2A2F267C84220048FDD1 /* WalnutTreeView.swift in Sources */,
+				18BD2A412680AD1D0048FDD1 /* PalmTreeFoliage.swift in Sources */,
+				18BD2A34267C84220048FDD1 /* PalmTreeView.swift in Sources */,
+				18BD2A27267C7C400048FDD1 /* PoplarTree.swift in Sources */,
+				1800D0A22674BEF000146738 /* ModelView.swift in Sources */,
+				18BD2A25267C7C400048FDD1 /* ChestnutTree.swift in Sources */,
+				18BD2A3C267CAF650048FDD1 /* PalmTreeFrondView.swift in Sources */,
+				18E1A7662673A64300A44C15 /* Model.swift in Sources */,
+				18101D9826779AB100424CDC /* PalmTreeTrunk.swift in Sources */,
+				18BD2A3A267CAF5C0048FDD1 /* PalmTreeFrond.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		1827C2772619C60200CAEDE8 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1827C2782619C60200CAEDE8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
-		1827C27C2619C60200CAEDE8 /* Debug */ = {
+		18E1A75E2673A5F200A44C15 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -532,7 +491,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				MACOSX_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -542,7 +501,7 @@
 			};
 			name = Debug;
 		};
-		1827C27D2619C60200CAEDE8 /* Release */ = {
+		18E1A75F2673A5F200A44C15 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -587,7 +546,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				MACOSX_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -596,42 +555,64 @@
 			};
 			name = Release;
 		};
-		1827C27F2619C60200CAEDE8 /* Debug */ = {
+		18E1A7612673A5F200A44C15 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Pasture/Supporting Files/Pasture.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_ASSET_PATHS = "";
-				INFOPLIST_FILE = "Pasture/Supporting Files/Info.plist";
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Pasture/Preview Content\"";
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readwrite;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Pasture/Info.plist;
+				INFOPLIST_KEY_CFBundleExecutable = Pasture;
+				INFOPLIST_KEY_CFBundleName = Pasture;
+				INFOPLIST_KEY_CFBundleVersion = 1;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.so.Pasture;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.so.pasture;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
-		1827C2802619C60200CAEDE8 /* Release */ = {
+		18E1A7622673A5F200A44C15 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Pasture/Supporting Files/Pasture.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_ASSET_PATHS = "";
-				INFOPLIST_FILE = "Pasture/Supporting Files/Info.plist";
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Pasture/Preview Content\"";
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readwrite;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Pasture/Info.plist;
+				INFOPLIST_KEY_CFBundleExecutable = Pasture;
+				INFOPLIST_KEY_CFBundleName = Pasture;
+				INFOPLIST_KEY_CFBundleVersion = 1;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.so.Pasture;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.so.pasture;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -639,36 +620,48 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1827C2672619C60100CAEDE8 /* Build configuration list for PBXProject "Pasture" */ = {
+		18E1A74A2673A5F100A44C15 /* Build configuration list for PBXProject "Pasture" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1827C27C2619C60200CAEDE8 /* Debug */,
-				1827C27D2619C60200CAEDE8 /* Release */,
+				18E1A75E2673A5F200A44C15 /* Debug */,
+				18E1A75F2673A5F200A44C15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1827C27E2619C60200CAEDE8 /* Build configuration list for PBXNativeTarget "Pasture" */ = {
+		18E1A7602673A5F200A44C15 /* Build configuration list for PBXNativeTarget "Pasture" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1827C27F2619C60200CAEDE8 /* Debug */,
-				1827C2802619C60200CAEDE8 /* Release */,
+				18E1A7612673A5F200A44C15 /* Debug */,
+				18E1A7622673A5F200A44C15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		18101D892677727300424CDC /* XCRemoteSwiftPackageReference "Euclid" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nicklockwood/Euclid.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
-		184F78C9262C507B00F371B2 /* Euclid */ = {
+		18101D8A2677727300424CDC /* Euclid */ = {
 			isa = XCSwiftPackageProductDependency;
+			package = 18101D892677727300424CDC /* XCRemoteSwiftPackageReference "Euclid" */;
 			productName = Euclid;
 		};
-		18EA31BC261B24CA009D837D /* Meadow */ = {
+		18101D91267778FC00424CDC /* Meadow */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Meadow;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = 1827C2642619C60100CAEDE8 /* Project object */;
+	rootObject = 18E1A7472673A5F100A44C15 /* Project object */;
 }
