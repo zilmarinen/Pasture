@@ -109,12 +109,11 @@ extension PalmTree: Prop {
         
         for leaf in 0..<foliage.fronds {
             
-            let angle = (rotation.radians * Double(leaf)) + Math.random(minimum: -foliage.frond.spread, maximum: foliage.frond.spread)
+            let angle = (rotation.radians * Double(leaf)) + Math.random(minimum: -(foliage.frond.spread / 2.0), maximum: (foliage.frond.spread / 2.0))
             
-            let frond = Frond(position: node.peakCenter, plane: node.plane, angle: angle, radius: foliage.frond.radius, width: foliage.frond.width, spread: foliage.frond.spread, segments: foliage.frond.segments, textureCoordinates: frondUVs)
+            let frond = Frond(position: node.peakCenter, plane: node.plane, angle: angle, radius: foliage.frond.radius, width: foliage.frond.width, thickness: foliage.frond.thickness, spread: foliage.frond.spread, segments: foliage.frond.segments, textureCoordinates: frondUVs)
             
-            //mesh = mesh.union(Mesh(frond.build()))
-            mesh = mesh.merge(Mesh(frond.build()))
+            mesh = mesh.union(Mesh(frond.build()))
         }
         
         return mesh.polygons

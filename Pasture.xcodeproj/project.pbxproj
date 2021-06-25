@@ -12,9 +12,9 @@
 		1800D0AA2674C72A00146738 /* BeechTreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1800D0A92674C72A00146738 /* BeechTreeView.swift */; };
 		1800D0AC2674C99200146738 /* PalmTreeTrunkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1800D0AB2674C99200146738 /* PalmTreeTrunkView.swift */; };
 		18101D8B2677727300424CDC /* Euclid in Frameworks */ = {isa = PBXBuildFile; productRef = 18101D8A2677727300424CDC /* Euclid */; };
-		18101D92267778FC00424CDC /* Meadow in Frameworks */ = {isa = PBXBuildFile; productRef = 18101D91267778FC00424CDC /* Meadow */; };
 		18101D9526777F3700424CDC /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18101D9426777F3700424CDC /* Vector.swift */; };
 		18101D9826779AB100424CDC /* PalmTreeTrunk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18101D9726779AB100424CDC /* PalmTreeTrunk.swift */; };
+		18B37DB02684A23700640E16 /* Meadow in Frameworks */ = {isa = PBXBuildFile; productRef = 18B37DAF2684A23700640E16 /* Meadow */; };
 		18BD2A092679D5240048FDD1 /* Prop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD2A082679D5240048FDD1 /* Prop.swift */; };
 		18BD2A112679F5350048FDD1 /* TreeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD2A102679F5350048FDD1 /* TreeModel.swift */; };
 		18BD2A13267A46C60048FDD1 /* Chonk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD2A12267A46C60048FDD1 /* Chonk.swift */; };
@@ -60,9 +60,9 @@
 		1800D0A72674C68200146738 /* TreeSpeciesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeSpeciesView.swift; sourceTree = "<group>"; };
 		1800D0A92674C72A00146738 /* BeechTreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeechTreeView.swift; sourceTree = "<group>"; };
 		1800D0AB2674C99200146738 /* PalmTreeTrunkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalmTreeTrunkView.swift; sourceTree = "<group>"; };
-		18101D8F267778C900424CDC /* Meadow */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Meadow; path = ../../../../Volumes/Personal/Developer/Meadow; sourceTree = "<group>"; };
 		18101D9426777F3700424CDC /* Vector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vector.swift; sourceTree = "<group>"; };
 		18101D9726779AB100424CDC /* PalmTreeTrunk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalmTreeTrunk.swift; sourceTree = "<group>"; };
+		18B37DAE26849EE500640E16 /* Meadow */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Meadow; path = ../Meadow; sourceTree = "<group>"; };
 		18BD2A082679D5240048FDD1 /* Prop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prop.swift; sourceTree = "<group>"; };
 		18BD2A102679F5350048FDD1 /* TreeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeModel.swift; sourceTree = "<group>"; };
 		18BD2A12267A46C60048FDD1 /* Chonk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chonk.swift; sourceTree = "<group>"; };
@@ -111,7 +111,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18101D8B2677727300424CDC /* Euclid in Frameworks */,
-				18101D92267778FC00424CDC /* Meadow in Frameworks */,
+				18B37DB02684A23700640E16 /* Meadow in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,7 +249,7 @@
 		18E1A7462673A5F100A44C15 = {
 			isa = PBXGroup;
 			children = (
-				18101D8F267778C900424CDC /* Meadow */,
+				18B37DAE26849EE500640E16 /* Meadow */,
 				18E1A7512673A5F100A44C15 /* Pasture */,
 				18E1A7502673A5F100A44C15 /* Products */,
 				18101D90267778FC00424CDC /* Frameworks */,
@@ -333,7 +333,7 @@
 			name = Pasture;
 			packageProductDependencies = (
 				18101D8A2677727300424CDC /* Euclid */,
-				18101D91267778FC00424CDC /* Meadow */,
+				18B37DAF2684A23700640E16 /* Meadow */,
 			);
 			productName = Pasture;
 			productReference = 18E1A74F2673A5F100A44C15 /* Pasture.app */;
@@ -657,7 +657,7 @@
 			package = 18101D892677727300424CDC /* XCRemoteSwiftPackageReference "Euclid" */;
 			productName = Euclid;
 		};
-		18101D91267778FC00424CDC /* Meadow */ = {
+		18B37DAF2684A23700640E16 /* Meadow */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Meadow;
 		};

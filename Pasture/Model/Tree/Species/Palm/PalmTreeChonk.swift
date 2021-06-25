@@ -83,17 +83,17 @@ extension PalmTreeChonk {
                                                      peak: 0.056,
                                                      base: 0.01,
                                                      baseRadius: 0.042,
-                                                     peakRadius: 0.105)
+                                                     peakRadius: 0.077)
     
     static let segment: PalmTreeChonk = PalmTreeChonk(segments: 7,
                                                       peak: 0.049,
                                                       base: 0.01,
-                                                      baseRadius: 0.035,
-                                                      peakRadius: 0.014)
+                                                      baseRadius: 0.014,
+                                                      peakRadius: 0.035)
     
     static let throne: PalmTreeChonk = PalmTreeChonk(segments: 7,
                                                      peak: 0.07,
-                                                     base: 0.01,
-                                                     baseRadius: 0.28,
-                                                     peakRadius: 0.14)
+                                                     base: 0.08,
+                                                     baseRadius: 0.1,
+                                                     peakRadius: 0.09)
 }

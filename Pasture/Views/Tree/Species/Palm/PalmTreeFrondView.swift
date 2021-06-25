@@ -28,6 +28,12 @@ struct PalmTreeFrondView: View {
             
             HStack {
 
+                Stepper("Thickness", value: $frond.thickness, in: 0.1...1, step: 0.01)
+                TextField("Thickness", value: $frond.thickness, formatter: PastureDocument.Constants.Formatters.double)
+            }
+            
+            HStack {
+
                 Stepper("Radius", value: $frond.radius, in: 0.1...1, step: 0.01)
                 TextField("Radius", value: $frond.radius, formatter: PastureDocument.Constants.Formatters.double)
             }
