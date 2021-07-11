@@ -10,7 +10,7 @@ import Meadow
 
 protocol Prop {
     
-    func build() -> [Euclid.Polygon]
+    func build(position: Euclid.Vector) -> [Euclid.Polygon]
 }
 
 extension Prop {

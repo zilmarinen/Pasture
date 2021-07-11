@@ -6,12 +6,13 @@
 
 import Euclid
 import Foundation
+import GameKit
 import Meadow
 
 struct Frond: Prop {
     
-    let position: Euclid.Vector
     let plane: Euclid.Plane
+    let noise: Noise
     
     let angle: Double
     let radius: Double
@@ -23,23 +24,28 @@ struct Frond: Prop {
     
     let textureCoordinates: UVs
 
-    func build() -> [Euclid.Polygon] {
+    func build(position: Euclid.Vector) -> [Euclid.Polygon] {
             
         let step = Double(1.0 / Double(segments))
         let uvStep = (textureCoordinates.end.y - textureCoordinates.start.y) / Double(segments)
         
         let anchor = plot(radians: angle, radius: radius)
-        let control = anchor.project(onto: plane) + Vector(0, position.y, 0)
-        let end = Vector(anchor.x, position.y - radius, anchor.z)
+        let control = position + anchor.project(onto: plane)
+        let end = control + (-plane.normal * radius)
         let middle = curve(start: position, end: end, control: control, interpolator: 0.5)
         let perpendicular = [position, middle, end].normal()
         var length = Math.ease(curve: .out, value: step) * width
         
+        let size = Vector(Double(segments), 0, Double(segments))
+        let sampleCount = Vector(2, 0, Double(segments))
+        
+        let map = noise.map(size: size, sampleCount: sampleCount, origin: end)
+        
         var polygons: [Euclid.Polygon] = []
         
-        var sweep = (lhs: position + (-perpendicular * length),
+        var sweep = (lhs: position + (-perpendicular * (length / 2.0)),
                      curve: position,
-                     rhs: position + (perpendicular * length))
+                     rhs: position + (perpendicular * (length / 2.0)))
         
         for segment in 1..<segments {
 
@@ -67,8 +73,11 @@ struct Frond: Prop {
             let lhs = (vertices: [sweep.curve, sweep.lhs, current.lhs, current.curve], uvs: [uv1, peakUV, baseUV, uv2])
             let rhs = (vertices: [sweep.rhs, sweep.curve, current.curve, current.rhs], uvs: [peakUV, uv0, uv3, baseUV])
             
-            polygons.append(contentsOf: face(vertices: lhs.vertices, uvs: lhs.uvs, side: .left, cut: (segment > 1 ? ((Int(Math.random(minimum: 0, maximum: Double(segments * 2))) < segments)) : false)))
-            polygons.append(contentsOf: face(vertices: rhs.vertices, uvs: rhs.uvs, side: .right, cut: (segment > 2 ? ((Int(Math.random(minimum: 0, maximum: Double(segments * 2))) < segments)) : false)))
+            let s0 = Double(map.value(at: vector2(0, Int32(segment))))
+            let s1 = Double(map.value(at: vector2(1, Int32(segment))))
+            
+            polygons.append(contentsOf: face(vertices: lhs.vertices, uvs: lhs.uvs, side: .left, cut: s0 > 0))
+            polygons.append(contentsOf: face(vertices: rhs.vertices, uvs: rhs.uvs, side: .right, cut: s1 > 0))
             
             if segment == 1 {
                 

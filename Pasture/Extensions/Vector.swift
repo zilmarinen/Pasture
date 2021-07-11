@@ -16,6 +16,37 @@ extension Vector {
     static var infinity = Vector(.infinity, .infinity, .infinity)
 }
 
+extension Vector {
+    
+    static func *(lhs: Self, rhs: Self) -> Self {
+        
+        return Vector(lhs.x * rhs.x, lhs.y * rhs.y, lhs.z * rhs.z)
+    }
+    
+    static func minimum(lhs: Self, rhs: Self) -> Self {
+        
+        return Vector(min(lhs.x, rhs.x), min(lhs.y, rhs.y), min(lhs.z, rhs.z))
+    }
+    
+    static func maximum(lhs: Self, rhs: Self) -> Self {
+        
+        return Vector(max(lhs.x, rhs.x), max(lhs.y, rhs.y), max(lhs.z, rhs.z))
+    }
+    
+    static func absolute(vector: Vector) -> Vector {
+        
+        return Vector(abs(vector.x), abs(vector.y), abs(vector.z))
+    }
+}
+
+extension Vector {
+    
+    var xz: Vector {
+        
+        return Vector(x, 0, z)
+    }
+}
+
 extension Array where Element == Vector {
     
     func average() -> Vector {

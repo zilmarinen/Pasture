@@ -1,6 +1,5 @@
 //
 //  PalmTreeFoliage.swift
-//  Pasture
 //
 //  Created by Zack Brown on 21/06/2021.
 //
@@ -8,6 +7,8 @@
 import SwiftUI
 
 class PalmTreeFoliage: Codable, Hashable, ObservableObject {
+    
+    static let `default`: PalmTreeFoliage = PalmTreeFoliage(fronds: 7)
  
     enum CodingKeys: CodingKey {
         
@@ -61,9 +62,4 @@ class PalmTreeFoliage: Codable, Hashable, ObservableObject {
                 lhs.crown == rhs.crown &&
                 lhs.frond == rhs.frond
     }
-}
-
-extension PalmTreeFoliage {
-    
-    static let `default`: PalmTreeFoliage = PalmTreeFoliage(fronds: 7)
 }

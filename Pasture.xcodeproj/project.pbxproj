@@ -11,10 +11,27 @@
 		1800D0A82674C68200146738 /* TreeSpeciesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1800D0A72674C68200146738 /* TreeSpeciesView.swift */; };
 		1800D0AA2674C72A00146738 /* BeechTreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1800D0A92674C72A00146738 /* BeechTreeView.swift */; };
 		1800D0AC2674C99200146738 /* PalmTreeTrunkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1800D0AB2674C99200146738 /* PalmTreeTrunkView.swift */; };
+		1802C209268A0ADD00328C8C /* RockCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1802C208268A0ADD00328C8C /* RockCategoryView.swift */; };
+		1802C20B268A0C5800328C8C /* CausewayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1802C20A268A0C5800328C8C /* CausewayView.swift */; };
+		1802C20E268A0C8800328C8C /* Causeway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1802C20D268A0C8800328C8C /* Causeway.swift */; };
 		18101D8B2677727300424CDC /* Euclid in Frameworks */ = {isa = PBXBuildFile; productRef = 18101D8A2677727300424CDC /* Euclid */; };
 		18101D9526777F3700424CDC /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18101D9426777F3700424CDC /* Vector.swift */; };
 		18101D9826779AB100424CDC /* PalmTreeTrunk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18101D9726779AB100424CDC /* PalmTreeTrunk.swift */; };
+		1856AEA8269701EC0030E563 /* PineTreeFoliageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1856AEA7269701EC0030E563 /* PineTreeFoliageView.swift */; };
+		1861C6752689C0450004B292 /* SDFLineSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1861C6742689C0450004B292 /* SDFLineSegment.swift */; };
+		18A83E1C2699CA72007409FD /* SDFGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A83E1B2699CA72007409FD /* SDFGroup.swift */; };
 		18B37DB02684A23700640E16 /* Meadow in Frameworks */ = {isa = PBXBuildFile; productRef = 18B37DAF2684A23700640E16 /* Meadow */; };
+		18B37DB32687360800640E16 /* RockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B37DB22687360800640E16 /* RockModel.swift */; };
+		18B37DB92689AA5C00640E16 /* SDFBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B37DB52689AA5C00640E16 /* SDFBox.swift */; };
+		18B37DBA2689AA5C00640E16 /* SDFGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B37DB62689AA5C00640E16 /* SDFGrid.swift */; };
+		18B37DBB2689AA5C00640E16 /* SDFShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B37DB72689AA5C00640E16 /* SDFShape.swift */; };
+		18B37DBC2689AA5C00640E16 /* SDFSphere.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B37DB82689AA5C00640E16 /* SDFSphere.swift */; };
+		18B37DC02689AABD00640E16 /* MarchingCube.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B37DBE2689AABC00640E16 /* MarchingCube.swift */; };
+		18B37DC12689AABD00640E16 /* MarchingTetrahedron.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B37DBF2689AABD00640E16 /* MarchingTetrahedron.swift */; };
+		18B37DC32689AC0B00640E16 /* SDFSampler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B37DC22689AC0B00640E16 /* SDFSampler.swift */; };
+		18B37DC62689B4B400640E16 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B37DC52689B4B400640E16 /* Asset.swift */; };
+		18B37DC82689B4D000640E16 /* AssetPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B37DC72689B4D000640E16 /* AssetPolygon.swift */; };
+		18B37DCA2689B4F800640E16 /* AssetVertex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B37DC92689B4F800640E16 /* AssetVertex.swift */; };
 		18BD2A092679D5240048FDD1 /* Prop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD2A082679D5240048FDD1 /* Prop.swift */; };
 		18BD2A112679F5350048FDD1 /* TreeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD2A102679F5350048FDD1 /* TreeModel.swift */; };
 		18BD2A13267A46C60048FDD1 /* Chonk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD2A12267A46C60048FDD1 /* Chonk.swift */; };
@@ -38,6 +55,20 @@
 		18BD2A3F267CCA9A0048FDD1 /* Frond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD2A3E267CCA9A0048FDD1 /* Frond.swift */; };
 		18BD2A412680AD1D0048FDD1 /* PalmTreeFoliage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD2A402680AD1D0048FDD1 /* PalmTreeFoliage.swift */; };
 		18BD2A432680AF140048FDD1 /* PalmTreeFoliageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD2A422680AF140048FDD1 /* PalmTreeFoliageView.swift */; };
+		18C49C0A268C4E0A0068F6D1 /* Pentomino.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C49C09268C4E0A0068F6D1 /* Pentomino.swift */; };
+		18C49C0C268C865B0068F6D1 /* ModelPropertiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C49C0B268C865B0068F6D1 /* ModelPropertiesView.swift */; };
+		18C49C0F268C951D0068F6D1 /* NoiseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C49C0E268C951D0068F6D1 /* NoiseView.swift */; };
+		18C49C11268C95450068F6D1 /* Noise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C49C10268C95450068F6D1 /* Noise.swift */; };
+		18C49C13268D9E520068F6D1 /* TrunkLeg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C49C12268D9E520068F6D1 /* TrunkLeg.swift */; };
+		18C49C15268D9F350068F6D1 /* TreeTrunkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C49C14268D9F350068F6D1 /* TreeTrunkView.swift */; };
+		18C49C17268DA0580068F6D1 /* TreeTrunk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C49C16268DA0580068F6D1 /* TreeTrunk.swift */; };
+		18C49C1A268DA1950068F6D1 /* Trunk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C49C19268DA1950068F6D1 /* Trunk.swift */; };
+		18C49C1C268DA1A30068F6D1 /* Stump.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C49C1B268DA1A30068F6D1 /* Stump.swift */; };
+		18C49C21268DAA060068F6D1 /* TrunkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C49C20268DAA060068F6D1 /* TrunkView.swift */; };
+		18C49C23268DAA350068F6D1 /* StumpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C49C22268DAA350068F6D1 /* StumpView.swift */; };
+		18C49C25268EEF980068F6D1 /* TrunkSlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C49C24268EEF980068F6D1 /* TrunkSlice.swift */; };
+		18C49C282691D8910068F6D1 /* FoliageRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C49C272691D8910068F6D1 /* FoliageRing.swift */; };
+		18C49C2A2691E2F50068F6D1 /* PineFoliage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C49C292691E2F50068F6D1 /* PineFoliage.swift */; };
 		18E1A7532673A5F100A44C15 /* PastureApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1A7522673A5F100A44C15 /* PastureApp.swift */; };
 		18E1A7552673A5F100A44C15 /* PastureDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1A7542673A5F100A44C15 /* PastureDocument.swift */; };
 		18E1A7572673A5F100A44C15 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1A7562673A5F100A44C15 /* ContentView.swift */; };
@@ -60,9 +91,26 @@
 		1800D0A72674C68200146738 /* TreeSpeciesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeSpeciesView.swift; sourceTree = "<group>"; };
 		1800D0A92674C72A00146738 /* BeechTreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeechTreeView.swift; sourceTree = "<group>"; };
 		1800D0AB2674C99200146738 /* PalmTreeTrunkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalmTreeTrunkView.swift; sourceTree = "<group>"; };
+		1802C208268A0ADD00328C8C /* RockCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RockCategoryView.swift; sourceTree = "<group>"; };
+		1802C20A268A0C5800328C8C /* CausewayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CausewayView.swift; sourceTree = "<group>"; };
+		1802C20D268A0C8800328C8C /* Causeway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Causeway.swift; sourceTree = "<group>"; };
 		18101D9426777F3700424CDC /* Vector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vector.swift; sourceTree = "<group>"; };
 		18101D9726779AB100424CDC /* PalmTreeTrunk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalmTreeTrunk.swift; sourceTree = "<group>"; };
+		1856AEA7269701EC0030E563 /* PineTreeFoliageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PineTreeFoliageView.swift; sourceTree = "<group>"; };
+		1861C6742689C0450004B292 /* SDFLineSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDFLineSegment.swift; sourceTree = "<group>"; };
+		18A83E1B2699CA72007409FD /* SDFGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDFGroup.swift; sourceTree = "<group>"; };
 		18B37DAE26849EE500640E16 /* Meadow */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Meadow; path = ../Meadow; sourceTree = "<group>"; };
+		18B37DB22687360800640E16 /* RockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RockModel.swift; sourceTree = "<group>"; };
+		18B37DB52689AA5C00640E16 /* SDFBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDFBox.swift; sourceTree = "<group>"; };
+		18B37DB62689AA5C00640E16 /* SDFGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDFGrid.swift; sourceTree = "<group>"; };
+		18B37DB72689AA5C00640E16 /* SDFShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDFShape.swift; sourceTree = "<group>"; };
+		18B37DB82689AA5C00640E16 /* SDFSphere.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDFSphere.swift; sourceTree = "<group>"; };
+		18B37DBE2689AABC00640E16 /* MarchingCube.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarchingCube.swift; sourceTree = "<group>"; };
+		18B37DBF2689AABD00640E16 /* MarchingTetrahedron.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarchingTetrahedron.swift; sourceTree = "<group>"; };
+		18B37DC22689AC0B00640E16 /* SDFSampler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDFSampler.swift; sourceTree = "<group>"; };
+		18B37DC52689B4B400640E16 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
+		18B37DC72689B4D000640E16 /* AssetPolygon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetPolygon.swift; sourceTree = "<group>"; };
+		18B37DC92689B4F800640E16 /* AssetVertex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetVertex.swift; sourceTree = "<group>"; };
 		18BD2A082679D5240048FDD1 /* Prop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prop.swift; sourceTree = "<group>"; };
 		18BD2A102679F5350048FDD1 /* TreeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeModel.swift; sourceTree = "<group>"; };
 		18BD2A12267A46C60048FDD1 /* Chonk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chonk.swift; sourceTree = "<group>"; };
@@ -86,6 +134,20 @@
 		18BD2A3E267CCA9A0048FDD1 /* Frond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frond.swift; sourceTree = "<group>"; };
 		18BD2A402680AD1D0048FDD1 /* PalmTreeFoliage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalmTreeFoliage.swift; sourceTree = "<group>"; };
 		18BD2A422680AF140048FDD1 /* PalmTreeFoliageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalmTreeFoliageView.swift; sourceTree = "<group>"; };
+		18C49C09268C4E0A0068F6D1 /* Pentomino.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pentomino.swift; sourceTree = "<group>"; };
+		18C49C0B268C865B0068F6D1 /* ModelPropertiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelPropertiesView.swift; sourceTree = "<group>"; };
+		18C49C0E268C951D0068F6D1 /* NoiseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoiseView.swift; sourceTree = "<group>"; };
+		18C49C10268C95450068F6D1 /* Noise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Noise.swift; sourceTree = "<group>"; };
+		18C49C12268D9E520068F6D1 /* TrunkLeg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrunkLeg.swift; sourceTree = "<group>"; };
+		18C49C14268D9F350068F6D1 /* TreeTrunkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeTrunkView.swift; sourceTree = "<group>"; };
+		18C49C16268DA0580068F6D1 /* TreeTrunk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeTrunk.swift; sourceTree = "<group>"; };
+		18C49C19268DA1950068F6D1 /* Trunk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trunk.swift; sourceTree = "<group>"; };
+		18C49C1B268DA1A30068F6D1 /* Stump.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stump.swift; sourceTree = "<group>"; };
+		18C49C20268DAA060068F6D1 /* TrunkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrunkView.swift; sourceTree = "<group>"; };
+		18C49C22268DAA350068F6D1 /* StumpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StumpView.swift; sourceTree = "<group>"; };
+		18C49C24268EEF980068F6D1 /* TrunkSlice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrunkSlice.swift; sourceTree = "<group>"; };
+		18C49C272691D8910068F6D1 /* FoliageRing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoliageRing.swift; sourceTree = "<group>"; };
+		18C49C292691E2F50068F6D1 /* PineFoliage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PineFoliage.swift; sourceTree = "<group>"; };
 		18E1A74F2673A5F100A44C15 /* Pasture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pasture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18E1A7522673A5F100A44C15 /* PastureApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastureApp.swift; sourceTree = "<group>"; };
 		18E1A7542673A5F100A44C15 /* PastureDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastureDocument.swift; sourceTree = "<group>"; };
@@ -137,7 +199,9 @@
 		1800D0A52674C65000146738 /* Rock */ = {
 			isa = PBXGroup;
 			children = (
+				1802C207268A0AA200328C8C /* Categories */,
 				18E1A7712673AA0A00A44C15 /* RockView.swift */,
+				1802C208268A0ADD00328C8C /* RockCategoryView.swift */,
 			);
 			path = Rock;
 			sourceTree = "<group>";
@@ -145,6 +209,7 @@
 		1800D0A62674C65500146738 /* Tree */ = {
 			isa = PBXGroup;
 			children = (
+				18C49C1F268DA9240068F6D1 /* Trunk */,
 				1800D0AD2674CEE300146738 /* Species */,
 				18E1A76B2673A9C900A44C15 /* TreeView.swift */,
 				1800D0A72674C68200146738 /* TreeSpeciesView.swift */,
@@ -155,15 +220,31 @@
 		1800D0AD2674CEE300146738 /* Species */ = {
 			isa = PBXGroup;
 			children = (
+				1856AEA6269701A60030E563 /* Pine */,
 				18BD2A36267C8FC90048FDD1 /* Palm */,
 				1800D0A92674C72A00146738 /* BeechTreeView.swift */,
 				18BD2A2B267C84220048FDD1 /* ChestnutTreeView.swift */,
 				18BD2A2A267C84220048FDD1 /* OakTreeView.swift */,
-				18BD2A2D267C84220048FDD1 /* PineTreeView.swift */,
 				18BD2A2C267C84220048FDD1 /* PoplarTreeView.swift */,
 				18BD2A29267C84220048FDD1 /* WalnutTreeView.swift */,
 			);
 			path = Species;
+			sourceTree = "<group>";
+		};
+		1802C207268A0AA200328C8C /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				1802C20A268A0C5800328C8C /* CausewayView.swift */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		1802C20C268A0C7C00328C8C /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				1802C20D268A0C8800328C8C /* Causeway.swift */,
+			);
+			path = Categories;
 			sourceTree = "<group>";
 		};
 		18101D90267778FC00424CDC /* Frameworks */ = {
@@ -184,6 +265,7 @@
 		18101D9626779AA600424CDC /* Tree */ = {
 			isa = PBXGroup;
 			children = (
+				18C49C18268DA15E0068F6D1 /* Trunk */,
 				18BD2A3D267CCA8D0048FDD1 /* Shapes */,
 				18BD2A0C2679DF290048FDD1 /* Species */,
 				18E1A7672673A65B00A44C15 /* Tree.swift */,
@@ -191,14 +273,65 @@
 			path = Tree;
 			sourceTree = "<group>";
 		};
+		1856AEA6269701A60030E563 /* Pine */ = {
+			isa = PBXGroup;
+			children = (
+				18BD2A2D267C84220048FDD1 /* PineTreeView.swift */,
+				1856AEA7269701EC0030E563 /* PineTreeFoliageView.swift */,
+			);
+			path = Pine;
+			sourceTree = "<group>";
+		};
+		18B37DB1268735E500640E16 /* Rock */ = {
+			isa = PBXGroup;
+			children = (
+				1802C20C268A0C7C00328C8C /* Categories */,
+				18E1A7772673AAF100A44C15 /* Rock.swift */,
+			);
+			path = Rock;
+			sourceTree = "<group>";
+		};
+		18B37DB42689AA5C00640E16 /* SDF */ = {
+			isa = PBXGroup;
+			children = (
+				18B37DC22689AC0B00640E16 /* SDFSampler.swift */,
+				18B37DB52689AA5C00640E16 /* SDFBox.swift */,
+				18B37DB62689AA5C00640E16 /* SDFGrid.swift */,
+				18B37DB72689AA5C00640E16 /* SDFShape.swift */,
+				18B37DB82689AA5C00640E16 /* SDFSphere.swift */,
+				1861C6742689C0450004B292 /* SDFLineSegment.swift */,
+				18A83E1B2699CA72007409FD /* SDFGroup.swift */,
+			);
+			path = SDF;
+			sourceTree = "<group>";
+		};
+		18B37DBD2689AAB200640E16 /* Meshing */ = {
+			isa = PBXGroup;
+			children = (
+				18B37DBE2689AABC00640E16 /* MarchingCube.swift */,
+				18B37DBF2689AABD00640E16 /* MarchingTetrahedron.swift */,
+			);
+			path = Meshing;
+			sourceTree = "<group>";
+		};
+		18B37DC42689B4AC00640E16 /* Asset */ = {
+			isa = PBXGroup;
+			children = (
+				18B37DC52689B4B400640E16 /* Asset.swift */,
+				18B37DC72689B4D000640E16 /* AssetPolygon.swift */,
+				18B37DC92689B4F800640E16 /* AssetVertex.swift */,
+			);
+			path = Asset;
+			sourceTree = "<group>";
+		};
 		18BD2A0C2679DF290048FDD1 /* Species */ = {
 			isa = PBXGroup;
 			children = (
-				18BD2A35267C8F730048FDD1 /* Palm */,
-				18BD2A1D267C793B0048FDD1 /* BeechTree.swift */,
-				18BD2A20267C7C400048FDD1 /* ChestnutTree.swift */,
+				18C49C262691CF240068F6D1 /* Pine */,
+				18C49C1D268DA6E80068F6D1 /* Beech */,
+				18C49C1E268DA7550068F6D1 /* Chestnut */,
 				18BD2A23267C7C400048FDD1 /* OakTree.swift */,
-				18BD2A1B267C78BA0048FDD1 /* PineTree.swift */,
+				18BD2A35267C8F730048FDD1 /* Palm */,
 				18BD2A22267C7C400048FDD1 /* PoplarTree.swift */,
 				18BD2A21267C7C400048FDD1 /* WalnutTree.swift */,
 			);
@@ -209,6 +342,7 @@
 			isa = PBXGroup;
 			children = (
 				18BD2A102679F5350048FDD1 /* TreeModel.swift */,
+				18B37DB22687360800640E16 /* RockModel.swift */,
 			);
 			path = "Scene Models";
 			sourceTree = "<group>";
@@ -242,8 +376,65 @@
 			children = (
 				18BD2A12267A46C60048FDD1 /* Chonk.swift */,
 				18BD2A3E267CCA9A0048FDD1 /* Frond.swift */,
+				18C49C09268C4E0A0068F6D1 /* Pentomino.swift */,
+				18C49C12268D9E520068F6D1 /* TrunkLeg.swift */,
+				18C49C24268EEF980068F6D1 /* TrunkSlice.swift */,
+				18C49C272691D8910068F6D1 /* FoliageRing.swift */,
 			);
 			path = Shapes;
+			sourceTree = "<group>";
+		};
+		18C49C0D268C95140068F6D1 /* Noise */ = {
+			isa = PBXGroup;
+			children = (
+				18C49C0E268C951D0068F6D1 /* NoiseView.swift */,
+			);
+			path = Noise;
+			sourceTree = "<group>";
+		};
+		18C49C18268DA15E0068F6D1 /* Trunk */ = {
+			isa = PBXGroup;
+			children = (
+				18C49C16268DA0580068F6D1 /* TreeTrunk.swift */,
+				18C49C19268DA1950068F6D1 /* Trunk.swift */,
+				18C49C1B268DA1A30068F6D1 /* Stump.swift */,
+			);
+			path = Trunk;
+			sourceTree = "<group>";
+		};
+		18C49C1D268DA6E80068F6D1 /* Beech */ = {
+			isa = PBXGroup;
+			children = (
+				18BD2A1D267C793B0048FDD1 /* BeechTree.swift */,
+			);
+			path = Beech;
+			sourceTree = "<group>";
+		};
+		18C49C1E268DA7550068F6D1 /* Chestnut */ = {
+			isa = PBXGroup;
+			children = (
+				18BD2A20267C7C400048FDD1 /* ChestnutTree.swift */,
+			);
+			path = Chestnut;
+			sourceTree = "<group>";
+		};
+		18C49C1F268DA9240068F6D1 /* Trunk */ = {
+			isa = PBXGroup;
+			children = (
+				18C49C14268D9F350068F6D1 /* TreeTrunkView.swift */,
+				18C49C20268DAA060068F6D1 /* TrunkView.swift */,
+				18C49C22268DAA350068F6D1 /* StumpView.swift */,
+			);
+			path = Trunk;
+			sourceTree = "<group>";
+		};
+		18C49C262691CF240068F6D1 /* Pine */ = {
+			isa = PBXGroup;
+			children = (
+				18BD2A1B267C78BA0048FDD1 /* PineTree.swift */,
+				18C49C292691E2F50068F6D1 /* PineFoliage.swift */,
+			);
+			path = Pine;
 			sourceTree = "<group>";
 		};
 		18E1A7462673A5F100A44C15 = {
@@ -267,14 +458,17 @@
 		18E1A7512673A5F100A44C15 /* Pasture */ = {
 			isa = PBXGroup;
 			children = (
+				18B37DC42689B4AC00640E16 /* Asset */,
 				18E1A7582673A5F200A44C15 /* Assets.xcassets */,
 				18101D9326777F2C00424CDC /* Extensions */,
 				18E1A75D2673A5F200A44C15 /* Info.plist */,
+				18B37DBD2689AAB200640E16 /* Meshing */,
 				18E1A7632673A62300A44C15 /* Model */,
 				18E1A7522673A5F100A44C15 /* PastureApp.swift */,
 				18E1A7542673A5F100A44C15 /* PastureDocument.swift */,
 				18E1A75A2673A5F200A44C15 /* Preview Content */,
 				18BD2A0F2679F5240048FDD1 /* Scene Models */,
+				18B37DB42689AA5C00640E16 /* SDF */,
 				18E1A7642673A62700A44C15 /* Views */,
 			);
 			path = Pasture;
@@ -291,12 +485,13 @@
 		18E1A7632673A62300A44C15 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				18B37DB1268735E500640E16 /* Rock */,
 				18BD2A082679D5240048FDD1 /* Prop.swift */,
 				18101D9626779AA600424CDC /* Tree */,
 				18E1A7652673A64300A44C15 /* Model.swift */,
 				18E1A7732673AA1F00A44C15 /* Building.swift */,
 				18E1A7752673AADF00A44C15 /* Bush.swift */,
-				18E1A7772673AAF100A44C15 /* Rock.swift */,
+				18C49C10268C95450068F6D1 /* Noise.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -304,6 +499,7 @@
 		18E1A7642673A62700A44C15 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				18C49C0D268C95140068F6D1 /* Noise */,
 				1800D0A42674C64B00146738 /* Building */,
 				1800D0A32674C64600146738 /* Bush */,
 				18E1A7562673A5F100A44C15 /* ContentView.swift */,
@@ -311,6 +507,7 @@
 				1800D0A52674C65000146738 /* Rock */,
 				18E1A7692673A8B700A44C15 /* ToolView.swift */,
 				1800D0A62674C65500146738 /* Tree */,
+				18C49C0B268C865B0068F6D1 /* ModelPropertiesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -392,46 +589,77 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18B37DBC2689AA5C00640E16 /* SDFSphere.swift in Sources */,
+				18C49C282691D8910068F6D1 /* FoliageRing.swift in Sources */,
 				18E1A7682673A65B00A44C15 /* Tree.swift in Sources */,
 				18BD2A13267A46C60048FDD1 /* Chonk.swift in Sources */,
 				18BD2A31267C84220048FDD1 /* ChestnutTreeView.swift in Sources */,
 				18E1A7722673AA0A00A44C15 /* RockView.swift in Sources */,
 				1800D0AA2674C72A00146738 /* BeechTreeView.swift in Sources */,
+				18C49C15268D9F350068F6D1 /* TreeTrunkView.swift in Sources */,
+				18C49C13268D9E520068F6D1 /* TrunkLeg.swift in Sources */,
+				18C49C25268EEF980068F6D1 /* TrunkSlice.swift in Sources */,
+				18B37DB92689AA5C00640E16 /* SDFBox.swift in Sources */,
+				18C49C21268DAA060068F6D1 /* TrunkView.swift in Sources */,
 				18E1A7782673AAF100A44C15 /* Rock.swift in Sources */,
 				18BD2A33267C84220048FDD1 /* PineTreeView.swift in Sources */,
+				1802C20E268A0C8800328C8C /* Causeway.swift in Sources */,
+				18C49C2A2691E2F50068F6D1 /* PineFoliage.swift in Sources */,
 				18BD2A32267C84220048FDD1 /* PoplarTreeView.swift in Sources */,
 				18BD2A3F267CCA9A0048FDD1 /* Frond.swift in Sources */,
+				18C49C17268DA0580068F6D1 /* TreeTrunk.swift in Sources */,
 				18BD2A24267C7C400048FDD1 /* PalmTree.swift in Sources */,
+				18C49C0C268C865B0068F6D1 /* ModelPropertiesView.swift in Sources */,
 				18E1A7702673A9FE00A44C15 /* BushView.swift in Sources */,
 				18BD2A1E267C793B0048FDD1 /* BeechTree.swift in Sources */,
 				18BD2A18267B339F0048FDD1 /* PalmTreeChonk.swift in Sources */,
 				18E1A7762673AADF00A44C15 /* Bush.swift in Sources */,
 				18E1A7742673AA1F00A44C15 /* Building.swift in Sources */,
+				18C49C11268C95450068F6D1 /* Noise.swift in Sources */,
 				1800D0A82674C68200146738 /* TreeSpeciesView.swift in Sources */,
+				18B37DBB2689AA5C00640E16 /* SDFShape.swift in Sources */,
 				18BD2A432680AF140048FDD1 /* PalmTreeFoliageView.swift in Sources */,
 				18BD2A112679F5350048FDD1 /* TreeModel.swift in Sources */,
+				18B37DC02689AABD00640E16 /* MarchingCube.swift in Sources */,
 				18E1A7532673A5F100A44C15 /* PastureApp.swift in Sources */,
 				18E1A7552673A5F100A44C15 /* PastureDocument.swift in Sources */,
+				18B37DC32689AC0B00640E16 /* SDFSampler.swift in Sources */,
+				1861C6752689C0450004B292 /* SDFLineSegment.swift in Sources */,
 				18BD2A28267C7C400048FDD1 /* OakTree.swift in Sources */,
 				18101D9526777F3700424CDC /* Vector.swift in Sources */,
 				18BD2A1A267B37B20048FDD1 /* PalmTreeChonkView.swift in Sources */,
 				18BD2A30267C84220048FDD1 /* OakTreeView.swift in Sources */,
 				18E1A7572673A5F100A44C15 /* ContentView.swift in Sources */,
+				18C49C23268DAA350068F6D1 /* StumpView.swift in Sources */,
+				1856AEA8269701EC0030E563 /* PineTreeFoliageView.swift in Sources */,
+				18B37DC12689AABD00640E16 /* MarchingTetrahedron.swift in Sources */,
 				18BD2A1C267C78BA0048FDD1 /* PineTree.swift in Sources */,
+				18C49C0F268C951D0068F6D1 /* NoiseView.swift in Sources */,
 				18E1A76A2673A8B700A44C15 /* ToolView.swift in Sources */,
 				18E1A76C2673A9C900A44C15 /* TreeView.swift in Sources */,
+				1802C20B268A0C5800328C8C /* CausewayView.swift in Sources */,
 				18BD2A26267C7C400048FDD1 /* WalnutTree.swift in Sources */,
+				18B37DBA2689AA5C00640E16 /* SDFGrid.swift in Sources */,
+				18C49C1A268DA1950068F6D1 /* Trunk.swift in Sources */,
 				1800D0AC2674C99200146738 /* PalmTreeTrunkView.swift in Sources */,
 				18E1A76E2673A9EE00A44C15 /* BuildingView.swift in Sources */,
 				18BD2A092679D5240048FDD1 /* Prop.swift in Sources */,
 				18BD2A2F267C84220048FDD1 /* WalnutTreeView.swift in Sources */,
+				18B37DB32687360800640E16 /* RockModel.swift in Sources */,
 				18BD2A412680AD1D0048FDD1 /* PalmTreeFoliage.swift in Sources */,
 				18BD2A34267C84220048FDD1 /* PalmTreeView.swift in Sources */,
+				18A83E1C2699CA72007409FD /* SDFGroup.swift in Sources */,
+				18C49C1C268DA1A30068F6D1 /* Stump.swift in Sources */,
 				18BD2A27267C7C400048FDD1 /* PoplarTree.swift in Sources */,
 				1800D0A22674BEF000146738 /* ModelView.swift in Sources */,
+				18B37DC62689B4B400640E16 /* Asset.swift in Sources */,
 				18BD2A25267C7C400048FDD1 /* ChestnutTree.swift in Sources */,
+				1802C209268A0ADD00328C8C /* RockCategoryView.swift in Sources */,
+				18C49C0A268C4E0A0068F6D1 /* Pentomino.swift in Sources */,
 				18BD2A3C267CAF650048FDD1 /* PalmTreeFrondView.swift in Sources */,
 				18E1A7662673A64300A44C15 /* Model.swift in Sources */,
+				18B37DCA2689B4F800640E16 /* AssetVertex.swift in Sources */,
+				18B37DC82689B4D000640E16 /* AssetPolygon.swift in Sources */,
 				18101D9826779AB100424CDC /* PalmTreeTrunk.swift in Sources */,
 				18BD2A3A267CAF5C0048FDD1 /* PalmTreeFrond.swift in Sources */,
 			);

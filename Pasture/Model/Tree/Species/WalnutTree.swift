@@ -11,6 +11,8 @@ import SwiftUI
 
 class WalnutTree: Codable, Hashable, ObservableObject {
     
+    static let `default`: WalnutTree = WalnutTree()
+    
     enum CodingKeys: CodingKey {
         
         case segments
@@ -19,8 +21,6 @@ class WalnutTree: Codable, Hashable, ObservableObject {
         case radius
         case height
     }
-    
-    static let `default`: WalnutTree = WalnutTree()
     
     @Published var segments: Int
     @Published var slices: Int
@@ -84,7 +84,7 @@ class WalnutTree: Codable, Hashable, ObservableObject {
 
 extension WalnutTree: Prop {
     
-    func build() -> [Euclid.Polygon] {
+    func build(position: Euclid.Vector) -> [Euclid.Polygon] {
         
         return []
     }

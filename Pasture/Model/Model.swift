@@ -10,6 +10,9 @@ import SwiftUI
 
 class Model: Codable, ObservableObject {
     
+    static let `default`: Model = Model(name: "Model",
+                                        tool: .tree(.default))
+    
     enum CodingKeys: CodingKey {
         
         case name
@@ -20,12 +23,12 @@ class Model: Codable, ObservableObject {
         
         static var allCases: [Model.Tool] { [.building,
                                              .bush,
-                                             .rock,
+                                             .rock(.default),
                                              .tree(.default)]}
         
         case building
         case bush
-        case rock
+        case rock(Rock)
         case tree(Tree)
         
         var id: String {
@@ -54,9 +57,11 @@ class Model: Codable, ObservableObject {
     @Published var name: String
     @Published var tool: Tool = .tree(.default)
     
-    init(name: String) {
+    init(name: String,
+         tool: Tool) {
         
         self.name = name
+        self.tool = tool
     }
     
     required init(from decoder: Decoder) throws {
@@ -77,6 +82,23 @@ class Model: Codable, ObservableObject {
 }
 
 extension Model {
+    
+    var rock: Rock {
+        
+        get {
+            
+            switch self.tool {
+                
+            case .rock(let rock): return rock
+                
+            default: return .default
+            }
+        }
+        set {
+            
+            self.tool = .rock(newValue)
+        }
+    }
     
     var tree: Tree {
         

@@ -44,7 +44,7 @@ class TreeModel: SCNNode, Responder, Shadable, Soilable {
         
         guard isDirty else { return false }
         
-        let mesh = Mesh(model.build())
+        let mesh = Mesh(model.build(position: .zero))
         
         self.geometry = SCNGeometry(mesh)
         self.geometry?.program = program

@@ -41,9 +41,9 @@ struct PastureDocument: FileDocument, Codable {
     
     var model: Model
 
-    init(name: String = "Model") {
+    init() {
         
-        self.model = Model(name: name)
+        self.model = .default
     }
 
     init(configuration: ReadConfiguration) throws {

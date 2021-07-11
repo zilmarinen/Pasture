@@ -45,7 +45,6 @@ struct PalmTreeTrunkView: View {
                 PalmTreeChonkView(segment: $trunk.throne)
             }
         }
-        .controlSize(.small)
     }
 }
 

@@ -12,11 +12,7 @@ struct BeechTreeView: View {
     
     var body: some View {
         
-        GroupBox(label: Label("Beech", systemImage: "leaf")
-                    .font(.headline)) {
-        
-            Text("BeechTreeView")
-        }
+        TreeTrunkView(trunk: $tree.trunk)
     }
 }
 

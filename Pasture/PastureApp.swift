@@ -24,6 +24,7 @@ struct PastureApp: App {
         
             scene = MDWScene(meadow: meadow)
         
+            scene.hero.controller.spawn(at: Coordinate(x: 2, y: 0, z: 2))
             scene.hero.isHidden = true
             
             let device = MTLCreateSystemDefaultDevice()

@@ -11,6 +11,8 @@ import SwiftUI
 
 class PoplarTree: Codable, Hashable, ObservableObject {
     
+    static let `default`: PoplarTree = PoplarTree()
+    
     enum CodingKeys: CodingKey {
         
         case segments
@@ -19,8 +21,6 @@ class PoplarTree: Codable, Hashable, ObservableObject {
         case radius
         case height
     }
-    
-    static let `default`: PoplarTree = PoplarTree()
     
     @Published var segments: Int
     @Published var slices: Int
@@ -84,7 +84,7 @@ class PoplarTree: Codable, Hashable, ObservableObject {
 
 extension PoplarTree: Prop {
     
-    func build() -> [Euclid.Polygon] {
+    func build(position: Euclid.Vector) -> [Euclid.Polygon] {
         
         return []
     }

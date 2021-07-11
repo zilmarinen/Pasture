@@ -26,6 +26,11 @@ struct ContentView: View {
                 
                 VStack(alignment: .leading)  {
                     
+                    GroupBox {
+                    
+                        ModelPropertiesView(model: $document.model)
+                    }
+                    
                     switch document.model.tool {
                         
                     case .building:
@@ -38,7 +43,7 @@ struct ContentView: View {
                         
                     case .rock:
                         
-                        RockView()
+                        RockView(rock: $document.model.rock)
                         
                     case .tree:
                         
@@ -53,5 +58,6 @@ struct ContentView: View {
             }
             .frame(minWidth: 280, maxWidth: 280)
         }
+        .controlSize(.small)
     }
 }

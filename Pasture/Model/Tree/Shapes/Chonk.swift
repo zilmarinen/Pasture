@@ -10,10 +10,9 @@ import Meadow
 
 struct Chonk: Prop {
     
-    var peakCenter: Euclid.Vector { position + (plane.normal * ((height / 2.0) + peak)) }
-    var baseCenter: Euclid.Vector { position - (plane.normal * (base + (height / 2.0))) }
+    var peakCenter: Euclid.Vector { (plane.normal * ((height / 2.0) + peak)) }
+    var baseCenter: Euclid.Vector { (plane.normal * (base + (height / 2.0))) }
     
-    let position: Euclid.Vector
     let plane: Euclid.Plane
     
     let peak: Double
@@ -27,7 +26,7 @@ struct Chonk: Prop {
     
     let textureCoordinates: UVs
     
-    func build() -> [Euclid.Polygon] {
+    func build(position: Euclid.Vector) -> [Euclid.Polygon] {
         
         var slices: [[Euclid.Vector]] = []
         
@@ -45,11 +44,11 @@ struct Chonk: Prop {
             
             for segment in 0..<segments {
                 
-                let angle = rotation.radians * Double(segment)
+                let angle = rotation * Double(segment)
                 
                 let distance = (slice == 0 ? -1 : 1) * (height / 2.0)
                 
-                layer.append(plot(radians: angle, radius: radius).project(onto: plane) + (plane.normal * distance))
+                layer.append(plot(radians: angle.radians, radius: radius).project(onto: plane) + (plane.normal * distance))
             }
             
             slices.append(layer)
@@ -88,10 +87,7 @@ struct Chonk: Prop {
             /// Create edge face
             //
             
-            var face = [v0, v1, v2, v3]
-            var uvs = [uv0, uv1, uv2, uv3]
-            
-            guard let polygon = self.polygon(vectors: face, uvs: uvs) else { continue }
+            guard let polygon = self.polygon(vectors: [v0, v1, v2, v3], uvs: [uv0, uv1, uv2, uv3]) else { continue }
             
             polygons.append(polygon)
             
@@ -99,10 +95,7 @@ struct Chonk: Prop {
             /// Create peak face
             //
             
-            face = [v1, v0, peakCenter]
-            uvs = [uv1, uv0, peakUV]
-            
-            guard let polygon = self.polygon(vectors: face, uvs: uvs) else { continue }
+            guard let polygon = self.polygon(vectors: [v1, v0, position + peakCenter], uvs: [uv1, uv0, peakUV]) else { continue }
             
             polygons.append(polygon)
             
@@ -110,10 +103,7 @@ struct Chonk: Prop {
             /// Create base face
             //
             
-            face = [v3, v2, baseCenter]
-            uvs = [uv3, uv2, baseUV]
-            
-            guard let polygon = self.polygon(vectors: face, uvs: uvs) else { continue }
+            guard let polygon = self.polygon(vectors: [v3, v2, position - baseCenter], uvs: [uv3, uv2, baseUV]) else { continue }
             
             polygons.append(polygon)
         }

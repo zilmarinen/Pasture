@@ -31,7 +31,6 @@ struct TreeView: View {
                 
             }
         }
-        .controlSize(.small)
     }
 }
 

@@ -11,13 +11,13 @@ import Meadow
 
 class Tree: Codable, Hashable, ObservableObject {
     
+    static let `default`: Tree = Tree(species: .beech(.default))
+    
     enum CodingKeys: CodingKey {
         
         case size
         case species
     }
-    
-    static let `default`: Tree = Tree(species: .beech(.default))
      
     enum Size: String, CaseIterable, Codable, Hashable, Identifiable {
         
@@ -65,6 +65,16 @@ class Tree: Codable, Hashable, ObservableObject {
             guard let image = MDWImage.asset(named: id.lowercased() + "_tree", in: .main) else { return nil }
             
             return Texture(key: "foliage", image: image)
+        }
+    }
+    
+    var footprint: Footprint {
+        
+        switch size {
+            
+        case .small: return Footprint(coordinate: .zero, nodes: [.zero])
+        case .medium: return Footprint(coordinate: .zero, nodes: [.zero])
+        case .large: return Footprint(coordinate: .zero, nodes: [.zero])
         }
     }
     
@@ -229,17 +239,17 @@ extension Tree {
 
 extension Tree: Prop {
     
-    func build() -> [Euclid.Polygon] {
+    func build(position: Euclid.Vector) -> [Euclid.Polygon] {
         
         switch species {
             
-        case .beech(let tree): return tree.build()
-        case .chestnut(let tree): return tree.build()
-        case .oak(let tree): return tree.build()
-        case .palm(let tree): return tree.build()
-        case .pine(let tree): return tree.build()
-        case .poplar(let tree): return tree.build()
-        case .walnut(let tree): return tree.build()
+        case .beech(let tree): return tree.build(position: position)
+        case .chestnut(let tree): return tree.build(position: position)
+        case .oak(let tree): return tree.build(position: position)
+        case .palm(let tree): return tree.build(position: position)
+        case .pine(let tree): return tree.build(position: position)
+        case .poplar(let tree): return tree.build(position: position)
+        case .walnut(let tree): return tree.build(position: position)
         }
     }
 }

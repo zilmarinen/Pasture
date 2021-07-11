@@ -7,7 +7,13 @@
 import SwiftUI
 
 class PalmTreeFrond: Codable, Hashable, ObservableObject {
- 
+    
+    static let `default`: PalmTreeFrond = PalmTreeFrond(segments: 7,
+                                                        radius: 0.42,
+                                                        width: 0.14,
+                                                        thickness: 0.014,
+                                                        spread: 0.014)
+    
     enum CodingKeys: CodingKey {
         
         case segments
@@ -75,13 +81,4 @@ class PalmTreeFrond: Codable, Hashable, ObservableObject {
                 lhs.thickness == rhs.thickness &&
                 lhs.spread == rhs.spread
     }
-}
-
-extension PalmTreeFrond {
-    
-    static let `default`: PalmTreeFrond = PalmTreeFrond(segments: 7,
-                                                        radius: 0.42,
-                                                        width: 0.14,
-                                                        thickness: 0.014,
-                                                        spread: 0.014)
 }

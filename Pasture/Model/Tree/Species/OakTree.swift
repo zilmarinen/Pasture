@@ -11,6 +11,8 @@ import SwiftUI
 
 class OakTree: Codable, Hashable, ObservableObject {
     
+    static let `default`: OakTree = OakTree()
+    
     enum CodingKeys: CodingKey {
         
         case segments
@@ -19,8 +21,6 @@ class OakTree: Codable, Hashable, ObservableObject {
         case radius
         case height
     }
-    
-    static let `default`: OakTree = OakTree()
     
     @Published var segments: Int
     @Published var slices: Int
@@ -84,7 +84,7 @@ class OakTree: Codable, Hashable, ObservableObject {
 
 extension OakTree: Prop {
     
-    func build() -> [Euclid.Polygon] {
+    func build(position: Euclid.Vector) -> [Euclid.Polygon] {
         
         return []
     }

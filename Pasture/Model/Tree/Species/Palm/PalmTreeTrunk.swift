@@ -10,7 +10,11 @@ import Foundation
 import Meadow
 
 class PalmTreeTrunk: Codable, Hashable, ObservableObject {
- 
+    
+    static let `default`: PalmTreeTrunk = PalmTreeTrunk(slices: 7,
+                                                        spread: 0.1,
+                                                        height: 2.0)
+    
     enum CodingKeys: CodingKey {
         
         case slices
@@ -80,11 +84,3 @@ class PalmTreeTrunk: Codable, Hashable, ObservableObject {
                 lhs.segment == rhs.segment
     }
 }
-
-extension PalmTreeTrunk {
-    
-    static let `default`: PalmTreeTrunk = PalmTreeTrunk(slices: 7,
-                                                        spread: 0.1,
-                                                        height: 2.0)
-}
-
