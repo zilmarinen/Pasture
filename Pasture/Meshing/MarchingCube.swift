@@ -6,28 +6,43 @@
 
 import Euclid
 import Foundation
+import Meadow
 
-public enum MarchingCube {
+enum MarchingCube {
     
-    public static func march(identifier: Int, position: Vector, size: Vector) -> [Polygon] {
+    static func march(chunk: SDFGrid.Chunk, size: Euclid.Vector) -> [Euclid.Polygon] {
+        
+        var identifier = 0
+        
+        for index in SDFGrid.corners.indices {
+            
+            let value = chunk.values[index]
+            
+            if value >= 0.0 {
+                
+                identifier |= 1 << index
+            }
+        }
         
         guard identifier > 0 && identifier < 255 else { return [] }
         
-        var polygons: [Polygon] = []
+        var polygons: [Euclid.Polygon] = []
         
         for triangle in triangles[identifier - 1] {
             
-            var face: [Vector] = []
+            var face: [Euclid.Vector] = []
             
-            for edge in triangle.reversed() {
+            for edge in triangle {
                 
                 guard let c0 = edges[edge].first,
                       let c1 = edges[edge].last else { continue }
                 
-                let v0 = corners[c0] * size
-                let v1 = corners[c1] * size
+                let v0 = SDFGrid.corners[c0] * size
+                let v1 = SDFGrid.corners[c1] * size
                 
-                face.append(position + ((v0 + v1) / 2.0))
+                let slope = chunk.slope(c0: c0, c1: c1)
+                
+                face.append(chunk.position + (v0 + ((v1 - v0) * slope)))
             }
             
             let normal = face.normal()
@@ -44,18 +59,6 @@ public enum MarchingCube {
 }
 
 extension MarchingCube {
-    
-    static let corners = [
-        
-        Vector(0, 0, 0),
-        Vector(1, 0, 0),
-        Vector(1, 1, 0),
-        Vector(0, 1, 0),
-        Vector(0, 0, 1),
-        Vector(1, 0, 1),
-        Vector(1, 1, 1),
-        Vector(0, 1, 1)
-    ]
     
     static let edges = [
     

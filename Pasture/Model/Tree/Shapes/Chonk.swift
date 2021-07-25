@@ -87,9 +87,10 @@ struct Chonk: Prop {
             /// Create edge face
             //
             
-            guard let polygon = self.polygon(vectors: [v0, v1, v2, v3], uvs: [uv0, uv1, uv2, uv3]) else { continue }
+            guard let lhs = self.polygon(vectors: [v0, v1, v2], uvs: [uv0, uv1, uv2]),
+                  let rhs = self.polygon(vectors: [v0, v2, v3], uvs: [uv0, uv2, uv3]) else { continue }
             
-            polygons.append(polygon)
+            polygons.append(contentsOf: [lhs, rhs])
             
             //
             /// Create peak face

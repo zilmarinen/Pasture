@@ -59,6 +59,14 @@ class RockModel: SCNNode, Responder, Shadable, Soilable {
             self.geometry?.set(textures: textures)
         }
         
+        for child in childNodes {
+            
+            child.removeFromParentNode()
+        }
+        
+        let node = SCNNode(geometry: SCNGeometry(wireframe: mesh))
+        addChildNode(node)
+        
         isDirty = false
         
         return true

@@ -26,6 +26,6 @@ struct ToolView_Previews: PreviewProvider {
     
     static var previews: some View {
         
-        ToolView(tool: .constant(.building))
+        ToolView(tool: .constant(.building(.default)))
     }
 }

@@ -1,34 +1,34 @@
 //
-//  TreeModel.swift
+//  BuildingModel.swift
 //
-//  Created by Zack Brown on 16/06/2021.
+//  Created by Zack Brown on 16/07/2021.
 //
 
 import Euclid
 import Meadow
 import SceneKit
 
-class TreeModel: SCNNode, Responder, Shadable, Soilable {
+class BuildingModel: SCNNode, Responder, Shadable, Soilable {
     
     public var ancestor: SoilableParent? { return parent as? SoilableParent }
     
     public var isDirty: Bool = true
     
-    public var category: Int { SceneGraphCategory.foliageChunk.rawValue }
+    public var category: Int { SceneGraphCategory.buildingChunk.rawValue }
     
-    public var program: SCNProgram? { scene?.meadow.foliage.program }
+    public var program: SCNProgram? { scene?.meadow.buildings.program }
     public var uniforms: [Uniform]? { nil }
     
     public var textures: [Texture]? {
         
-        guard let texture = model.species.texture else { return nil }
+        guard let texture = model.architecture.texture else { return nil }
         
         return [texture]
     }
     
-    let model: Tree
+    let model: Building
     
-    init(model: Tree) {
+    init(model: Building) {
         
         self.model = model
         
@@ -72,3 +72,5 @@ class TreeModel: SCNNode, Responder, Shadable, Soilable {
         return true
     }
 }
+
+

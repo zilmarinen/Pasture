@@ -5,9 +5,9 @@
         "package": "Euclid",
         "repositoryURL": "https://github.com/nicklockwood/Euclid.git",
         "state": {
-          "branch": "develop",
-          "revision": "712b80df21ff21b4d156dbe2ca80d4c50564fbf0",
-          "version": null
+          "branch": null,
+          "revision": "22ab256554e72abb9e0f26f9cab4733798715ee6",
+          "version": "0.4.0"
         }
       }
     ]

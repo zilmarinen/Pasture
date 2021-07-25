@@ -7,6 +7,7 @@
 import Euclid
 import Foundation
 import Meadow
+import SwiftUI
 
 public class SDFGrid {
     
@@ -16,10 +17,26 @@ public class SDFGrid {
         case tetrahedron
     }
     
+    struct Chunk {
+        
+        let position: Euclid.Vector
+        let values: [Double]
+        
+        func slope(c0: Int, c1: Int) -> Double {
+            
+            let s0 = values[c0]
+            let s1 = values[c1]
+            
+            let delta = s1 - s0
+            
+            return -s0 / delta
+        }
+    }
+    
     let footprint: Footprint
     let resolution: Int
     
-    var shapes: [SDFShape] = []
+    var graph = SDFGroup()
     
     public init(footprint: Footprint, resolution: Int) {
         
@@ -29,59 +46,39 @@ public class SDFGrid {
     
     public func march(method: Method) -> [Euclid.Polygon] {
         
-        let step = 1.0 / Double(resolution)
+        let step = 1.0 / Double(resolution + 1)
         let size = Vector(step, step, step)
         
         var polygons: [Euclid.Polygon] = []
-
+        
         for node in footprint.nodes {
             
-            for x in stride(from: -0.5, to: 0.5, by: step) {
+            for x in stride(from: -0.5, to: 0.5, by: size.x) {
                 
-                for y in stride(from: -0.1, to: 3, by: step) {
+                for y in stride(from: -0.5, to: 0.5, by: size.y) {
                  
-                    for z in stride(from: -0.5, to: 0.5, by: step) {
+                    for z in stride(from: -0.5, to: 0.5, by: size.z) {
                         
                         let position = Vector(Double(node.x) + x, Double(node.y) + y, Double(node.z) + z)
                         
-                        var identifier = 0
+                        var values: [Double] = Array(repeating: 0, count: 8)
+                        
+                        for index in values.indices {
+                            
+                            values[index] = graph.sample(region: position + (SDFGrid.corners[index] * size))
+                        }
+                        
+                        let chunk = Chunk(position: position, values: values)
                         
                         switch method {
                             
                         case .cubes:
                             
-                            for index in MarchingCube.corners.indices {
-                                
-                                let value = sample(region: position + (MarchingCube.corners[index] * step))
-                                
-                                if abs(value) >= Math.epsilon {
-                                    
-                                    identifier |= 1 << index
-                                }
-                            }
-                            
-                            polygons.append(contentsOf: MarchingCube.march(identifier: identifier, position: position, size: size))
+                            polygons.append(contentsOf: MarchingCube.march(chunk: chunk, size: size))
                             
                         case .tetrahedron:
                             
-                            for tetrahedron in MarchingTetrahedron.tetrahedrons {
-                                
-                                var identifier = 0
-                            
-                                for index in tetrahedron.indices {
-                                    
-                                    let corner = tetrahedron[index]
-                                
-                                    let value = sample(region: position + (MarchingTetrahedron.corners[corner] * step))
-                                
-                                    if abs(value) >= Math.epsilon {
-                                    
-                                        identifier |= 1 << index
-                                    }
-                                }
-                                
-                                polygons.append(contentsOf: MarchingTetrahedron.march(identifier: identifier, position: position, size: size))
-                            }
+                            polygons.append(contentsOf: MarchingTetrahedron.march(chunk: chunk, size: size))
                         }
                     }
                 }
@@ -96,30 +93,26 @@ extension SDFGrid {
     
     public func add(shape: SDFShape) {
         
-        guard !shapes.contains(shape) else { return }
-        
-        shapes.append(shape)
+        graph.add(shape: shape)
     }
     
     public func remove(shape: SDFShape) {
         
-        guard let index = shapes.firstIndex(of: shape) else { return }
-        
-        shapes.remove(at: index)
+        graph.remove(shape: shape)
     }
 }
 
 extension SDFGrid {
     
-    func sample(region: Euclid.Vector) -> Double {
+    static let corners = [
         
-        var value = 0.0
-        
-        for shape in shapes {
-            
-            value = min(value, shape.sample(region: region))
-        }
-        
-        return value
-    }
+        Vector(0, 0, 0),
+        Vector(1, 0, 0),
+        Vector(1, 1, 0),
+        Vector(0, 1, 0),
+        Vector(0, 0, 1),
+        Vector(1, 0, 1),
+        Vector(1, 1, 1),
+        Vector(0, 1, 1)
+    ]
 }

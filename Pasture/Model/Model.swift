@@ -21,12 +21,12 @@ class Model: Codable, ObservableObject {
     
     enum Tool: CaseIterable, Codable, Hashable, Identifiable {
         
-        static var allCases: [Model.Tool] { [.building,
+        static var allCases: [Model.Tool] { [.building(.default),
                                              .bush,
                                              .rock(.default),
                                              .tree(.default)]}
         
-        case building
+        case building(Building)
         case bush
         case rock(Rock)
         case tree(Tree)
@@ -82,6 +82,23 @@ class Model: Codable, ObservableObject {
 }
 
 extension Model {
+    
+    var building: Building {
+        
+        get {
+            
+            switch self.tool {
+                
+            case .building(let building): return building
+                
+            default: return .default
+            }
+        }
+        set {
+            
+            self.tool = .building(newValue)
+        }
+    }
     
     var rock: Rock {
         

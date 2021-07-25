@@ -17,39 +17,41 @@ struct ModelView: View {
     
     var body: some View {
         
+        for node in scene.meadow.buildings.childNodes {
+            
+            node.removeFromParentNode()
+        }
+        
+        for node in scene.meadow.foliage.childNodes {
+            
+            node.removeFromParentNode()
+        }
+        
         switch model.tool {
             
-        case .building,
-                .bush:
+        case .building(let model):
             
-            for node in scene.meadow.foliage.childNodes {
-                
-                node.removeFromParentNode()
-            }
+            let node = BuildingModel(model: model)
             
+            scene.meadow.buildings.addChildNode(node)
+            
+            node.clean()
+            
+        case .bush:
+
             scene.meadow.foliage.addChildNode(TreeModel(model: model.tree))
             
-        case .rock(let rock):
+        case .rock(let model):
             
-            for node in scene.meadow.foliage.childNodes {
-                
-                node.removeFromParentNode()
-            }
-            
-            let node = RockModel(model: rock)
+            let node = RockModel(model: model)
             
             scene.meadow.foliage.addChildNode(node)
             
             node.clean()
             
-        case .tree(let tree):
+        case .tree(let model):
             
-            for node in scene.meadow.foliage.childNodes {
-                
-                node.removeFromParentNode()
-            }
-            
-            let node = TreeModel(model: tree)
+            let node = TreeModel(model: model)
             
             scene.meadow.foliage.addChildNode(node)
             
@@ -85,22 +87,29 @@ extension ModelView {
             
             switch model.tool {
                 
-            case .building,
-                    .bush:
+            case .building(let model):
                 
-                print("")
-                
-            case .rock(let rock):
-                
-                let asset = Asset(footprint: rock.footprint, polygons: rock.build(position: .zero))
+                let asset = Asset(footprint: model.footprint, polygons: model.build(position: .zero))
                 
                 let data = try? JSONEncoder().encode(asset)
                 
                 try? data?.write(to: url, options: .atomic)
                 
-            case .tree(let tree):
+            case .bush:
                 
-                let asset = Asset(footprint: tree.footprint, polygons: tree.build(position: .zero))
+                print("")
+                
+            case .rock(let model):
+                
+                let asset = Asset(footprint: model.footprint, polygons: model.build(position: .zero))
+                
+                let data = try? JSONEncoder().encode(asset)
+                
+                try? data?.write(to: url, options: .atomic)
+                
+            case .tree(let model):
+                
+                let asset = Asset(footprint: model.footprint, polygons: model.build(position: .zero))
                 
                 let data = try? JSONEncoder().encode(asset)
                 

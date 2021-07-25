@@ -6,42 +6,60 @@
 
 import Euclid
 import Foundation
+import Meadow
 
-public enum MarchingTetrahedron {
+enum MarchingTetrahedron {
     
-    public static func march(identifier: Int, position: Vector, size: Vector) -> [Polygon] {
+    static func march(chunk: SDFGrid.Chunk, size: Euclid.Vector) -> [Euclid.Polygon] {
         
-        guard identifier > 0 && identifier < 15 else { return [] }
+        var polygons: [Euclid.Polygon] = []
         
-        var polygons: [Polygon] = []
-        
-        for triangle in triangles[identifier - 1] {
+        for tetrahedron in MarchingTetrahedron.tetrahedrons {
             
-            var face: [Vector] = []
+            var identifier = 0
+        
+            for index in tetrahedron.indices {
+                
+                let corner = tetrahedron[index]
             
-            for edge in triangle.reversed() {
+                let value = chunk.values[corner]
+            
+                if value >= 0.0 {
                 
-                guard let c0 = edges[edge].first,
-                      let c1 = edges[edge].last else {
-                          
-                          print("INDEX OUT OF BPUNDS")
-                          continue }
-                
-                let v0 = corners[c0] * size
-                let v1 = corners[c1] * size
-                
-                face.append(position + ((v0 + v1) / 2.0))
+                    identifier |= 1 << index
+                }
             }
             
-            let normal = face.normal()
+            guard identifier > 0 && identifier < 15 else { continue }
             
-            let vertices = face.map { Vertex($0, normal) }
-            
-            guard let polygon = Polygon(vertices) else {
-                print("Shitty vertices: [\(vertices.count)]")
-                continue }
-            
-            polygons.append(polygon)
+            for triangle in triangles[identifier - 1] {
+                
+                var face: [Euclid.Vector] = []
+                
+                for edge in triangle {
+                    
+                    guard let c0 = edges[edge].first,
+                          let c1 = edges[edge].last else { continue }
+                    
+                    let c2 = tetrahedron[c0]
+                    let c3 = tetrahedron[c1]
+                    
+                    let v0 = SDFGrid.corners[c2] * size
+                    let v1 = SDFGrid.corners[c3] * size
+                    
+                    let slope = chunk.slope(c0: c2, c1: c3)
+                    
+                    face.append(chunk.position + (v0 + ((v1 - v0) * slope)))
+                }
+                
+                let normal = face.normal()
+                
+                let vertices = face.map { Vertex($0, normal) }
+                
+                guard let polygon = Polygon(vertices) else { continue }
+                
+                polygons.append(polygon)
+            }
         }
         
         return polygons
@@ -58,18 +76,6 @@ extension MarchingTetrahedron {
         [0, 3, 7, 6],
         [0, 7, 4, 6],
         [0, 4, 5, 6]
-    ]
-    
-    static let corners = [
-        
-        Vector(0, 0, 0),
-        Vector(1, 0, 0),
-        Vector(1, 1, 0),
-        Vector(0, 1, 0),
-        Vector(0, 0, 1),
-        Vector(1, 0, 1),
-        Vector(1, 1, 1),
-        Vector(0, 1, 1)
     ]
     
     static let edges = [

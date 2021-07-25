@@ -35,7 +35,7 @@ struct ContentView: View {
                         
                     case .building:
                         
-                        BuildingView()
+                        BuildingView(building: $document.model.building)
                         
                     case .bush:
                         

@@ -69,19 +69,17 @@ extension BeechTree: Prop {
         /// Create foliage
         //
         
-        let grid = SDFGrid(footprint: Footprint(coordinate: .zero, nodes: [.zero, .forward, .right, -.forward, -.right]), resolution: 8)
+        let grid = SDFGrid(footprint: Footprint(coordinate: .zero, nodes: [.zero]), resolution: 8)
         
-        let s0 = SDFSphere(position: Vector(0, 0, 0), radius: 0.5)
+        let s0 = SDFSphere(position: Vector(0, 0, 0), radius: 0.25)
         
-        let s1 = SDFSphere(position: Vector(0, trunk.trunk.height + 0.5, 0), radius: 0.75)
+        let s1 = SDFSphere(position: Vector(0, 0.25, 0), radius: 0.25)
         
-        let g0 = SDFGroup(method: .minimum, shapes: [s0, s1])
+        grid.add(shape: s0)
+        grid.add(shape: s1)
         
-        grid.add(shape: g0)
-        //grid.add(shape: s0)
-        //grid.add(shape: s1)
-        
-        mesh = mesh.union(Mesh(grid.march(method: .tetrahedron)))
+        mesh = mesh.union(Mesh(grid.march(method: .cubes)).translated(by: (.right * 2) + .up))
+        mesh = mesh.union(Mesh(grid.march(method: .tetrahedron)).translated(by: .up))
         
         return mesh.polygons
     }

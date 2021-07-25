@@ -88,10 +88,12 @@ struct Frond: Prop {
                 let v1 = sweep.rhs - (n1 * thickness)
                 let v2 = v0.lerp(v1, 0.5)
                 
-                guard let leftFace = polygon(vectors: [sweep.lhs, sweep.curve, v2, v0], uvs: lhs.uvs),
-                      let rightFace = polygon(vectors: [sweep.curve, sweep.rhs, v1, v2], uvs: lhs.uvs) else { continue }
+                guard let lf0 = polygon(vectors: [sweep.lhs, sweep.curve, v2], uvs: [lhs.uvs[0], lhs.uvs[1], lhs.uvs[2]]),
+                      let lf1 = polygon(vectors: [sweep.lhs, v2, v0], uvs: [lhs.uvs[0], lhs.uvs[2], lhs.uvs[3]]),
+                      let rf0 = polygon(vectors: [sweep.curve, sweep.rhs, v1], uvs: [rhs.uvs[0], rhs.uvs[1], rhs.uvs[2]]),
+                      let rf1 = polygon(vectors: [sweep.curve, v1, v2], uvs: [rhs.uvs[0], rhs.uvs[2], rhs.uvs[3]]) else { continue }
                 
-                polygons.append(contentsOf: [leftFace, rightFace])
+                polygons.append(contentsOf: [lf0, lf1, rf0, rf1])
             }
 
             sweep = current
@@ -113,13 +115,15 @@ struct Frond: Prop {
         let leftFace = [upperFace[2], upperFace[1], lowerFace[1], lowerFace[0]]
         let rightFace = [upperFace[0], upperFace[2], lowerFace[0], lowerFace[2]]
         let uvs = [uv1, uv0, baseUV]
-
+        
         guard let upperPolygon = self.polygon(vectors: upperFace, uvs: uvs),
               let lowerPolygon = self.polygon(vectors: lowerFace, uvs: uvs),
-              let leftPolygon = self.polygon(vectors: leftFace, uvs: [uv0, uv1, uv2, uv3]),
-              let rightPolygon = self.polygon(vectors: rightFace, uvs: [uv0, uv1, uv2, uv3]) else { return polygons }
+              let lp0 = self.polygon(vectors: [leftFace[0], leftFace[1], leftFace[2]], uvs: [uv0, uv1, uv2]),
+              let lp1 = self.polygon(vectors: [leftFace[0], leftFace[2], leftFace[3]], uvs: [uv0, uv2, uv3]),
+              let rp0 = self.polygon(vectors: [rightFace[0], rightFace[1], rightFace[2]], uvs: [uv0, uv1, uv2]),
+              let rp1 = self.polygon(vectors: [rightFace[0], rightFace[2], rightFace[3]], uvs: [uv0, uv2, uv3])else { return polygons }
 
-        polygons.append(contentsOf: [upperPolygon, lowerPolygon, leftPolygon, rightPolygon])
+        polygons.append(contentsOf: [upperPolygon, lowerPolygon, lp0, lp1, rp0, rp1])
         
         return polygons
     }
@@ -155,11 +159,14 @@ extension Frond {
                                                  faces.lower.vertices[0],
                                                  faces.lower.vertices[3]]
             
-            guard let upperFace = polygon(vectors: faces.upper.vertices, uvs: faces.upper.uvs),
-                  let lowerFace = polygon(vectors: faces.lower.vertices, uvs: faces.lower.uvs),
-                  let edgeFace = polygon(vectors: edgeVertices, uvs: faces.upper.uvs) else { return [] }
+            guard let uf0 = polygon(vectors: [faces.upper.vertices[0], faces.upper.vertices[1], faces.upper.vertices[2]], uvs: [faces.upper.uvs[0], faces.upper.uvs[1], faces.upper.uvs[2]]),
+                  let uf1 = polygon(vectors: [faces.upper.vertices[0], faces.upper.vertices[2], faces.upper.vertices[3]], uvs: [faces.upper.uvs[0], faces.upper.uvs[2], faces.upper.uvs[3]]),
+                  let lf0 = polygon(vectors: [faces.lower.vertices[0], faces.lower.vertices[1], faces.lower.vertices[2]], uvs: [faces.lower.uvs[0], faces.lower.uvs[1], faces.lower.uvs[2]]),
+                  let lf1 = polygon(vectors: [faces.lower.vertices[0], faces.lower.vertices[2], faces.lower.vertices[3]], uvs: [faces.lower.uvs[0], faces.lower.uvs[2], faces.lower.uvs[3]]),
+                  let ef0 = polygon(vectors: [edgeVertices[0], edgeVertices[1], edgeVertices[2]], uvs: [faces.upper.uvs[0], faces.upper.uvs[1], faces.upper.uvs[2]]),
+                  let ef1 = polygon(vectors: [edgeVertices[0], edgeVertices[2], edgeVertices[3]], uvs: [faces.upper.uvs[0], faces.upper.uvs[2], faces.upper.uvs[3]]) else { return [] }
             
-            return [upperFace, lowerFace, edgeFace]
+            return [uf0, uf1, lf0, lf1, ef0, ef1]
         }
         
         let v0 = faces.upper.vertices.average()
@@ -181,17 +188,19 @@ extension Frond {
             
             let bottomFaces = face(vertices: [v2, v0, faces.upper.vertices[2], faces.upper.vertices[3]], uvs: [uv2, uv0, faces.upper.uvs[2], faces.upper.uvs[3]], side: side, cut: false)
             
-            guard let edgeFace = polygon(vectors: [v0, v1, v4, v3], uvs: faces.upper.uvs) else { return topFaces + bottomFaces }
+            guard let ef0 = polygon(vectors: [v0, v1, v4], uvs: [faces.upper.uvs[0], faces.upper.uvs[1], faces.upper.uvs[2]]),
+                  let ef1 = polygon(vectors: [v0, v4, v3], uvs: [faces.upper.uvs[0], faces.upper.uvs[2], faces.upper.uvs[3]]) else { return topFaces + bottomFaces }
             
-            return topFaces + bottomFaces + [edgeFace]
+            return topFaces + bottomFaces + [ef0, ef1]
             
         case .right:
             
             let bottomFaces = face(vertices: [v0, v1, faces.upper.vertices[2], faces.upper.vertices[3]], uvs: [uv0, uv1, faces.upper.uvs[2], faces.upper.uvs[3]], side: side, cut: false)
             
-            guard let edgeFace = polygon(vectors: [v2, v0, v3, v5], uvs: faces.upper.uvs) else { return topFaces + bottomFaces }
+            guard let ef0 = polygon(vectors: [v2, v0, v3], uvs: [faces.upper.uvs[0], faces.upper.uvs[1], faces.upper.uvs[2]]),
+                  let ef1 = polygon(vectors: [v2, v3, v5], uvs: [faces.upper.uvs[0], faces.upper.uvs[2], faces.upper.uvs[3]]) else { return topFaces + bottomFaces }
             
-            return topFaces + bottomFaces + [edgeFace]
+            return topFaces + bottomFaces + [ef0, ef1]
         }
     }
 }

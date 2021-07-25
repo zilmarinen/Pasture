@@ -8,19 +8,10 @@ import Euclid
 
 class SDFGroup: SDFShape {
     
-    enum Method {
-        
-        case additive
-        case minimum
-        case maximum
-    }
+    var shapes: [SDFShape]
     
-    let method: Method
-    let shapes: [SDFShape]
-    
-    init(method: Method, shapes: [SDFShape]) {
+    init(shapes: [SDFShape] = []) {
         
-        self.method = method
         self.shapes = shapes
         
         super.init(position: .zero)
@@ -32,22 +23,26 @@ class SDFGroup: SDFShape {
         
         for shape in shapes {
             
-            switch method {
-                
-            case .additive:
-                
-                value += (shape.sample(region: region) / Double(shapes.count))
-                
-            case .minimum:
-                
-                value = min(shape.sample(region: region), value)
-                
-            case .maximum:
-                
-                value = max(shape.sample(region: region), value)
-            }
+            value = min(shape.sample(region: region), value)
         }
         
         return value
+    }
+}
+
+extension SDFGroup {
+    
+    public func add(shape: SDFShape) {
+        
+        guard !shapes.contains(shape) else { return }
+        
+        shapes.append(shape)
+    }
+    
+    public func remove(shape: SDFShape) {
+        
+        guard let index = shapes.firstIndex(of: shape) else { return }
+        
+        shapes.remove(at: index)
     }
 }

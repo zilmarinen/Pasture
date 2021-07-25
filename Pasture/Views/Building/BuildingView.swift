@@ -8,9 +8,17 @@ import SwiftUI
 
 struct BuildingView: View {
     
+    @Binding var building: Building
+    
     var body: some View {
         
-        Text("Building")
+        VStack(alignment: .leading) {
+            
+            GroupBox {
+                
+                BuildingArchitectureView(building: $building)
+            }
+        }
     }
 }
 
@@ -18,6 +26,6 @@ struct BuildingView_Previews: PreviewProvider {
     
     static var previews: some View {
         
-        BuildingView()
+        BuildingView(building: .constant(.default))
     }
 }
