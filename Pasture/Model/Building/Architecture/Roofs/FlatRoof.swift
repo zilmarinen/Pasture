@@ -12,19 +12,21 @@ struct FlatRoof: Prop {
     
     let configuration: [Coordinate : GridPattern<Building.Element>]
     
+    let architecture: Building.Architecture
+    
     let height: Double
     
     let inset: Double
     
-    let angled: Bool
-    
-    let textureCoordinates: UVs
-    
-    func build(position: Euclid.Vector) -> [Euclid.Polygon] {
+    func build(position: Vector) -> [Euclid.Polygon] {
         
-        let outer = BuildingShell(configuration: configuration, layers: 1, height: height, cornerInset: 0.01, edgeInset: 0.05, angled: angled, textureCoordinates: textureCoordinates)
+        let wallTextureCoordinates = UVs(start: Vector(0, 0.5), end: Vector(0.5, 1))
+        let roofTextureCoordinates = UVs(start: .zero, end: Vector(0.5, 0.5))
+        let shingleTextureCoordinates = UVs(start: Vector(0.5, 0.0), end: Vector(1.0, 0.125))
         
-        let inner = BuildingShell(configuration: configuration, layers: 1, height: height, cornerInset: 0.1, edgeInset: 0.1, angled: angled, textureCoordinates: textureCoordinates)
+        let outer = BuildingShell(configuration: configuration, architecture: architecture, layers: 1, height: height, inset: inset / 2.0, angled: architecture.angled, cornerStyle: .plain, cutaways: false, uvs: (shingleTextureCoordinates, shingleTextureCoordinates, roofTextureCoordinates))
+        
+        let inner = BuildingShell(configuration: configuration, architecture: architecture, layers: 1, height: height, inset: inset, angled: architecture.angled, cornerStyle: .plain, cutaways: false, uvs: (wallTextureCoordinates, wallTextureCoordinates, roofTextureCoordinates))
         
         var mesh = Mesh(outer.build(position: position))
         

@@ -10,18 +10,18 @@ import Meadow
 
 struct BuildingWall: Prop {
     
-    let c0: Euclid.Vector
-    let c1: Euclid.Vector
+    let c0: Vector
+    let c1: Vector
     
     let height: Double
     
     let layer: Int
     
-    let normal: Euclid.Vector
+    let normal: Vector
     
     let textureCoordinates: UVs
     
-    func build(position: Euclid.Vector) -> [Euclid.Polygon] {
+    func build(position: Vector) -> [Euclid.Polygon] {
         
         let floor = Vector(0, Double(layer) * height, 0)
         let ceiling = floor + Vector(0, height, 0)

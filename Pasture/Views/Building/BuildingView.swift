@@ -17,6 +17,7 @@ struct BuildingView: View {
             GroupBox {
                 
                 BuildingArchitectureView(building: $building)
+                BuildingRoofView(roof: $building.roof)
             }
         }
     }

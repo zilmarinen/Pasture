@@ -1,41 +1,14 @@
 //
-//  SaltboxRoof.swift
+//  SkillionRoof.swift
 //
-//  Created by Zack Brown on 23/07/2021.
+//  Created by Zack Brown on 28/07/2021.
 //
 
 import Euclid
 import Foundation
 import Meadow
 
-struct SaltboxRoof: Prop {
-    
-    enum Peak: CaseIterable, Codable, Hashable, Identifiable {
-        
-        case left
-        case center
-        case right
-        
-        var id: String {
-            
-            switch self {
-                
-            case .left: return "Left"
-            case .center: return "Center"
-            case .right: return "Right"
-            }
-        }
-        
-        var length: Double {
-            
-            switch self {
-                
-            case .left: return 0.33
-            case .center: return 0.5
-            case .right: return 0.66
-            }
-        }
-    }
+struct SkillionRoof: Prop {
     
     let footprint: Footprint
     
@@ -48,7 +21,6 @@ struct SaltboxRoof: Prop {
     let inset: Double
     
     let direction: Cardinal
-    let peak: Peak
     
     func build(position: Vector) -> [Euclid.Polygon] {
         
@@ -105,31 +77,40 @@ struct SaltboxRoof: Prop {
         let (v0, v1, v2, v3) = (vertices[3], vertices[2], vertices[1], vertices[0])
         let (uv0, uv1, uv2, uv3) = (uvs[3], uvs[2], uvs[1], uvs[0])
         
-        let v4 = v0.lerp(v1, peak.length) + Vector(0, slope, 0)
-        let v5 = v3.lerp(v2, peak.length) + Vector(0, slope, 0)
+        let v4 = (direction == .north || direction == .east ? v0 : v1) + Vector(0, slope, 0)
+        let v5 = (direction == .north || direction == .east ? v3 : v2) + Vector(0, slope, 0)
         
-        let uv4 = uv0.lerp(uv1, peak.length)
-        let uv5 = uv3.lerp(uv2, peak.length)
+        let uv4 = uv0.lerp(uv1, slope)
+        let uv5 = uv3.lerp(uv2, slope)
         
         guard let olhs = polygon(vectors: [v1, v4, v0], uvs: [uv1, uv4, uv0]),
               let orhs = polygon(vectors: [v3, v5, v2], uvs: [uv3, uv5, uv2]),
-              let ulhs = polygon(vectors: [v0, v4, v5, v3], uvs: uvs),
-              let urhs = polygon(vectors: [v4, v1, v2, v5], uvs: uvs),
+              let front = polygon(vectors: [v0, v4, v5, v3], uvs: uvs),
+              let apex = polygon(vectors: [v4, v1, v2, v5], uvs: uvs),
               let throne = polygon(vectors: vertices, uvs: uvs) else { return Mesh([]) }
         
-        return Mesh([olhs, orhs, ulhs, urhs, throne])
+        return Mesh([olhs, orhs, front, apex, throne])
     }
     
     func roof(vertices: [Vector], uvs: [Vector]) -> Euclid.Mesh {
         
-        let (v0, v1, v2, v3) = (vertices[3], vertices[2], vertices[1], vertices[0])
+        var (v0, v1, v2, v3) = (vertices[3], vertices[2], vertices[1], vertices[0])
     
-        let v4 = v0.lerp(v1, peak.length) + Vector(0, slope, 0)
-        let v5 = v3.lerp(v2, peak.length) + Vector(0, slope, 0)
+        switch direction {
+            
+        case .north,
+                .east:
+            
+            v0.y += slope
+            v3.y += slope
+            
+        default:
+            
+            v1.y += slope
+            v2.y += slope
+        }
         
-        let mesh = Mesh(face(vertices: [v0, v4, v5, v3], uvs: uvs))
-        
-        return mesh.union(Mesh(face(vertices: [v4, v1, v2, v5], uvs: uvs)))
+        return Mesh(face(vertices: [v0, v1, v2, v3], uvs: uvs))
     }
     
     func face(vertices: [Vector], uvs: [Vector]) -> [Euclid.Polygon] {

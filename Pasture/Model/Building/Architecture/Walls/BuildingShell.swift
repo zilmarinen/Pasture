@@ -10,27 +10,41 @@ import Meadow
 
 struct BuildingShell: Prop {
     
+    enum Constants {
+        
+        static let wallInset = 0.1
+        static let corniceInset = 0.09
+        static let borderInset = 0.08
+    }
+    
     let configuration: [Coordinate : GridPattern<Building.Element>]
+    
+    let architecture: Building.Architecture
     
     let layers: Int
     
     let height: Double
     
-    let cornerInset: Double
-    let edgeInset: Double
+    let inset: Double
     
     let angled: Bool
+    let cornerStyle: Building.Architecture.MasonryStyle
+    let cutaways: Bool
     
-    let textureCoordinates: UVs
+    let uvs: (edge: UVs, corner: UVs, roof: UVs)
     
-    func build(position: Euclid.Vector) -> [Euclid.Polygon] {
+    func build(position: Vector) -> [Euclid.Polygon] {
         
         let size = Vector(World.Constants.volumeSize, 0.0, World.Constants.volumeSize)
         
-        let roofUVs = Ordinal.uvs.map { Euclid.Vector($0.x, $0.y) }.inset(axis: .y, corner: cornerInset, edge: edgeInset)
-        let wallUVs = Ordinal.uvs.map { Euclid.Vector($0.x, $0.y) }.inset(axis: .y, corner: cornerInset, edge: edgeInset)
+        let roofUVs = uvs.roof.uvs.map { Vector($0.x, $0.y) }.inset(axis: .y, corner: inset, edge: inset)
+        let wallUVs = uvs.edge.uvs.map { Vector($0.x, $0.y) }.inset(axis: .y, corner: inset, edge: inset)
         
-        let vertices = Ordinal.Coordinates.map { (size * Vector(Double($0.x), 0, Double($0.z))) }.inset(axis: .z, corner: cornerInset, edge: edgeInset)
+        let vertices = Ordinal.Coordinates.map { (size * Vector(Double($0.x), 0, Double($0.z))) }.inset(axis: .z, corner: inset, edge: inset)
+        
+        //
+        /// Create building shell
+        //
         
         var polygons: [Euclid.Polygon] = []
         
@@ -49,7 +63,7 @@ struct BuildingShell: Prop {
                       let (woeuv0, _) = wallUVs.edges.outer[.north],
                       let (woeuv1, _) = wallUVs.edges.outer[.south] else { continue }
                 
-                let normal = Euclid.Vector(cardinal.normal.x, cardinal.normal.y, cardinal.normal.z)
+                let normal = Vector(cardinal.normal.x, cardinal.normal.y, cardinal.normal.z)
                 
                 var v0 = pattern.value(for: c0) == .empty ? e0 : vertices.corners.inner[o0.rawValue]
                 var v1 = pattern.value(for: c1) == .empty ? e1 : vertices.corners.inner[o1.rawValue]
@@ -84,8 +98,8 @@ struct BuildingShell: Prop {
                 }
             }
             
-            var floorVertices: [Euclid.Vector] = []
-            var floorUVs: [Euclid.Vector] = []
+            var floorVertices: [Vector] = []
+            var floorUVs: [Vector] = []
             
             for ordinal in Ordinal.allCases {
                 
@@ -103,8 +117,8 @@ struct BuildingShell: Prop {
                       let (_, rieuv0) = roofUVs.edges.inner[c0],
                       let (rieuv1, _) = roofUVs.edges.inner[c1] else { continue }
                 
-                let n0 = Euclid.Vector(c0.normal.x, c0.normal.y, c0.normal.z)
-                let n1 = Euclid.Vector(c1.normal.x, c1.normal.y, c1.normal.z)
+                let n0 = Vector(c0.normal.x, c0.normal.y, c0.normal.z)
+                let n1 = Vector(c1.normal.x, c1.normal.y, c1.normal.z)
                 
                 if angled {
                     
@@ -198,6 +212,97 @@ struct BuildingShell: Prop {
             polygons.append(contentsOf: [throne, apex])
         }
         
-        return polygons
+        var mesh = Mesh(polygons)
+        
+        //
+        /// Create corners
+        //
+        
+        switch cornerStyle {
+            
+        case .plain: break
+            
+        default:
+            
+            let cornerVertices = Ordinal.Coordinates.map { (size * Vector(Double($0.x), 0, Double($0.z))) }.inset(axis: .z, corner: inset + 0.01, edge: inset + 0.01)
+            
+            let height = (World.Constants.slope * 4)
+            
+            for (node, pattern) in configuration {
+                
+                let offset = position + Vector(Double(node.x), 0, Double(node.z))
+                
+                for ordinal in Ordinal.allCases {
+                    
+                    let (c0, c1) = ordinal.cardinals
+                    let innerCorner = pattern.value(for: c0) == .empty && pattern.value(for: c1) == .empty
+                    
+                    guard pattern.value(for: ordinal) == .corner, !innerCorner else { continue }
+                    
+                    if angled {
+                        
+                        guard let (_, v0) = cornerVertices.edges.inner[c0],
+                              let (v1, _) = cornerVertices.edges.inner[c1],
+                              let (_, v2) = cornerVertices.edges.outer[c0],
+                              let (v3, _) = cornerVertices.edges.outer[c1] else { continue }
+                    
+                        let lhs = BuildingCorner(style: cornerStyle, o0: ordinal, o1: ordinal.previous, c0: c0, c1: c1, height: height, textureCoordinates: uvs.corner)
+                        let rhs = BuildingCorner(style: cornerStyle, o0: ordinal, o1: ordinal.next, c0: c1, c1: c0, height: height, textureCoordinates: uvs.corner)
+                        
+                        for layer in 0..<layers {
+                        
+                            mesh = mesh.union(Mesh(lhs.build(position: offset + (innerCorner ? v3 : v1) + Vector(0, Double(layer) * height, 0))))
+                            mesh = mesh.union(Mesh(rhs.build(position: offset + (innerCorner ? v2 : v0) + Vector(0, Double(layer) * height, 0))))
+                        }
+                    }
+                    else {
+                        
+                        let v0 = cornerVertices.corners.inner[ordinal.rawValue]
+                        
+                        let corner = BuildingCorner(style: cornerStyle, o0: ordinal, o1: ordinal, c0: c0, c1: c1, height: height, textureCoordinates: uvs.corner)
+                        
+                        for layer in 0..<layers {
+                        
+                            mesh = mesh.union(Mesh(corner.build(position: offset + v0 + Vector(0, Double(layer) * height, 0))))
+                        }
+                    }
+                }
+            }
+        }
+        
+        //
+        ///create windows and doors
+        //
+        
+        guard cutaways else { return mesh.polygons }
+        
+        for (node, pattern) in configuration {
+            
+            let offset = position + Vector(Double(node.x), 0, Double(node.z))
+            
+            for cardinal in Cardinal.allCases {
+                
+                guard let edge = vertices.edges.inner[cardinal] else { continue }
+                
+                switch pattern.value(for: cardinal) {
+                    
+                case .door:
+                    
+                    let door = BuildingDoor(architecture: architecture, c0: edge.c0, c1: edge.c1, cardinal: cardinal)
+                    
+                    mesh = mesh.union(Mesh(door.build(position: offset)))
+                    
+                case .window:
+                    
+                    let door = BuildingWindow(architecture: architecture, c0: edge.c0, c1: edge.c1, cardinal: cardinal)
+                    
+                    mesh = mesh.union(Mesh(door.build(position: offset + Vector(0, World.Constants.slope, 0))))
+                    
+                default: break
+                }
+            }
+        }
+        
+        return mesh.polygons
     }
 }
