@@ -15,6 +15,13 @@ class Trunk: Codable, Hashable, ObservableObject {
                                         peakRadius: 0.2,
                                         spread: 0.1)
     
+    static let spruce: Trunk = Trunk(segments: 7,
+                                     slices: 7,
+                                     height: 1.5,
+                                     baseRadius: 0.14,
+                                     peakRadius: 0.028,
+                                     spread: 0.1)
+    
     enum CodingKeys: CodingKey {
         
         case segments

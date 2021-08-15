@@ -115,7 +115,7 @@ class Causeway: Codable, Hashable, ObservableObject {
 
 extension Causeway: Prop {
     
-    func build(position: Euclid.Vector) -> [Euclid.Polygon] {
+    func build(position: Vector) -> [Euclid.Polygon] {
         
         let uvStep = 1.0 / Double(4)
         let xStep = sqrt(3) * (radius + margin)
@@ -168,7 +168,7 @@ extension Causeway: Prop {
 
 extension Causeway {
     
-    func column(position: Euclid.Vector, elevation: Double, textureCoordinates: UVs, spread: Double) -> [Euclid.Polygon] {
+    func column(position: Vector, elevation: Double, textureCoordinates: UVs, spread: Double) -> [Euclid.Polygon] {
         
         let segments = (shape == .hexagon ? 6 : 4)
         let rotation = Euclid.Angle(radians: Math.pi2 / Double(segments))
@@ -189,10 +189,10 @@ extension Causeway {
             let uvx0 = textureCoordinates.start.x + (uvStep * Double(segment))
             let uvx1 = textureCoordinates.start.x + (uvStep * Double(segment + 1))
             
-            let uv0 = Euclid.Vector(uvx1, textureCoordinates.start.y)
-            let uv1 = Euclid.Vector(uvx0, textureCoordinates.start.y)
-            let uv2 = Euclid.Vector(uvx0, textureCoordinates.end.y)
-            let uv3 = Euclid.Vector(uvx1, textureCoordinates.end.y)
+            let uv0 = Vector(uvx1, textureCoordinates.start.y)
+            let uv1 = Vector(uvx0, textureCoordinates.start.y)
+            let uv2 = Vector(uvx0, textureCoordinates.end.y)
+            let uv3 = Vector(uvx1, textureCoordinates.end.y)
             
             let peakUV = uv0.lerp(uv1, 0.5)
             

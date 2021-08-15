@@ -24,12 +24,16 @@ class Model: Codable, ObservableObject {
         static var allCases: [Model.Tool] { [.building(.default),
                                              .bush,
                                              .rock(.default),
-                                             .tree(.default)]}
+                                             .stairs(.default),
+                                             .tree(.default),
+                                             .walls(.default)]}
         
         case building(Building)
         case bush
         case rock(Rock)
+        case stairs(Stairs)
         case tree(Tree)
+        case walls(Walls)
         
         var id: String {
             
@@ -38,7 +42,9 @@ class Model: Codable, ObservableObject {
             case .building: return "Building"
             case .bush: return "Bush"
             case .rock: return "Rock"
+            case .stairs: return "Stairs"
             case .tree: return "Tree"
+            case .walls: return "Walls"
             }
         }
         
@@ -49,7 +55,9 @@ class Model: Codable, ObservableObject {
             case .building: return "building"
             case .bush: return "leaf"
             case .rock: return "triangle"
+            case .stairs: return "triangle"
             case .tree: return "cone"
+            case .walls: return "building"
             }
         }
     }
@@ -89,7 +97,7 @@ extension Model {
             
             switch self.tool {
                 
-            case .building(let building): return building
+            case .building(let model): return model
                 
             default: return .default
             }
@@ -106,7 +114,7 @@ extension Model {
             
             switch self.tool {
                 
-            case .rock(let rock): return rock
+            case .rock(let model): return model
                 
             default: return .default
             }
@@ -117,13 +125,30 @@ extension Model {
         }
     }
     
+    var stairs: Stairs {
+        
+        get {
+            
+            switch self.tool {
+                
+            case .stairs(let model): return model
+                
+            default: return .default
+            }
+        }
+        set {
+            
+            self.tool = .stairs(newValue)
+        }
+    }
+    
     var tree: Tree {
         
         get {
             
             switch self.tool {
                 
-            case .tree(let tree): return tree
+            case .tree(let model): return model
                 
             default: return .default
             }
@@ -131,6 +156,23 @@ extension Model {
         set {
             
             self.tool = .tree(newValue)
+        }
+    }
+    
+    var walls: Walls {
+        
+        get {
+            
+            switch self.tool {
+                
+            case .walls(let model): return model
+                
+            default: return .default
+            }
+        }
+        set {
+            
+            self.tool = .walls(newValue)
         }
     }
 }

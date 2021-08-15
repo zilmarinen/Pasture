@@ -15,7 +15,6 @@ enum Zachomino: String, Codable, CaseIterable, Identifiable {
     case n
     case o
     case p
-    case s
     case t
     case u
     case v
@@ -35,7 +34,8 @@ enum Zachomino: String, Codable, CaseIterable, Identifiable {
                                                              Coordinate(x: -1, y: 0, z: 0),
                                                              Coordinate(x: 0, y: 0, z: 1)])
             
-        case .i: return Footprint(coordinate: .zero, nodes: [Coordinate(x: 0, y: 0, z: 0),
+        case .i: return Footprint(coordinate: .zero, nodes: [Coordinate(x: 0, y: 0, z: -1),
+                                                             Coordinate(x: 0, y: 0, z: 0),
                                                              Coordinate(x: 0, y: 0, z: 1)])
             
         case .l: return Footprint(coordinate: .zero, nodes: [Coordinate(x: 0, y: 0, z: -1),
@@ -59,11 +59,6 @@ enum Zachomino: String, Codable, CaseIterable, Identifiable {
                                                              Coordinate(x: 0, y: 0, z: 0),
                                                              Coordinate(x: 1, y: 0, z: 0),
                                                              Coordinate(x: 0, y: 0, z: 1)])
-            
-        case .s: return Footprint(coordinate: .zero, nodes: [Coordinate(x: 0, y: 0, z: -1),
-                                                             Coordinate(x: 0, y: 0, z: 0),
-                                                             Coordinate(x: -1, y: 0, z: 0),
-                                                             Coordinate(x: -1, y: 0, z: 1)])
             
         case .t: return Footprint(coordinate: .zero, nodes: [Coordinate(x: -1, y: 0, z: -1),
                                                              Coordinate(x: 0, y: 0, z: -1),

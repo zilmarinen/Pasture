@@ -12,27 +12,22 @@ import Meadow
 class TreeTrunk: Codable, Hashable, ObservableObject {
     
     static let `default`: TreeTrunk = TreeTrunk(stump: .default,
-                                                trunk: .default,
-                                                noise: .default)
+                                                trunk: .default)
     
     enum CodingKeys: CodingKey {
         
         case stump
         case trunk
-        case noise
     }
     
     @Published var stump: Stump
     @Published var trunk: Trunk
-    @Published var noise: Noise
     
     init(stump: Stump,
-         trunk: Trunk,
-         noise: Noise) {
+         trunk: Trunk) {
         
         self.stump = stump
         self.trunk = trunk
-        self.noise = noise
     }
     
     required init(from decoder: Decoder) throws {
@@ -41,7 +36,6 @@ class TreeTrunk: Codable, Hashable, ObservableObject {
         
         stump = try container.decode(Stump.self, forKey: .stump)
         trunk = try container.decode(Trunk.self, forKey: .trunk)
-        noise = try container.decode(Noise.self, forKey: .noise)
     }
     
     func encode(to encoder: Encoder) throws {
@@ -50,41 +44,38 @@ class TreeTrunk: Codable, Hashable, ObservableObject {
         
         try container.encode(stump, forKey: .stump)
         try container.encode(trunk, forKey: .trunk)
-        try container.encode(noise, forKey: .noise)
     }
     
     func hash(into hasher: inout Hasher) {
         
         hasher.combine(stump)
         hasher.combine(trunk)
-        hasher.combine(noise)
     }
     
     static func == (lhs: TreeTrunk, rhs: TreeTrunk) -> Bool {
         
         return  lhs.stump == rhs.stump &&
-                lhs.trunk == rhs.trunk &&
-                lhs.noise == rhs.noise
+                lhs.trunk == rhs.trunk
     }
 }
 
 extension TreeTrunk: Prop {
     
-    typealias Builder = (polygons: [Euclid.Polygon], position: Euclid.Vector, plane: Euclid.Plane)
+    typealias Builder = (polygons: [Euclid.Polygon], position: Vector, plane: Euclid.Plane)
     
-    func build(position: Euclid.Vector) -> [Euclid.Polygon] { return [] }
+    func build(position: Vector) -> [Euclid.Polygon] {
     
-    func build(position: Euclid.Vector, plane: Euclid.Plane) -> Builder {
+        guard let plane = Plane(normal: .up, pointOnPlane: .zero) else { return [] }
+        
+        return build(position: position, plane: plane).polygons
+    }
+    
+    func build(position: Vector, plane: Euclid.Plane) -> Builder {
         
         let legUVs = UVs(start: Vector(x: 0, y: 0.5, z: 0), end: Vector(x: 1, y: 0.75, z: 0))
         let trunkUVs = UVs(start: Vector(x: 0, y: 0.75, z: 0), end: Vector(x: 1, y: 1, z: 0))
         
-        let size = Vector(Double(trunk.segments), 0, Double(stump.segments))
-        let sampleCount = Vector(Double(trunk.segments), 0, Double(stump.segments))
-        
-        let map = noise.map(size: size, sampleCount: sampleCount)
-        
-        let sample = Double(map.value(at: vector2(1, 0)))
+        let sample = Double.random(in: 0..<1, using: &rng)
         
         let curveStep = 1.0 / Double(trunk.slices)
         let yStep = trunk.height / Double(trunk.slices)
@@ -95,35 +86,18 @@ extension TreeTrunk: Prop {
         var mesh = Euclid.Mesh([])
         
         //
-        /// Create stump legs
-        //
-        
-        guard let plane = Plane(normal: normal, pointOnPlane: .zero) else { return ([], position, plane) }
-        
-        var rotation = Euclid.Angle(radians: Math.pi2 / Double(stump.legs))
-        
-        for leg in 0..<stump.legs {
-            
-            let angle = (rotation.radians * Double(leg))
-            
-            let trunkLeg = TrunkLeg(plane: plane, noise: noise, angle: angle, spread: stump.spread, innerRadius: stump.innerRadius, outerRadius: stump.outerRadius, peak: stump.peak, base: stump.base, segments: stump.segments, textureCoordinates: legUVs)
-            
-            mesh = mesh.union(Mesh(trunkLeg.build(position: position)))
-        }
-        
-        //
         /// Create trunk segments
         //
         
-        var slices: [[Euclid.Vector]] = []
+        var slices: [[Vector]] = []
         
-        rotation = Euclid.Angle(radians: Math.pi2 / Double(trunk.segments))
+        var rotation = Euclid.Angle(radians: Math.pi2 / Double(trunk.segments))
         
         for slice in 0...trunk.slices {
             
             let interpolator = curveStep * Double(slice)
             
-            var layer: [Euclid.Vector] = []
+            var layer: [Vector] = []
             
             let length = (1.0 - Math.ease(curve: .out, value: interpolator)) * (trunk.baseRadius - trunk.peakRadius)
             
@@ -157,6 +131,23 @@ extension TreeTrunk: Prop {
                 
                 mesh = mesh.union(Mesh(trunkSlice.build(position: position)))
             }
+        }
+        
+        //
+        /// Create stump legs
+        //
+        
+        guard let plane = Plane(normal: normal, pointOnPlane: .zero) else { return ([], position, plane) }
+        
+        rotation = Euclid.Angle(radians: Math.pi2 / Double(stump.legs))
+        
+        for leg in 0..<stump.legs {
+            
+            let angle = (rotation.radians * Double(leg))
+            
+            let trunkLeg = TrunkLeg(plane: plane, angle: angle, spread: stump.spread, innerRadius: stump.innerRadius, outerRadius: stump.outerRadius, peak: stump.peak, base: stump.base, segments: stump.segments, textureCoordinates: legUVs)
+            
+            mesh = mesh.union(Mesh(trunkLeg.build(position: position)))
         }
         
         return (mesh.polygons, slices.last?.average() ?? position, plane)

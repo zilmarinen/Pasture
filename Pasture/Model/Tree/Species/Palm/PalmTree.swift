@@ -13,27 +13,22 @@ import SwiftUI
 class PalmTree: Codable, Hashable, ObservableObject {
     
     static let `default`: PalmTree = PalmTree(foliage: .default,
-                                              trunk: .default,
-                                              noise: .default)
+                                              trunk: .default)
     
     enum CodingKeys: CodingKey {
         
         case foliage
         case trunk
-        case noise
     }
     
     @Published var foliage: PalmTreeFoliage
     @Published var trunk: PalmTreeTrunk
-    @Published var noise: Noise
     
     init(foliage: PalmTreeFoliage,
-         trunk: PalmTreeTrunk,
-         noise: Noise) {
+         trunk: PalmTreeTrunk) {
         
         self.foliage = foliage
         self.trunk = trunk
-        self.noise = noise
     }
     
     required init(from decoder: Decoder) throws {
@@ -42,7 +37,6 @@ class PalmTree: Codable, Hashable, ObservableObject {
         
         foliage = try container.decode(PalmTreeFoliage.self, forKey: .foliage)
         trunk = try container.decode(PalmTreeTrunk.self, forKey: .trunk)
-        noise = try container.decode(Noise.self, forKey: .noise)
     }
     
     func encode(to encoder: Encoder) throws {
@@ -51,27 +45,24 @@ class PalmTree: Codable, Hashable, ObservableObject {
         
         try container.encode(foliage, forKey: .foliage)
         try container.encode(trunk, forKey: .trunk)
-        try container.encode(noise, forKey: .noise)
     }
     
     func hash(into hasher: inout Hasher) {
         
         hasher.combine(foliage)
         hasher.combine(trunk)
-        hasher.combine(noise)
     }
     
     static func == (lhs: PalmTree, rhs: PalmTree) -> Bool {
         
         return  lhs.foliage == rhs.foliage &&
-                lhs.trunk == rhs.trunk &&
-                lhs.noise == rhs.noise
+                lhs.trunk == rhs.trunk
     }
 }
 
 extension PalmTree: Prop {
     
-    func build(position: Euclid.Vector) -> [Euclid.Polygon] {
+    func build(position: Vector) -> [Euclid.Polygon] {
         
         let frondUVs = UVs(start: Vector(x: 0, y: 0, z: 0), end: Vector(x: 1, y: 0.5, z: 0))
         let chonkUVs = UVs(start: Vector(x: 0, y: 0.5, z: 0), end: Vector(x: 1, y: 1, z: 0))
@@ -82,14 +73,7 @@ extension PalmTree: Prop {
         
         guard let plane = Plane(normal: .up, pointOnPlane: .zero) else { return [] }
         
-        let size = Vector(Double(foliage.fronds * 10), 0, Double(foliage.fronds * 10))
-        let sampleCount = Vector(Double(foliage.fronds), 0, Double(foliage.fronds))
-        
-        let map = noise.map(size: size, sampleCount: sampleCount)
-        
-        let sample = Double(map.value(at: vector2(1, 0)))
-        
-        var mesh = Euclid.Mesh([])
+        let sample = Double.random(in: 0..<1, using: &rng)
         
         let yStep = Double(1.0 / Double(trunk.slices))
         let segmentHeight = Double(((trunk.height / Double(trunk.slices))) - (trunk.segment.peak + trunk.segment.base))
@@ -100,7 +84,7 @@ extension PalmTree: Prop {
         
         var center = position + Vector(0, TrunkLeg.Constants.floor, 0)
         
-        mesh = mesh.union(Mesh(node.build(position: center)))
+        var mesh = Euclid.Mesh(node.build(position: center))
         
         center = center + node.peakCenter
         
@@ -133,7 +117,7 @@ extension PalmTree: Prop {
             
             let angle = (rotation.radians * Double(leaf))
             
-            let frond = Frond(plane: node.plane, noise: noise, angle: angle, radius: foliage.frond.radius, width: foliage.frond.width, thickness: foliage.frond.thickness, spread: foliage.frond.spread, segments: foliage.frond.segments, textureCoordinates: frondUVs)
+            let frond = Frond(plane: node.plane, angle: angle, radius: foliage.frond.radius, width: foliage.frond.width, thickness: foliage.frond.thickness, spread: foliage.frond.spread, segments: foliage.frond.segments, textureCoordinates: frondUVs)
             
             mesh = mesh.union(Mesh(frond.build(position: center + node.peakCenter)))
         }

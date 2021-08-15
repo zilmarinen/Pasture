@@ -17,12 +17,12 @@ struct ModelView: View {
     
     var body: some View {
         
-        for node in scene.meadow.buildings.childNodes {
-            
-            node.removeFromParentNode()
-        }
+        let nodes = scene.meadow.buildings.childNodes +
+                    scene.meadow.foliage.childNodes +
+                    scene.meadow.stairs.childNodes +
+                    scene.meadow.walls.childNodes
         
-        for node in scene.meadow.foliage.childNodes {
+        for node in nodes {
             
             node.removeFromParentNode()
         }
@@ -49,11 +49,27 @@ struct ModelView: View {
             
             node.clean()
             
+        case .stairs(let model):
+            
+            let node = StairsModel(model: model)
+            
+            scene.meadow.stairs.addChildNode(node)
+            
+            node.clean()
+            
         case .tree(let model):
             
             let node = TreeModel(model: model)
             
             scene.meadow.foliage.addChildNode(node)
+            
+            node.clean()
+            
+        case .walls(let model):
+            
+            let node = WallModel(model: model)
+            
+            scene.meadow.walls.addChildNode(node)
             
             node.clean()
         }
@@ -74,42 +90,123 @@ extension ModelView {
     
     private func export() {
         
-        let panel = NSSavePanel()
+        switch model.tool {
+            
+        case .stairs(let model):
+            
+            let panel = NSOpenPanel()
+            
+            panel.allowsMultipleSelection = false
+            panel.canChooseDirectories = true
+            panel.canChooseFiles = false
+            panel.canCreateDirectories = true
+            panel.prompt = "Export"
+            panel.title = "Export"
+            
+            panel.begin { (response) in
+                
+                guard response == .OK, let url = panel.urls.first else { return }
+                
+                let encoder = JSONEncoder()
+                
+                var wrappers: [String : FileWrapper] = [:]
+                
+                for tileType in StairType.allCases {
+                    
+                    let stairs = Stairs(style: tileType, material: model.material)
+                    
+                    let asset = Asset(footprint: tileType.footprint, polygons: stairs.build(position: .zero))
+                    
+                    guard let data = try? encoder.encode(asset) else { continue }
+                    
+                    wrappers["\(model.material)_\(tileType.id).model"] = FileWrapper(regularFileWithContents: data)
+                }
+                
+                let wrapper = FileWrapper(directoryWithFileWrappers: wrappers)
+                
+                try? wrapper.write(to: url, options: .atomic, originalContentsURL: nil)
+            }
+            
+        case .walls(let model):
+            
+            let panel = NSOpenPanel()
+            
+            panel.allowsMultipleSelection = false
+            panel.canChooseDirectories = true
+            panel.canChooseFiles = false
+            panel.canCreateDirectories = true
+            panel.prompt = "Export"
+            panel.title = "Export"
+            
+            panel.begin { (response) in
+                
+                guard response == .OK, let url = panel.urls.first else { return }
+                
+                let footprint = Footprint(coordinate: .zero, nodes: [.zero])
+                
+                let corner1 = Corner(style: model.style, cardinals: [.north])
+                let corner2 = Corner(style: model.style, cardinals: [.north, .east])
+                let corner3 = Corner(style: model.style, cardinals: [.north, .east, .south])
+                let corner4 = Corner(style: model.style, cardinals: Cardinal.allCases)
+                
+                let edgeExternalLeft = Edge(style: model.style, side: .left, external: true)
+                let edgeExternalRight = Edge(style: model.style, side: .right, external: true)
+                let edgeInternal = Edge(style: model.style, side: .left, external: false)
+                
+                let wallExternal = Wall(style: model.style, external: true)
+                let wallInternal = Wall(style: model.style, external: false)
+                
+                let models = ["\(model.style.id)_corner_1" : Asset(footprint: footprint, polygons: corner1.build(position: .zero)),
+                              "\(model.style.id)_corner_2" : Asset(footprint: footprint, polygons: corner2.build(position: .zero)),
+                              "\(model.style.id)_corner_3" : Asset(footprint: footprint, polygons: corner3.build(position: .zero)),
+                              "\(model.style.id)_corner_4" : Asset(footprint: footprint, polygons: corner4.build(position: .zero)),
+                              "\(model.style.id)_edge_external_left" : Asset(footprint: footprint, polygons: edgeExternalLeft.build(position: .zero)),
+                              "\(model.style.id)_edge_external_right" : Asset(footprint: footprint, polygons: edgeExternalRight.build(position: .zero)),
+                              "\(model.style.id)_edge_internal" : Asset(footprint: footprint, polygons: edgeInternal.build(position: .zero)),
+                              "\(model.style.id)_wall_external" : Asset(footprint: footprint, polygons: wallExternal.build(position: .zero)),
+                              "\(model.style.id)_wall_internal" : Asset(footprint: footprint, polygons: wallInternal.build(position: .zero))]
+                
+                let encoder = JSONEncoder()
+                
+                var wrappers: [String : FileWrapper] = [:]
+                
+                for (identifier, asset) in models {
+                    
+                    guard let data = try? encoder.encode(asset) else { continue }
+                    
+                    wrappers["\(identifier).model"] = FileWrapper(regularFileWithContents: data)
+                }
+                
+                let wrapper = FileWrapper(directoryWithFileWrappers: wrappers)
+                
+                try? wrapper.write(to: url, options: .atomic, originalContentsURL: nil)
+            }
+            
+        default:
+            
+            let panel = NSSavePanel()
 
-        panel.canCreateDirectories = true
-        panel.prompt = "Export"
-        panel.title = "Export"
-        panel.nameFieldStringValue = "\(model.name).model"
-        
-        panel.begin { (response) in
+            panel.canCreateDirectories = true
+            panel.prompt = "Export"
+            panel.title = "Export"
+            panel.nameFieldStringValue = "\(model.name).model"
             
-            guard response == .OK, let url = panel.url else { return }
-            
-            switch model.tool {
+            panel.begin { (response) in
                 
-            case .building(let model):
+                guard response == .OK, let url = panel.url else { return }
                 
-                let asset = Asset(footprint: model.footprint, polygons: model.build(position: .zero))
+                var asset: Asset?
                 
-                let data = try? JSONEncoder().encode(asset)
+                switch model.tool {
+                    
+                case .building(let model): asset = Asset(footprint: model.footprint, polygons: model.build(position: .zero))
+                case .rock(let model): asset = Asset(footprint: model.footprint, polygons: model.build(position: .zero))
+                case .tree(let model): asset = Asset(footprint: model.footprint, polygons: model.build(position: .zero))
+                    
+                default: break
+                }
                 
-                try? data?.write(to: url, options: .atomic)
-                
-            case .bush:
-                
-                print("")
-                
-            case .rock(let model):
-                
-                let asset = Asset(footprint: model.footprint, polygons: model.build(position: .zero))
-                
-                let data = try? JSONEncoder().encode(asset)
-                
-                try? data?.write(to: url, options: .atomic)
-                
-            case .tree(let model):
-                
-                let asset = Asset(footprint: model.footprint, polygons: model.build(position: .zero))
+                guard let asset = asset else { return }
                 
                 let data = try? JSONEncoder().encode(asset)
                 

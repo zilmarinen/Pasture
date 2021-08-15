@@ -102,7 +102,7 @@ extension Rock {
 
 extension Rock: Prop {
     
-    func build(position: Euclid.Vector) -> [Euclid.Polygon] {
+    func build(position: Vector) -> [Euclid.Polygon] {
         
         switch category {
             

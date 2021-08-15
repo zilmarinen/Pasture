@@ -16,17 +16,17 @@ struct TrunkSlice: Prop {
         case throne
     }
     
-    var peakCenter: Euclid.Vector { upper.average() }
-    var baseCenter: Euclid.Vector { lower.average() }
+    var peakCenter: Vector { upper.average() }
+    var baseCenter: Vector { lower.average() }
     
-    let upper: [Euclid.Vector]
-    let lower: [Euclid.Vector]
+    let upper: [Vector]
+    let lower: [Vector]
     
     let cap: Cap?
     
     let textureCoordinates: UVs
     
-    func build(position: Euclid.Vector) -> [Euclid.Polygon] {
+    func build(position: Vector) -> [Euclid.Polygon] {
         
         guard upper.count == lower.count else { return [] }
         
@@ -39,10 +39,10 @@ struct TrunkSlice: Prop {
             let uvx0 = textureCoordinates.start.x + (uvStep * Double(segment))
             let uvx1 = textureCoordinates.start.x + (uvStep * Double(segment + 1))
             
-            let uv0 = Euclid.Vector(uvx1, textureCoordinates.start.y)
-            let uv1 = Euclid.Vector(uvx0, textureCoordinates.start.y)
-            let uv2 = Euclid.Vector(uvx0, textureCoordinates.end.y)
-            let uv3 = Euclid.Vector(uvx1, textureCoordinates.end.y)
+            let uv0 = Vector(uvx1, textureCoordinates.start.y)
+            let uv1 = Vector(uvx0, textureCoordinates.start.y)
+            let uv2 = Vector(uvx0, textureCoordinates.end.y)
+            let uv3 = Vector(uvx1, textureCoordinates.end.y)
             
             let peakUV = uv0.lerp(uv1, 0.5)
             let baseUV = uv3.lerp(uv2, 0.5)

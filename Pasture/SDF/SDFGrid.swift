@@ -19,7 +19,7 @@ public class SDFGrid {
     
     struct Chunk {
         
-        let position: Euclid.Vector
+        let position: Vector
         let values: [Double]
         
         func slope(c0: Int, c1: Int) -> Double {

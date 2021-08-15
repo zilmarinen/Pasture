@@ -12,7 +12,6 @@ import Meadow
 struct Frond: Prop {
     
     let plane: Euclid.Plane
-    let noise: Noise
     
     let angle: Double
     let radius: Double
@@ -23,8 +22,8 @@ struct Frond: Prop {
     let segments: Int
     
     let textureCoordinates: UVs
-
-    func build(position: Euclid.Vector) -> [Euclid.Polygon] {
+    
+    func build(position: Vector) -> [Euclid.Polygon] {
             
         let step = Double(1.0 / Double(segments))
         let uvStep = (textureCoordinates.end.y - textureCoordinates.start.y) / Double(segments)
@@ -35,11 +34,6 @@ struct Frond: Prop {
         let middle = curve(start: position, end: end, control: control, interpolator: 0.5)
         let perpendicular = [position, middle, end].normal()
         var length = Math.ease(curve: .out, value: step) * width
-        
-        let size = Vector(Double(segments), 0, Double(segments))
-        let sampleCount = Vector(2, 0, Double(segments))
-        
-        let map = noise.map(size: size, sampleCount: sampleCount, origin: end)
         
         var polygons: [Euclid.Polygon] = []
         
@@ -54,10 +48,10 @@ struct Frond: Prop {
             let uvy0 = textureCoordinates.start.x + (uvStep * Double(segment))
             let uvy1 = textureCoordinates.start.x + (uvStep * Double(segment + 1))
 
-            let uv0 = Euclid.Vector(textureCoordinates.end.x, uvy0)
-            let uv1 = Euclid.Vector(textureCoordinates.start.x, uvy0)
-            let uv2 = Euclid.Vector(textureCoordinates.start.x, uvy1)
-            let uv3 = Euclid.Vector(textureCoordinates.end.x, uvy1)
+            let uv0 = Vector(textureCoordinates.end.x, uvy0)
+            let uv1 = Vector(textureCoordinates.start.x, uvy0)
+            let uv2 = Vector(textureCoordinates.start.x, uvy1)
+            let uv3 = Vector(textureCoordinates.end.x, uvy1)
 
             let peakUV = uv0.lerp(uv1, 0.5)
             let baseUV = uv3.lerp(uv2, 0.5)
@@ -73,11 +67,11 @@ struct Frond: Prop {
             let lhs = (vertices: [sweep.curve, sweep.lhs, current.lhs, current.curve], uvs: [uv1, peakUV, baseUV, uv2])
             let rhs = (vertices: [sweep.rhs, sweep.curve, current.curve, current.rhs], uvs: [peakUV, uv0, uv3, baseUV])
             
-            let s0 = Double(map.value(at: vector2(0, Int32(segment))))
-            let s1 = Double(map.value(at: vector2(1, Int32(segment))))
+            let cut0 = Double.random(in: 0..<10, using: &rng) <= 1
+            let cut1 = Double.random(in: 0..<10, using: &rng) <= 1
             
-            polygons.append(contentsOf: face(vertices: lhs.vertices, uvs: lhs.uvs, side: .left, cut: s0 > 0))
-            polygons.append(contentsOf: face(vertices: rhs.vertices, uvs: rhs.uvs, side: .right, cut: s1 > 0))
+            polygons.append(contentsOf: face(vertices: lhs.vertices, uvs: lhs.uvs, side: .left, cut: cut0))
+            polygons.append(contentsOf: face(vertices: rhs.vertices, uvs: rhs.uvs, side: .right, cut: cut1))
             
             if segment == 1 {
                 
@@ -102,10 +96,10 @@ struct Frond: Prop {
         let uvy0 = textureCoordinates.start.x + (uvStep * Double(segments - 1))
         let uvy1 = textureCoordinates.start.x + (uvStep * Double(segments))
 
-        let uv0 = Euclid.Vector(textureCoordinates.end.x, uvy0)
-        let uv1 = Euclid.Vector(textureCoordinates.start.x, uvy0)
-        let uv2 = Euclid.Vector(textureCoordinates.start.x, uvy1)
-        let uv3 = Euclid.Vector(textureCoordinates.end.x, uvy1)
+        let uv0 = Vector(textureCoordinates.end.x, uvy0)
+        let uv1 = Vector(textureCoordinates.start.x, uvy0)
+        let uv2 = Vector(textureCoordinates.start.x, uvy1)
+        let uv3 = Vector(textureCoordinates.end.x, uvy1)
 
         let baseUV = uv3.lerp(uv2, 0.5)
 
@@ -121,7 +115,7 @@ struct Frond: Prop {
               let lp0 = self.polygon(vectors: [leftFace[0], leftFace[1], leftFace[2]], uvs: [uv0, uv1, uv2]),
               let lp1 = self.polygon(vectors: [leftFace[0], leftFace[2], leftFace[3]], uvs: [uv0, uv2, uv3]),
               let rp0 = self.polygon(vectors: [rightFace[0], rightFace[1], rightFace[2]], uvs: [uv0, uv1, uv2]),
-              let rp1 = self.polygon(vectors: [rightFace[0], rightFace[2], rightFace[3]], uvs: [uv0, uv2, uv3])else { return polygons }
+              let rp1 = self.polygon(vectors: [rightFace[0], rightFace[2], rightFace[3]], uvs: [uv0, uv2, uv3]) else { return polygons }
 
         polygons.append(contentsOf: [upperPolygon, lowerPolygon, lp0, lp1, rp0, rp1])
         
@@ -137,7 +131,7 @@ extension Frond {
         case right
     }
     
-    func face(vertices: [Euclid.Vector], uvs: [Euclid.Vector], side: Side, cut: Bool) -> [Euclid.Polygon] {
+    func face(vertices: [Vector], uvs: [Vector], side: Side, cut: Bool) -> [Euclid.Polygon] {
         
         guard vertices.count == uvs.count else { return [] }
         
@@ -182,6 +176,7 @@ extension Frond {
         let uv2 = faces.upper.uvs[0].lerp(faces.upper.uvs[3], 0.5)
         
         let topFaces = face(vertices: [faces.upper.vertices[0], faces.upper.vertices[1], v1, v2], uvs: [faces.upper.uvs[0], faces.upper.uvs[1], uv1, uv2], side: side, cut: false)
+        
         switch side {
             
         case .left:

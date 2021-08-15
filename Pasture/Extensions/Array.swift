@@ -8,12 +8,12 @@ import Euclid
 import Foundation
 import Meadow
 
-extension Array where Element == Euclid.Vector {
+extension Array where Element == Vector {
     
-    typealias Grid = (corners: (inner: [Euclid.Vector],
-                                outer: [Euclid.Vector]),
-                      edges: (inner: [Cardinal : (c0: Euclid.Vector, c1: Euclid.Vector)],
-                              outer: [Cardinal : (c0: Euclid.Vector, c1: Euclid.Vector)]))
+    typealias Grid = (corners: (inner: [Vector],
+                                outer: [Vector]),
+                      edges: (inner: [Cardinal : (c0: Vector, c1: Vector)],
+                              outer: [Cardinal : (c0: Vector, c1: Vector)]))
     
     enum Axis {
         
@@ -24,8 +24,8 @@ extension Array where Element == Euclid.Vector {
     func inset(axis: Axis, corner: Double, edge: Double) -> Grid {
         
         var corners = self
-        var edges: (inner: [Cardinal : (Euclid.Vector, Euclid.Vector)],
-                    outer: [Cardinal : (Euclid.Vector, Euclid.Vector)]) = ([:], [:])
+        var edges: (inner: [Cardinal : (Vector, Vector)],
+                    outer: [Cardinal : (Vector, Vector)]) = ([:], [:])
         
         for cardinal in Cardinal.allCases {
          

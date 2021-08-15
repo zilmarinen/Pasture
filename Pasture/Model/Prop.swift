@@ -10,12 +10,12 @@ import Meadow
 
 protocol Prop {
     
-    func build(position: Euclid.Vector) -> [Euclid.Polygon]
+    func build(position: Vector) -> [Euclid.Polygon]
 }
 
 extension Prop {
     
-    func curve(start: Euclid.Vector, end: Euclid.Vector, control: Euclid.Vector, interpolator: Double) -> Euclid.Vector {
+    func curve(start: Vector, end: Vector, control: Vector, interpolator: Double) -> Vector {
         
         let ab = start.lerp(control, interpolator)
         let bc = control.lerp(end, interpolator)
@@ -23,15 +23,15 @@ extension Prop {
         return ab.lerp(bc, interpolator)
     }
     
-    func plot(radians: Double, radius: Double) -> Euclid.Vector {
+    func plot(radians: Double, radius: Double) -> Vector {
         
-        return Euclid.Vector(sin(radians) * radius, 0, cos(radians) * radius)
+        return Vector(sin(radians) * radius, 0, cos(radians) * radius)
     }
 }
 
 extension Prop {
     
-    func polygon(vectors: [Euclid.Vector], uvs: [Euclid.Vector]) -> Euclid.Polygon? {
+    func polygon(vectors: [Vector], uvs: [Vector]) -> Euclid.Polygon? {
         
         guard vectors.count == uvs.count else { return nil }
         

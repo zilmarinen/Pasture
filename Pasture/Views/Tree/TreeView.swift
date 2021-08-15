@@ -16,19 +16,19 @@ struct TreeView: View {
             
             GroupBox {
             
-            TreeSpeciesView(size: $tree.size, species: $tree.species)
-            
-            switch tree.species {
+                TreeSpeciesView(species: $tree.species)
                 
-            case .beech: BeechTreeView(tree: $tree.beech)
-            case .chestnut: ChestnutTreeView(tree: $tree.chestnut)
-            case .oak: OakTreeView(tree: $tree.oak)
-            case .palm: PalmTreeView(tree: $tree.palm)
-            case .pine: PineTreeView(tree: $tree.pine)
-            case .poplar: PoplarTreeView(tree: $tree.poplar)
-            case .walnut: WalnutTreeView(tree: $tree.walnut)
-            }
-                
+                switch tree.species {
+                    
+                case .beech: BeechTreeView(tree: $tree.beech)
+                case .chestnut: ChestnutTreeView(tree: $tree.chestnut)
+                case .oak: OakTreeView(tree: $tree.oak)
+                case .palm: PalmTreeView(tree: $tree.palm)
+                case .pine: PineTreeView(tree: $tree.pine)
+                case .poplar: PoplarTreeView(tree: $tree.poplar)
+                case .spruce: SpruceTreeView(tree: $tree.spruce)
+                case .walnut: WalnutTreeView(tree: $tree.walnut)
+                }
             }
         }
     }

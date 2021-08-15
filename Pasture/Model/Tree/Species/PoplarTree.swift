@@ -84,7 +84,7 @@ class PoplarTree: Codable, Hashable, ObservableObject {
 
 extension PoplarTree: Prop {
     
-    func build(position: Euclid.Vector) -> [Euclid.Polygon] {
+    func build(position: Vector) -> [Euclid.Polygon] {
         
         return []
     }

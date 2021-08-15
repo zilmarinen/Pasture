@@ -84,7 +84,7 @@ class OakTree: Codable, Hashable, ObservableObject {
 
 extension OakTree: Prop {
     
-    func build(position: Euclid.Vector) -> [Euclid.Polygon] {
+    func build(position: Vector) -> [Euclid.Polygon] {
         
         return []
     }

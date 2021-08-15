@@ -12,7 +12,6 @@ struct PalmTreeView: View {
     
     var body: some View {
         
-        NoiseView(noise: $tree.noise)
         PalmTreeFoliageView(foliage: $tree.foliage)
         PalmTreeTrunkView(trunk: $tree.trunk)
     }

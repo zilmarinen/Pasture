@@ -61,7 +61,7 @@ class ChestnutTree: Codable, Hashable, ObservableObject {
 
 extension ChestnutTree: Prop {
     
-    func build(position: Euclid.Vector) -> [Euclid.Polygon] {
+    func build(position: Vector) -> [Euclid.Polygon] {
         
         return []
     }

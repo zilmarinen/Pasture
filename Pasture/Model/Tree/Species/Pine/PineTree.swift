@@ -61,7 +61,7 @@ class PineTree: Codable, Hashable, ObservableObject {
 
 extension PineTree: Prop {
     
-    func build(position: Euclid.Vector) -> [Euclid.Polygon] {
+    func build(position: Vector) -> [Euclid.Polygon] {
         
         guard let plane = Plane(normal: .up, pointOnPlane: .zero) else { return [] }
         

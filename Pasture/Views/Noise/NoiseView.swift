@@ -42,7 +42,7 @@ struct NoiseView: View {
                 
                 HStack {
 
-                    Text("Seed")
+                    Stepper("Seed", value: $noise.seed)
                     TextField("Seed", value: $noise.seed, formatter: PastureDocument.Constants.Formatters.integer)
                 }
             }

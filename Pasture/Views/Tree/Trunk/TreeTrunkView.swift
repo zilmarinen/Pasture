@@ -14,8 +14,6 @@ struct TreeTrunkView: View {
         
         GroupBox(label: Label("Trunk", systemImage: "pyramid").font(.headline)) {
             
-            NoiseView(noise: $trunk.noise)
-            
             GroupBox(label: Label("Segments", systemImage: "rhombus").font(.headline)) {
                 
                 TrunkView(trunk: $trunk.trunk)

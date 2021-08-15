@@ -17,7 +17,6 @@ struct TrunkLeg: Prop {
     }
     
     let plane: Euclid.Plane
-    let noise: Noise
     
     let angle: Double
     let spread: Double
@@ -32,18 +31,13 @@ struct TrunkLeg: Prop {
     
     let textureCoordinates: UVs
     
-    func build(position: Euclid.Vector) -> [Euclid.Polygon] {
+    func build(position: Vector) -> [Euclid.Polygon] {
         
         let step = Double(1.0 / Double(segments))
         let uvStep = (textureCoordinates.end.y - textureCoordinates.start.y) / Double(segments)
         
-        let size = Vector(Double(segments), 0, Double(segments))
-        let sampleCount = Vector(Double(segments), 0, Double(segments))
-        
-        let map = noise.map(size: size, sampleCount: sampleCount)
-        
-        let s0 = Double(map.value(at: vector2(1, 0)))
-        let s1 = Double(map.value(at: vector2(0, Int32(segments))))
+        let s0 = Double.random(in: -1..<1, using: &rng)
+        let s1 = Double.random(in: -1..<1, using: &rng)
         
         let start = plot(radians: angle, radius: innerRadius)
         var end = plot(radians: angle, radius: outerRadius)
@@ -65,10 +59,10 @@ struct TrunkLeg: Prop {
             let uvy0 = textureCoordinates.start.y + (uvStep * Double(segment))
             let uvy1 = textureCoordinates.start.y + (uvStep * Double(segment + 1))
 
-            let uv0 = Euclid.Vector(textureCoordinates.end.x, uvy0)
-            let uv1 = Euclid.Vector(textureCoordinates.start.x, uvy0)
-            let uv2 = Euclid.Vector(textureCoordinates.start.x, uvy1)
-            let uv3 = Euclid.Vector(textureCoordinates.end.x, uvy1)
+            let uv0 = Vector(textureCoordinates.end.x, uvy0)
+            let uv1 = Vector(textureCoordinates.start.x, uvy0)
+            let uv2 = Vector(textureCoordinates.start.x, uvy1)
+            let uv3 = Vector(textureCoordinates.end.x, uvy1)
 
             let peakUV = uv0.lerp(uv1, 0.5)
             let baseUV = uv3.lerp(uv2, 0.5)
@@ -126,7 +120,7 @@ extension TrunkLeg {
         case right
     }
     
-    func face(vertices: [Euclid.Vector], uvs: [Euclid.Vector], side: Side) -> [Euclid.Polygon] {
+    func face(vertices: [Vector], uvs: [Vector], side: Side) -> [Euclid.Polygon] {
         
         guard vertices.count == uvs.count else { return [] }
         

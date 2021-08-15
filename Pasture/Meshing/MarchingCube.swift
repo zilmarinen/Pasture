@@ -10,7 +10,7 @@ import Meadow
 
 enum MarchingCube {
     
-    static func march(chunk: SDFGrid.Chunk, size: Euclid.Vector) -> [Euclid.Polygon] {
+    static func march(chunk: SDFGrid.Chunk, size: Vector) -> [Euclid.Polygon] {
         
         var identifier = 0
         
@@ -30,7 +30,7 @@ enum MarchingCube {
         
         for triangle in triangles[identifier - 1] {
             
-            var face: [Euclid.Vector] = []
+            var face: [Vector] = []
             
             for edge in triangle {
                 

@@ -17,13 +17,36 @@
 		18101D8B2677727300424CDC /* Euclid in Frameworks */ = {isa = PBXBuildFile; productRef = 18101D8A2677727300424CDC /* Euclid */; };
 		18101D9526777F3700424CDC /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18101D9426777F3700424CDC /* Vector.swift */; };
 		18101D9826779AB100424CDC /* PalmTreeTrunk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18101D9726779AB100424CDC /* PalmTreeTrunk.swift */; };
+		18124DBF26C92EB4003DB31D /* StairType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18124DBE26C92EB4003DB31D /* StairType.swift */; };
 		182B470E26A961D0004D58E8 /* BuildingRoof.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B470D26A961D0004D58E8 /* BuildingRoof.swift */; };
 		182B471026A97999004D58E8 /* FlatRoof.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B470F26A97999004D58E8 /* FlatRoof.swift */; };
 		182B471226A9ACA3004D58E8 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B471126A9ACA3004D58E8 /* Array.swift */; };
+		182B4FB126AEA2100038A875 /* BuildingRoofView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B4FB026AEA20F0038A875 /* BuildingRoofView.swift */; };
+		182B4FB326B137FC0038A875 /* SkillionRoof.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B4FB226B137FC0038A875 /* SkillionRoof.swift */; };
+		182B4FB526B166B50038A875 /* GridPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B4FB426B166B50038A875 /* GridPattern.swift */; };
+		1833890526B804CF00B3D2BC /* SpruceTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1833890426B804CF00B3D2BC /* SpruceTree.swift */; };
+		1833890726B8050900B3D2BC /* SpruceTreeFoliage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1833890626B8050900B3D2BC /* SpruceTreeFoliage.swift */; };
+		1833890A26B8059C00B3D2BC /* SpruceTreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1833890926B8059C00B3D2BC /* SpruceTreeView.swift */; };
+		1833890C26B805CB00B3D2BC /* SpruceTreeFoliageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1833890B26B805CB00B3D2BC /* SpruceTreeFoliageView.swift */; };
 		1856AEA8269701EC0030E563 /* PineTreeFoliageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1856AEA7269701EC0030E563 /* PineTreeFoliageView.swift */; };
 		1861C6752689C0450004B292 /* SDFLineSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1861C6742689C0450004B292 /* SDFLineSegment.swift */; };
 		18671EE526AAB805002C56D9 /* SaltboxRoof.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18671EE426AAB805002C56D9 /* SaltboxRoof.swift */; };
+		1877B0DB26C91DBE00A068C0 /* Stairs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1877B0DA26C91DBE00A068C0 /* Stairs.swift */; };
+		1877B0DD26C9205400A068C0 /* StoneStairs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1877B0DC26C9205400A068C0 /* StoneStairs.swift */; };
+		1877B0DF26C921FE00A068C0 /* StairsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1877B0DE26C921FE00A068C0 /* StairsModel.swift */; };
+		1877B0E226C9224C00A068C0 /* StairsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1877B0E126C9224C00A068C0 /* StairsView.swift */; };
+		189199E826C151290067F558 /* WallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189199E726C151290067F558 /* WallView.swift */; };
+		189199EB26C1517E0067F558 /* Walls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189199EA26C1517E0067F558 /* Walls.swift */; };
+		189199F026C25E920067F558 /* Corner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189199EF26C25E920067F558 /* Corner.swift */; };
+		189199F226C25E990067F558 /* Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189199F126C25E990067F558 /* Edge.swift */; };
+		189199F426C25EA50067F558 /* Wall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189199F326C25EA50067F558 /* Wall.swift */; };
+		189199F726C265060067F558 /* WallModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189199F626C265060067F558 /* WallModel.swift */; };
+		189199F926C26BBA0067F558 /* ConcreteCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189199F826C26BBA0067F558 /* ConcreteCorner.swift */; };
+		189199FB26C26C2D0067F558 /* ConcreteEdge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189199FA26C26C2D0067F558 /* ConcreteEdge.swift */; };
+		189199FD26C26C430067F558 /* ConcreteWall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189199FC26C26C430067F558 /* ConcreteWall.swift */; };
 		18A83E1C2699CA72007409FD /* SDFGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A83E1B2699CA72007409FD /* SDFGroup.swift */; };
+		18B0464C26C64E84007FDF8B /* PicketCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B0464B26C64E84007FDF8B /* PicketCorner.swift */; };
+		18B0465026C64E97007FDF8B /* PicketWall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B0464F26C64E97007FDF8B /* PicketWall.swift */; };
 		18B37DB02684A23700640E16 /* Meadow in Frameworks */ = {isa = PBXBuildFile; productRef = 18B37DAF2684A23700640E16 /* Meadow */; };
 		18B37DB32687360800640E16 /* RockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B37DB22687360800640E16 /* RockModel.swift */; };
 		18B37DB92689AA5C00640E16 /* SDFBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B37DB52689AA5C00640E16 /* SDFBox.swift */; };
@@ -34,8 +57,7 @@
 		18B37DC12689AABD00640E16 /* MarchingTetrahedron.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B37DBF2689AABD00640E16 /* MarchingTetrahedron.swift */; };
 		18B37DC32689AC0B00640E16 /* SDFSampler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B37DC22689AC0B00640E16 /* SDFSampler.swift */; };
 		18B37DC62689B4B400640E16 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B37DC52689B4B400640E16 /* Asset.swift */; };
-		18B37DC82689B4D000640E16 /* AssetPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B37DC72689B4D000640E16 /* AssetPolygon.swift */; };
-		18B37DCA2689B4F800640E16 /* AssetVertex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B37DC92689B4F800640E16 /* AssetVertex.swift */; };
+		18BD226D26BD66E300C428A6 /* BuildingWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD226C26BD66E300C428A6 /* BuildingWindow.swift */; };
 		18BD2A092679D5240048FDD1 /* Prop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD2A082679D5240048FDD1 /* Prop.swift */; };
 		18BD2A112679F5350048FDD1 /* TreeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD2A102679F5350048FDD1 /* TreeModel.swift */; };
 		18BD2A13267A46C60048FDD1 /* Chonk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD2A12267A46C60048FDD1 /* Chonk.swift */; };
@@ -78,6 +100,7 @@
 		18CE0C7D26A1757C00BE70CC /* BuildingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CE0C7C26A1757C00BE70CC /* BuildingModel.swift */; };
 		18CE0C7F26A561DA00BE70CC /* BuildingShell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CE0C7E26A561DA00BE70CC /* BuildingShell.swift */; };
 		18CE0C8126A569E100BE70CC /* Zachomino.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CE0C8026A569E100BE70CC /* Zachomino.swift */; };
+		18D36F4A26B2971100164204 /* BuildingCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D36F4926B2971100164204 /* BuildingCorner.swift */; };
 		18E1A7532673A5F100A44C15 /* PastureApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1A7522673A5F100A44C15 /* PastureApp.swift */; };
 		18E1A7552673A5F100A44C15 /* PastureDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1A7542673A5F100A44C15 /* PastureDocument.swift */; };
 		18E1A7572673A5F100A44C15 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1A7562673A5F100A44C15 /* ContentView.swift */; };
@@ -93,6 +116,7 @@
 		18E1A7742673AA1F00A44C15 /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1A7732673AA1F00A44C15 /* Building.swift */; };
 		18E1A7762673AADF00A44C15 /* Bush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1A7752673AADF00A44C15 /* Bush.swift */; };
 		18E1A7782673AAF100A44C15 /* Rock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1A7772673AAF100A44C15 /* Rock.swift */; };
+		18FC070B26BC0E8B002A8AA6 /* BuildingDoor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FC070A26BC0E8B002A8AA6 /* BuildingDoor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,13 +129,36 @@
 		1802C20D268A0C8800328C8C /* Causeway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Causeway.swift; sourceTree = "<group>"; };
 		18101D9426777F3700424CDC /* Vector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vector.swift; sourceTree = "<group>"; };
 		18101D9726779AB100424CDC /* PalmTreeTrunk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalmTreeTrunk.swift; sourceTree = "<group>"; };
+		18124DBE26C92EB4003DB31D /* StairType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StairType.swift; sourceTree = "<group>"; };
 		182B470D26A961D0004D58E8 /* BuildingRoof.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingRoof.swift; sourceTree = "<group>"; };
 		182B470F26A97999004D58E8 /* FlatRoof.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatRoof.swift; sourceTree = "<group>"; };
 		182B471126A9ACA3004D58E8 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		182B4FB026AEA20F0038A875 /* BuildingRoofView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingRoofView.swift; sourceTree = "<group>"; };
+		182B4FB226B137FC0038A875 /* SkillionRoof.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillionRoof.swift; sourceTree = "<group>"; };
+		182B4FB426B166B50038A875 /* GridPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridPattern.swift; sourceTree = "<group>"; };
+		1833890426B804CF00B3D2BC /* SpruceTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpruceTree.swift; sourceTree = "<group>"; };
+		1833890626B8050900B3D2BC /* SpruceTreeFoliage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpruceTreeFoliage.swift; sourceTree = "<group>"; };
+		1833890926B8059C00B3D2BC /* SpruceTreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpruceTreeView.swift; sourceTree = "<group>"; };
+		1833890B26B805CB00B3D2BC /* SpruceTreeFoliageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpruceTreeFoliageView.swift; sourceTree = "<group>"; };
 		1856AEA7269701EC0030E563 /* PineTreeFoliageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PineTreeFoliageView.swift; sourceTree = "<group>"; };
 		1861C6742689C0450004B292 /* SDFLineSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDFLineSegment.swift; sourceTree = "<group>"; };
 		18671EE426AAB805002C56D9 /* SaltboxRoof.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaltboxRoof.swift; sourceTree = "<group>"; };
+		1877B0DA26C91DBE00A068C0 /* Stairs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stairs.swift; sourceTree = "<group>"; };
+		1877B0DC26C9205400A068C0 /* StoneStairs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoneStairs.swift; sourceTree = "<group>"; };
+		1877B0DE26C921FE00A068C0 /* StairsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StairsModel.swift; sourceTree = "<group>"; };
+		1877B0E126C9224C00A068C0 /* StairsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StairsView.swift; sourceTree = "<group>"; };
+		189199E726C151290067F558 /* WallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallView.swift; sourceTree = "<group>"; };
+		189199EA26C1517E0067F558 /* Walls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walls.swift; sourceTree = "<group>"; };
+		189199EF26C25E920067F558 /* Corner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Corner.swift; sourceTree = "<group>"; };
+		189199F126C25E990067F558 /* Edge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Edge.swift; sourceTree = "<group>"; };
+		189199F326C25EA50067F558 /* Wall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wall.swift; sourceTree = "<group>"; };
+		189199F626C265060067F558 /* WallModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallModel.swift; sourceTree = "<group>"; };
+		189199F826C26BBA0067F558 /* ConcreteCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcreteCorner.swift; sourceTree = "<group>"; };
+		189199FA26C26C2D0067F558 /* ConcreteEdge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcreteEdge.swift; sourceTree = "<group>"; };
+		189199FC26C26C430067F558 /* ConcreteWall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcreteWall.swift; sourceTree = "<group>"; };
 		18A83E1B2699CA72007409FD /* SDFGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDFGroup.swift; sourceTree = "<group>"; };
+		18B0464B26C64E84007FDF8B /* PicketCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicketCorner.swift; sourceTree = "<group>"; };
+		18B0464F26C64E97007FDF8B /* PicketWall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicketWall.swift; sourceTree = "<group>"; };
 		18B37DAE26849EE500640E16 /* Meadow */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Meadow; path = ../Meadow; sourceTree = "<group>"; };
 		18B37DB22687360800640E16 /* RockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RockModel.swift; sourceTree = "<group>"; };
 		18B37DB52689AA5C00640E16 /* SDFBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDFBox.swift; sourceTree = "<group>"; };
@@ -122,8 +169,7 @@
 		18B37DBF2689AABD00640E16 /* MarchingTetrahedron.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarchingTetrahedron.swift; sourceTree = "<group>"; };
 		18B37DC22689AC0B00640E16 /* SDFSampler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDFSampler.swift; sourceTree = "<group>"; };
 		18B37DC52689B4B400640E16 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
-		18B37DC72689B4D000640E16 /* AssetPolygon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetPolygon.swift; sourceTree = "<group>"; };
-		18B37DC92689B4F800640E16 /* AssetVertex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetVertex.swift; sourceTree = "<group>"; };
+		18BD226C26BD66E300C428A6 /* BuildingWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingWindow.swift; sourceTree = "<group>"; };
 		18BD2A082679D5240048FDD1 /* Prop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prop.swift; sourceTree = "<group>"; };
 		18BD2A102679F5350048FDD1 /* TreeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeModel.swift; sourceTree = "<group>"; };
 		18BD2A12267A46C60048FDD1 /* Chonk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chonk.swift; sourceTree = "<group>"; };
@@ -166,6 +212,7 @@
 		18CE0C7C26A1757C00BE70CC /* BuildingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingModel.swift; sourceTree = "<group>"; };
 		18CE0C7E26A561DA00BE70CC /* BuildingShell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingShell.swift; sourceTree = "<group>"; };
 		18CE0C8026A569E100BE70CC /* Zachomino.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zachomino.swift; sourceTree = "<group>"; };
+		18D36F4926B2971100164204 /* BuildingCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingCorner.swift; sourceTree = "<group>"; };
 		18E1A74F2673A5F100A44C15 /* Pasture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pasture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18E1A7522673A5F100A44C15 /* PastureApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastureApp.swift; sourceTree = "<group>"; };
 		18E1A7542673A5F100A44C15 /* PastureDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastureDocument.swift; sourceTree = "<group>"; };
@@ -183,6 +230,7 @@
 		18E1A7732673AA1F00A44C15 /* Building.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Building.swift; sourceTree = "<group>"; };
 		18E1A7752673AADF00A44C15 /* Bush.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bush.swift; sourceTree = "<group>"; };
 		18E1A7772673AAF100A44C15 /* Rock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rock.swift; sourceTree = "<group>"; };
+		18FC070A26BC0E8B002A8AA6 /* BuildingDoor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingDoor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +259,7 @@
 			children = (
 				18E1A76D2673A9EE00A44C15 /* BuildingView.swift */,
 				18CE0C7526A1672900BE70CC /* BuildingArchitectureView.swift */,
+				182B4FB026AEA20F0038A875 /* BuildingRoofView.swift */,
 			);
 			path = Building;
 			sourceTree = "<group>";
@@ -239,6 +288,7 @@
 		1800D0AD2674CEE300146738 /* Species */ = {
 			isa = PBXGroup;
 			children = (
+				1833890826B8058600B3D2BC /* Spruce */,
 				1856AEA6269701A60030E563 /* Pine */,
 				18BD2A36267C8FC90048FDD1 /* Palm */,
 				1800D0A92674C72A00146738 /* BeechTreeView.swift */,
@@ -278,6 +328,8 @@
 			children = (
 				18101D9426777F3700424CDC /* Vector.swift */,
 				182B471126A9ACA3004D58E8 /* Array.swift */,
+				182B4FB426B166B50038A875 /* GridPattern.swift */,
+				18124DBE26C92EB4003DB31D /* StairType.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -299,8 +351,27 @@
 				182B470D26A961D0004D58E8 /* BuildingRoof.swift */,
 				182B470F26A97999004D58E8 /* FlatRoof.swift */,
 				18671EE426AAB805002C56D9 /* SaltboxRoof.swift */,
+				182B4FB226B137FC0038A875 /* SkillionRoof.swift */,
 			);
 			path = Roofs;
+			sourceTree = "<group>";
+		};
+		1833890326B804C100B3D2BC /* Spruce */ = {
+			isa = PBXGroup;
+			children = (
+				1833890426B804CF00B3D2BC /* SpruceTree.swift */,
+				1833890626B8050900B3D2BC /* SpruceTreeFoliage.swift */,
+			);
+			path = Spruce;
+			sourceTree = "<group>";
+		};
+		1833890826B8058600B3D2BC /* Spruce */ = {
+			isa = PBXGroup;
+			children = (
+				1833890926B8059C00B3D2BC /* SpruceTreeView.swift */,
+				1833890B26B805CB00B3D2BC /* SpruceTreeFoliageView.swift */,
+			);
+			path = Spruce;
 			sourceTree = "<group>";
 		};
 		1856AEA6269701A60030E563 /* Pine */ = {
@@ -310,6 +381,71 @@
 				1856AEA7269701EC0030E563 /* PineTreeFoliageView.swift */,
 			);
 			path = Pine;
+			sourceTree = "<group>";
+		};
+		1877B0D926C91DA800A068C0 /* Stairs */ = {
+			isa = PBXGroup;
+			children = (
+				1877B0DA26C91DBE00A068C0 /* Stairs.swift */,
+				1877B0DC26C9205400A068C0 /* StoneStairs.swift */,
+			);
+			path = Stairs;
+			sourceTree = "<group>";
+		};
+		1877B0E026C9223C00A068C0 /* Stairs */ = {
+			isa = PBXGroup;
+			children = (
+				1877B0E126C9224C00A068C0 /* StairsView.swift */,
+			);
+			path = Stairs;
+			sourceTree = "<group>";
+		};
+		189199E626C1511F0067F558 /* Walls */ = {
+			isa = PBXGroup;
+			children = (
+				189199E726C151290067F558 /* WallView.swift */,
+			);
+			path = Walls;
+			sourceTree = "<group>";
+		};
+		189199E926C151730067F558 /* Walls */ = {
+			isa = PBXGroup;
+			children = (
+				189199EE26C25E410067F558 /* Corner */,
+				189199ED26C25E3E0067F558 /* Edge */,
+				189199EC26C25E390067F558 /* Wall */,
+				189199EA26C1517E0067F558 /* Walls.swift */,
+			);
+			path = Walls;
+			sourceTree = "<group>";
+		};
+		189199EC26C25E390067F558 /* Wall */ = {
+			isa = PBXGroup;
+			children = (
+				189199F326C25EA50067F558 /* Wall.swift */,
+				189199FC26C26C430067F558 /* ConcreteWall.swift */,
+				18B0464F26C64E97007FDF8B /* PicketWall.swift */,
+			);
+			path = Wall;
+			sourceTree = "<group>";
+		};
+		189199ED26C25E3E0067F558 /* Edge */ = {
+			isa = PBXGroup;
+			children = (
+				189199F126C25E990067F558 /* Edge.swift */,
+				189199FA26C26C2D0067F558 /* ConcreteEdge.swift */,
+			);
+			path = Edge;
+			sourceTree = "<group>";
+		};
+		189199EE26C25E410067F558 /* Corner */ = {
+			isa = PBXGroup;
+			children = (
+				189199EF26C25E920067F558 /* Corner.swift */,
+				189199F826C26BBA0067F558 /* ConcreteCorner.swift */,
+				18B0464B26C64E84007FDF8B /* PicketCorner.swift */,
+			);
+			path = Corner;
 			sourceTree = "<group>";
 		};
 		18B37DB1268735E500640E16 /* Rock */ = {
@@ -348,8 +484,6 @@
 			isa = PBXGroup;
 			children = (
 				18B37DC52689B4B400640E16 /* Asset.swift */,
-				18B37DC72689B4D000640E16 /* AssetPolygon.swift */,
-				18B37DC92689B4F800640E16 /* AssetVertex.swift */,
 			);
 			path = Asset;
 			sourceTree = "<group>";
@@ -357,6 +491,7 @@
 		18BD2A0C2679DF290048FDD1 /* Species */ = {
 			isa = PBXGroup;
 			children = (
+				1833890326B804C100B3D2BC /* Spruce */,
 				18C49C262691CF240068F6D1 /* Pine */,
 				18C49C1D268DA6E80068F6D1 /* Beech */,
 				18C49C1E268DA7550068F6D1 /* Chestnut */,
@@ -374,6 +509,8 @@
 				18BD2A102679F5350048FDD1 /* TreeModel.swift */,
 				18B37DB22687360800640E16 /* RockModel.swift */,
 				18CE0C7C26A1757C00BE70CC /* BuildingModel.swift */,
+				189199F626C265060067F558 /* WallModel.swift */,
+				1877B0DE26C921FE00A068C0 /* StairsModel.swift */,
 			);
 			path = "Scene Models";
 			sourceTree = "<group>";
@@ -479,6 +616,7 @@
 		18CE0C7826A1680500BE70CC /* Architecture */ = {
 			isa = PBXGroup;
 			children = (
+				18FC070926BC0E76002A8AA6 /* Cutaways */,
 				182B470C26A961C1004D58E8 /* Roofs */,
 				18CE0C7926A16C8A00BE70CC /* Walls */,
 			);
@@ -490,6 +628,7 @@
 			children = (
 				18CE0C7A26A16C9700BE70CC /* BuildingWall.swift */,
 				18CE0C7E26A561DA00BE70CC /* BuildingShell.swift */,
+				18D36F4926B2971100164204 /* BuildingCorner.swift */,
 			);
 			path = Walls;
 			sourceTree = "<group>";
@@ -542,6 +681,8 @@
 		18E1A7632673A62300A44C15 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1877B0D926C91DA800A068C0 /* Stairs */,
+				189199E926C151730067F558 /* Walls */,
 				18C49C09268C4E0A0068F6D1 /* Pentomino.swift */,
 				18CE0C7726A167F200BE70CC /* Building */,
 				18B37DB1268735E500640E16 /* Rock */,
@@ -558,6 +699,8 @@
 		18E1A7642673A62700A44C15 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1877B0E026C9223C00A068C0 /* Stairs */,
+				189199E626C1511F0067F558 /* Walls */,
 				18C49C0D268C95140068F6D1 /* Noise */,
 				1800D0A42674C64B00146738 /* Building */,
 				1800D0A32674C64600146738 /* Bush */,
@@ -569,6 +712,15 @@
 				18C49C0B268C865B0068F6D1 /* ModelPropertiesView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		18FC070926BC0E76002A8AA6 /* Cutaways */ = {
+			isa = PBXGroup;
+			children = (
+				18FC070A26BC0E8B002A8AA6 /* BuildingDoor.swift */,
+				18BD226C26BD66E300C428A6 /* BuildingWindow.swift */,
+			);
+			path = Cutaways;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -652,21 +804,26 @@
 				18C49C282691D8910068F6D1 /* FoliageRing.swift in Sources */,
 				18CE0C7F26A561DA00BE70CC /* BuildingShell.swift in Sources */,
 				18E1A7682673A65B00A44C15 /* Tree.swift in Sources */,
+				189199F026C25E920067F558 /* Corner.swift in Sources */,
 				18BD2A13267A46C60048FDD1 /* Chonk.swift in Sources */,
 				18BD2A31267C84220048FDD1 /* ChestnutTreeView.swift in Sources */,
 				18E1A7722673AA0A00A44C15 /* RockView.swift in Sources */,
+				18124DBF26C92EB4003DB31D /* StairType.swift in Sources */,
 				182B470E26A961D0004D58E8 /* BuildingRoof.swift in Sources */,
 				1800D0AA2674C72A00146738 /* BeechTreeView.swift in Sources */,
+				189199F926C26BBA0067F558 /* ConcreteCorner.swift in Sources */,
 				18C49C15268D9F350068F6D1 /* TreeTrunkView.swift in Sources */,
 				18C49C13268D9E520068F6D1 /* TrunkLeg.swift in Sources */,
 				18C49C25268EEF980068F6D1 /* TrunkSlice.swift in Sources */,
 				18B37DB92689AA5C00640E16 /* SDFBox.swift in Sources */,
 				18C49C21268DAA060068F6D1 /* TrunkView.swift in Sources */,
 				18E1A7782673AAF100A44C15 /* Rock.swift in Sources */,
+				1877B0E226C9224C00A068C0 /* StairsView.swift in Sources */,
 				18BD2A33267C84220048FDD1 /* PineTreeView.swift in Sources */,
 				1802C20E268A0C8800328C8C /* Causeway.swift in Sources */,
 				18C49C2A2691E2F50068F6D1 /* PineFoliage.swift in Sources */,
 				18BD2A32267C84220048FDD1 /* PoplarTreeView.swift in Sources */,
+				182B4FB526B166B50038A875 /* GridPattern.swift in Sources */,
 				18BD2A3F267CCA9A0048FDD1 /* Frond.swift in Sources */,
 				18C49C17268DA0580068F6D1 /* TreeTrunk.swift in Sources */,
 				18BD2A24267C7C400048FDD1 /* PalmTree.swift in Sources */,
@@ -676,10 +833,15 @@
 				18BD2A18267B339F0048FDD1 /* PalmTreeChonk.swift in Sources */,
 				18E1A7762673AADF00A44C15 /* Bush.swift in Sources */,
 				18E1A7742673AA1F00A44C15 /* Building.swift in Sources */,
+				1877B0DB26C91DBE00A068C0 /* Stairs.swift in Sources */,
+				189199F226C25E990067F558 /* Edge.swift in Sources */,
 				18C49C11268C95450068F6D1 /* Noise.swift in Sources */,
 				1800D0A82674C68200146738 /* TreeSpeciesView.swift in Sources */,
+				1833890A26B8059C00B3D2BC /* SpruceTreeView.swift in Sources */,
 				18B37DBB2689AA5C00640E16 /* SDFShape.swift in Sources */,
 				18BD2A432680AF140048FDD1 /* PalmTreeFoliageView.swift in Sources */,
+				182B4FB126AEA2100038A875 /* BuildingRoofView.swift in Sources */,
+				189199FD26C26C430067F558 /* ConcreteWall.swift in Sources */,
 				18BD2A112679F5350048FDD1 /* TreeModel.swift in Sources */,
 				18B37DC02689AABD00640E16 /* MarchingCube.swift in Sources */,
 				18E1A7532673A5F100A44C15 /* PastureApp.swift in Sources */,
@@ -690,11 +852,15 @@
 				18101D9526777F3700424CDC /* Vector.swift in Sources */,
 				18BD2A1A267B37B20048FDD1 /* PalmTreeChonkView.swift in Sources */,
 				18BD2A30267C84220048FDD1 /* OakTreeView.swift in Sources */,
+				18BD226D26BD66E300C428A6 /* BuildingWindow.swift in Sources */,
+				189199E826C151290067F558 /* WallView.swift in Sources */,
 				18E1A7572673A5F100A44C15 /* ContentView.swift in Sources */,
 				18C49C23268DAA350068F6D1 /* StumpView.swift in Sources */,
 				1856AEA8269701EC0030E563 /* PineTreeFoliageView.swift in Sources */,
 				18B37DC12689AABD00640E16 /* MarchingTetrahedron.swift in Sources */,
 				18BD2A1C267C78BA0048FDD1 /* PineTree.swift in Sources */,
+				1833890C26B805CB00B3D2BC /* SpruceTreeFoliageView.swift in Sources */,
+				18B0465026C64E97007FDF8B /* PicketWall.swift in Sources */,
 				18CE0C7D26A1757C00BE70CC /* BuildingModel.swift in Sources */,
 				18C49C0F268C951D0068F6D1 /* NoiseView.swift in Sources */,
 				18E1A76A2673A8B700A44C15 /* ToolView.swift in Sources */,
@@ -702,34 +868,44 @@
 				1802C20B268A0C5800328C8C /* CausewayView.swift in Sources */,
 				18BD2A26267C7C400048FDD1 /* WalnutTree.swift in Sources */,
 				18B37DBA2689AA5C00640E16 /* SDFGrid.swift in Sources */,
+				189199F426C25EA50067F558 /* Wall.swift in Sources */,
 				18C49C1A268DA1950068F6D1 /* Trunk.swift in Sources */,
+				1877B0DD26C9205400A068C0 /* StoneStairs.swift in Sources */,
 				1800D0AC2674C99200146738 /* PalmTreeTrunkView.swift in Sources */,
 				18CE0C7626A1672900BE70CC /* BuildingArchitectureView.swift in Sources */,
+				18FC070B26BC0E8B002A8AA6 /* BuildingDoor.swift in Sources */,
 				18E1A76E2673A9EE00A44C15 /* BuildingView.swift in Sources */,
 				18BD2A092679D5240048FDD1 /* Prop.swift in Sources */,
 				18BD2A2F267C84220048FDD1 /* WalnutTreeView.swift in Sources */,
 				18B37DB32687360800640E16 /* RockModel.swift in Sources */,
 				18BD2A412680AD1D0048FDD1 /* PalmTreeFoliage.swift in Sources */,
+				18B0464C26C64E84007FDF8B /* PicketCorner.swift in Sources */,
 				18BD2A34267C84220048FDD1 /* PalmTreeView.swift in Sources */,
 				182B471226A9ACA3004D58E8 /* Array.swift in Sources */,
 				18A83E1C2699CA72007409FD /* SDFGroup.swift in Sources */,
+				189199F726C265060067F558 /* WallModel.swift in Sources */,
 				18C49C1C268DA1A30068F6D1 /* Stump.swift in Sources */,
 				18BD2A27267C7C400048FDD1 /* PoplarTree.swift in Sources */,
 				1800D0A22674BEF000146738 /* ModelView.swift in Sources */,
+				1833890526B804CF00B3D2BC /* SpruceTree.swift in Sources */,
 				18B37DC62689B4B400640E16 /* Asset.swift in Sources */,
+				189199EB26C1517E0067F558 /* Walls.swift in Sources */,
 				18CE0C7B26A16C9700BE70CC /* BuildingWall.swift in Sources */,
+				18D36F4A26B2971100164204 /* BuildingCorner.swift in Sources */,
 				18BD2A25267C7C400048FDD1 /* ChestnutTree.swift in Sources */,
+				1877B0DF26C921FE00A068C0 /* StairsModel.swift in Sources */,
 				18671EE526AAB805002C56D9 /* SaltboxRoof.swift in Sources */,
 				182B471026A97999004D58E8 /* FlatRoof.swift in Sources */,
 				1802C209268A0ADD00328C8C /* RockCategoryView.swift in Sources */,
 				18C49C0A268C4E0A0068F6D1 /* Pentomino.swift in Sources */,
+				182B4FB326B137FC0038A875 /* SkillionRoof.swift in Sources */,
 				18BD2A3C267CAF650048FDD1 /* PalmTreeFrondView.swift in Sources */,
 				18CE0C8126A569E100BE70CC /* Zachomino.swift in Sources */,
 				18E1A7662673A64300A44C15 /* Model.swift in Sources */,
-				18B37DCA2689B4F800640E16 /* AssetVertex.swift in Sources */,
-				18B37DC82689B4D000640E16 /* AssetPolygon.swift in Sources */,
 				18101D9826779AB100424CDC /* PalmTreeTrunk.swift in Sources */,
+				189199FB26C26C2D0067F558 /* ConcreteEdge.swift in Sources */,
 				18BD2A3A267CAF5C0048FDD1 /* PalmTreeFrond.swift in Sources */,
+				1833890726B8050900B3D2BC /* SpruceTreeFoliage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -941,8 +1117,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/nicklockwood/Euclid.git";
 			requirement = {
-				kind = exactVersion;
-				version = 0.4.0;
+				kind = revision;
+				revision = 2accfd5ed005ee5ef4812ab2ea630bbb9d76286e;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

@@ -8,7 +8,6 @@ import SwiftUI
 
 struct TreeSpeciesView: View {
     
-    @Binding var size: Tree.Size
     @Binding var species: Tree.Species
     
     var body: some View {
@@ -25,14 +24,6 @@ struct TreeSpeciesView: View {
                         Text(item.id).tag(item)
                     }
                 }
-                
-                Picker("Size", selection: $size) {
-            
-                    ForEach(Tree.Size.allCases) { item in
-            
-                        Text(item.rawValue.capitalized).tag(item)
-                    }
-                }
             }
         }
     }
@@ -42,7 +33,6 @@ struct TreeSpeciesView_Previews: PreviewProvider {
     
     static var previews: some View {
         
-        TreeSpeciesView(size: .constant(.small),
-                        species: .constant(.beech(.default)))
+        TreeSpeciesView(species: .constant(.beech(.default)))
     }
 }

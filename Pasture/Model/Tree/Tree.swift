@@ -18,15 +18,6 @@ class Tree: Codable, Hashable, ObservableObject {
         case size
         case species
     }
-     
-    enum Size: String, CaseIterable, Codable, Hashable, Identifiable {
-        
-        case small
-        case medium
-        case large
-        
-        var id: String { self.rawValue }
-    }
     
     enum Species: CaseIterable, Codable, Hashable, Identifiable {
         
@@ -36,6 +27,7 @@ class Tree: Codable, Hashable, ObservableObject {
                                                .palm(.default),
                                                .pine(.default),
                                                .poplar(.default),
+                                               .spruce(.default),
                                                .walnut(.default)] }
         
         case beech(BeechTree)
@@ -44,6 +36,7 @@ class Tree: Codable, Hashable, ObservableObject {
         case palm(PalmTree)
         case pine(PineTree)
         case poplar(PoplarTree)
+        case spruce(SpruceTree)
         case walnut(WalnutTree)
         
         var id: String {
@@ -56,6 +49,7 @@ class Tree: Codable, Hashable, ObservableObject {
             case .palm: return "Palm"
             case .pine: return "Pine"
             case .poplar: return "Poplar"
+            case .spruce: return "Spruce"
             case .walnut: return "Walnut"
             }
         }
@@ -68,17 +62,8 @@ class Tree: Codable, Hashable, ObservableObject {
         }
     }
     
-    var footprint: Footprint {
-        
-        switch size {
-            
-        case .small: return Footprint(coordinate: .zero, nodes: [.zero])
-        case .medium: return Footprint(coordinate: .zero, nodes: [.zero])
-        case .large: return Footprint(coordinate: .zero, nodes: [.zero])
-        }
-    }
+    var footprint: Footprint { Footprint(coordinate: .zero, nodes: [.zero]) }
     
-    @Published var size: Size = .small
     @Published var species: Species = .beech(.default)
     
     init(species: Species) {
@@ -90,7 +75,6 @@ class Tree: Codable, Hashable, ObservableObject {
         
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
-        size = try container.decode(Tree.Size.self, forKey: .size)
         species = try container.decode(Species.self, forKey: .species)
     }
     
@@ -98,20 +82,17 @@ class Tree: Codable, Hashable, ObservableObject {
         
         var container = encoder.container(keyedBy: CodingKeys.self)
         
-        try container.encode(size, forKey: .size)
         try container.encode(species, forKey: .species)
     }
     
     func hash(into hasher: inout Hasher) {
         
         hasher.combine(species)
-        hasher.combine(size.rawValue)
     }
     
     static func == (lhs: Tree, rhs: Tree) -> Bool {
         
-        return  lhs.species == rhs.species &&
-                lhs.size == rhs.size
+        return  lhs.species == rhs.species
     }
 }
 
@@ -219,6 +200,23 @@ extension Tree {
         }
     }
     
+    var spruce: SpruceTree {
+        
+        get {
+            
+            switch self.species {
+                
+            case .spruce(let tree): return tree
+                
+            default: return .default
+            }
+        }
+        set {
+            
+            self.species = .spruce(newValue)
+        }
+    }
+    
     var walnut: WalnutTree {
         
         get {
@@ -239,7 +237,7 @@ extension Tree {
 
 extension Tree: Prop {
     
-    func build(position: Euclid.Vector) -> [Euclid.Polygon] {
+    func build(position: Vector) -> [Euclid.Polygon] {
         
         switch species {
             
@@ -249,6 +247,7 @@ extension Tree: Prop {
         case .palm(let tree): return tree.build(position: position)
         case .pine(let tree): return tree.build(position: position)
         case .poplar(let tree): return tree.build(position: position)
+        case .spruce(let tree): return tree.build(position: position)
         case .walnut(let tree): return tree.build(position: position)
         }
     }

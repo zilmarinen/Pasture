@@ -17,12 +17,12 @@ struct Asset: Codable {
     }
     
     var footprint: Footprint
-    var polygons: [AssetPolygon]
+    var polygons: [Euclid.Polygon]
     
     init(footprint: Footprint, polygons: [Euclid.Polygon]) {
         
         self.footprint = footprint
-        self.polygons = polygons.map { AssetPolygon(vertices: $0.vertices.map { AssetVertex(position: Vector(x: $0.position.x, y: $0.position.y, z: $0.position.z), normal: Vector(x: $0.normal.x, y: $0.normal.y, z: $0.normal.z), textureCoordinates: Vector(x: $0.texcoord.x, y: $0.texcoord.y, z: $0.texcoord.z)) }) }
+        self.polygons = polygons
     }
     
     public init(from decoder: Decoder) throws {
@@ -30,7 +30,7 @@ struct Asset: Codable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
        
         footprint = try container.decode(Footprint.self, forKey: .footprint)
-        polygons = try container.decode([AssetPolygon].self, forKey: .polygons)
+        polygons = try container.decode([Euclid.Polygon].self, forKey: .polygons)
     }
    
     public func encode(to encoder: Encoder) throws {

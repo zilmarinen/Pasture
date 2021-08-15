@@ -45,9 +45,17 @@ struct ContentView: View {
                         
                         RockView(rock: $document.model.rock)
                         
+                    case .stairs:
+                        
+                        StairsView(stairs: $document.model.stairs)
+                        
                     case .tree:
                         
                         TreeView(tree: $document.model.tree)
+                        
+                    case .walls:
+                        
+                        WallView(walls: $document.model.walls)
                     }
                 }
                 .padding()

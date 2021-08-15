@@ -14,7 +14,15 @@ class Stump: Codable, Hashable, ObservableObject {
                                         base: 0.05,
                                         segments: 7,
                                         legs: 4,
-                                        spread: 0.1)
+                                        spread: 0.01)
+    
+    static let spruce: Stump = Stump(innerRadius: 0.1,
+                                     outerRadius: 0.21,
+                                     peak: 0.2,
+                                     base: 0.05,
+                                     segments: 7,
+                                     legs: 7,
+                                     spread: 0.01)
     
     enum CodingKeys: CodingKey {
         

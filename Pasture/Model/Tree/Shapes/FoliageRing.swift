@@ -10,8 +10,8 @@ import Meadow
 
 struct FoliageRing: Prop {
     
-    var peakCenter: Euclid.Vector { (plane.normal * (height / 2.0)) }
-    var baseCenter: Euclid.Vector { (plane.normal * (height / 2.0)) }
+    var peakCenter: Vector { (plane.normal * (height / 2.0)) }
+    var baseCenter: Vector { (plane.normal * (height / 2.0)) }
     
     let plane: Euclid.Plane
     
@@ -24,9 +24,9 @@ struct FoliageRing: Prop {
     
     let textureCoordinates: UVs
     
-    func build(position: Euclid.Vector) -> [Euclid.Polygon] {
+    func build(position: Vector) -> [Euclid.Polygon] {
         
-        var slices: [[Euclid.Vector]] = []
+        var slices: [[Vector]] = []
         
         let rotation = Euclid.Angle(radians: Math.pi2 / Double(segments))
         
@@ -34,7 +34,7 @@ struct FoliageRing: Prop {
         /// Create peak and base vertices
         //
         
-        var layer: [Euclid.Vector] = []
+        var layer: [Vector] = []
         
         for index in 0..<(segments * 2) {
             
@@ -54,7 +54,7 @@ struct FoliageRing: Prop {
         
         if peakRadius > Math.epsilon {
             
-            var layer: [Euclid.Vector] = []
+            var layer: [Vector] = []
             
             for index in 0..<segments {
             
@@ -88,10 +88,10 @@ struct FoliageRing: Prop {
             let uvx0 = textureCoordinates.start.x + (uvStep * Double(segment))
             let uvx1 = textureCoordinates.start.x + (uvStep * Double(segment + 1))
             
-            let uv0 = Euclid.Vector(uvx1, textureCoordinates.start.y)
-            let uv1 = Euclid.Vector(uvx0, textureCoordinates.start.y)
-            let uv2 = Euclid.Vector(uvx0, textureCoordinates.end.y)
-            let uv3 = Euclid.Vector(uvx1, textureCoordinates.end.y)
+            let uv0 = Vector(uvx1, textureCoordinates.start.y)
+            let uv1 = Vector(uvx0, textureCoordinates.start.y)
+            let uv2 = Vector(uvx0, textureCoordinates.end.y)
+            let uv3 = Vector(uvx1, textureCoordinates.end.y)
             
             let peakUV = uv0.lerp(uv1, 0.5)
             let baseUV = uv3.lerp(uv2, 0.5)
