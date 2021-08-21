@@ -1,14 +1,14 @@
 //
-//  StairsModel.swift
+//  BridgeModel.swift
 //
-//  Created by Zack Brown on 15/08/2021.
+//  Created by Zack Brown on 16/08/2021.
 //
 
 import Euclid
 import Meadow
 import SceneKit
 
-class StairsModel: SCNNode, Responder, Shadable, Soilable {
+class BridgeModel: SCNNode, Responder, Shadable, Soilable {
     
     public var ancestor: SoilableParent? { return parent as? SoilableParent }
     
@@ -20,9 +20,9 @@ class StairsModel: SCNNode, Responder, Shadable, Soilable {
     public var uniforms: [Uniform]? { nil }
     public var textures: [Texture]? { nil }
     
-    let model: Stairs
+    let model: Bridge
     
-    init(model: Stairs) {
+    init(model: Bridge) {
         
         self.model = model
         
@@ -38,7 +38,7 @@ class StairsModel: SCNNode, Responder, Shadable, Soilable {
         
         guard isDirty else { return false }
         
-        let mesh = Mesh(model.build(position: .zero))
+        let mesh = Mesh(model.build(position: Vector(x: 0, y: World.Constants.slope, z: 0)))
         
         self.geometry = SCNGeometry(mesh)
         self.geometry?.program = program

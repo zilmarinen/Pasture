@@ -21,13 +21,15 @@ class Model: Codable, ObservableObject {
     
     enum Tool: CaseIterable, Codable, Hashable, Identifiable {
         
-        static var allCases: [Model.Tool] { [.building(.default),
+        static var allCases: [Model.Tool] { [.bridge(.default),
+                                             .building(.default),
                                              .bush,
                                              .rock(.default),
                                              .stairs(.default),
                                              .tree(.default),
                                              .walls(.default)]}
         
+        case bridge(Bridge)
         case building(Building)
         case bush
         case rock(Rock)
@@ -39,6 +41,7 @@ class Model: Codable, ObservableObject {
             
             switch self {
                 
+            case .bridge: return "Bridge"
             case .building: return "Building"
             case .bush: return "Bush"
             case .rock: return "Rock"
@@ -51,7 +54,8 @@ class Model: Codable, ObservableObject {
         var imageName: String {
             
             switch self {
-                
+            
+            case .bridge: return "rectangle.roundedtop"
             case .building: return "building"
             case .bush: return "leaf"
             case .rock: return "triangle"
@@ -90,6 +94,23 @@ class Model: Codable, ObservableObject {
 }
 
 extension Model {
+    
+    var bridge: Bridge {
+        
+        get {
+            
+            switch self.tool {
+                
+            case .bridge(let model): return model
+                
+            default: return .default
+            }
+        }
+        set {
+            
+            self.tool = .bridge(newValue)
+        }
+    }
     
     var building: Building {
         

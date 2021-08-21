@@ -33,6 +33,10 @@ struct ContentView: View {
                     
                     switch document.model.tool {
                         
+                    case .bridge:
+                        
+                        BridgeView(bridge: $document.model.bridge)
+                        
                     case .building:
                         
                         BuildingView(building: $document.model.building)

@@ -69,4 +69,3 @@ struct PastureDocument: FileDocument, Codable {
         return FileWrapper(regularFileWithContents: data)
     }
 }
-

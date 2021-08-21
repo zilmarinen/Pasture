@@ -17,7 +17,8 @@ struct ModelView: View {
     
     var body: some View {
         
-        let nodes = scene.meadow.buildings.childNodes +
+        let nodes = scene.meadow.bridges.childNodes +
+                    scene.meadow.buildings.childNodes +
                     scene.meadow.foliage.childNodes +
                     scene.meadow.stairs.childNodes +
                     scene.meadow.walls.childNodes
@@ -28,6 +29,14 @@ struct ModelView: View {
         }
         
         switch model.tool {
+            
+        case .bridge(let model):
+            
+            let node = BridgeModel(model: model)
+            
+            scene.meadow.bridges.addChildNode(node)
+            
+            node.clean()
             
         case .building(let model):
             
@@ -91,6 +100,55 @@ extension ModelView {
     private func export() {
         
         switch model.tool {
+            
+        case .bridge(let model):
+            
+            let panel = NSOpenPanel()
+            
+            panel.allowsMultipleSelection = false
+            panel.canChooseDirectories = true
+            panel.canChooseFiles = false
+            panel.canCreateDirectories = true
+            panel.prompt = "Export"
+            panel.title = "Export"
+            
+            panel.begin { (response) in
+                
+                guard response == .OK, let url = panel.urls.first else { return }
+                
+                let footprint = Footprint(coordinate: .zero, nodes: [.zero])
+                
+                let cornerLeft = BridgeCorner(material: model.material, side: .left, cardinals: [.east])
+                let cornerRight = BridgeCorner(material: model.material, side: .right, cardinals: [.east])
+                let cornerDual = BridgeCorner(material: model.material, side: .left, cardinals: [.south, .west])
+                let edgeLeft = BridgeEdge(material: model.material, side: .left)
+                let edgeRight = BridgeEdge(material: model.material, side: .right)
+                let wall = BridgeWall(material: model.material)
+                let path = BridgePath(material: model.material, cardinals: [])
+                
+                let models = ["\(model.material.id)_bridge_corner_left" : Asset(footprint: footprint, polygons: cornerLeft.build(position: .zero)),
+                              "\(model.material.id)_bridge_corner_right" : Asset(footprint: footprint, polygons: cornerRight.build(position: .zero)),
+                              "\(model.material.id)_bridge_corner_dual" : Asset(footprint: footprint, polygons: cornerDual.build(position: .zero)),
+                              "\(model.material.id)_bridge_edge_left" : Asset(footprint: footprint, polygons: edgeLeft.build(position: .zero)),
+                              "\(model.material.id)_bridge_edge_right" : Asset(footprint: footprint, polygons: edgeRight.build(position: .zero)),
+                              "\(model.material.id)_bridge_wall" : Asset(footprint: footprint, polygons: wall.build(position: .zero)),
+                              "\(model.material.id)_bridge_path" : Asset(footprint: footprint, polygons: path.build(position: .zero))]
+                
+                let encoder = JSONEncoder()
+                
+                var wrappers: [String : FileWrapper] = [:]
+                
+                for (identifier, asset) in models {
+                    
+                    guard let data = try? encoder.encode(asset) else { continue }
+                    
+                    wrappers["\(identifier).model"] = FileWrapper(regularFileWithContents: data)
+                }
+                
+                let wrapper = FileWrapper(directoryWithFileWrappers: wrappers)
+                
+                try? wrapper.write(to: url, options: .atomic, originalContentsURL: nil)
+            }
             
         case .stairs(let model):
             

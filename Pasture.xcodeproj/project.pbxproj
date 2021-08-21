@@ -18,6 +18,17 @@
 		18101D9526777F3700424CDC /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18101D9426777F3700424CDC /* Vector.swift */; };
 		18101D9826779AB100424CDC /* PalmTreeTrunk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18101D9726779AB100424CDC /* PalmTreeTrunk.swift */; };
 		18124DBF26C92EB4003DB31D /* StairType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18124DBE26C92EB4003DB31D /* StairType.swift */; };
+		18189CCC26CA4186003C117E /* BridgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18189CCB26CA4186003C117E /* BridgeView.swift */; };
+		18189CCE26CA41BF003C117E /* BridgeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18189CCD26CA41BF003C117E /* BridgeModel.swift */; };
+		18189CD126CA422C003C117E /* Bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18189CD026CA422C003C117E /* Bridge.swift */; };
+		18189CD626CA43E2003C117E /* StoneBridgeCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18189CD526CA43E2003C117E /* StoneBridgeCorner.swift */; };
+		18189CD826CA43E8003C117E /* StoneBridgeEdge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18189CD726CA43E8003C117E /* StoneBridgeEdge.swift */; };
+		18189CDA26CA43EF003C117E /* StoneBridgeWall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18189CD926CA43EF003C117E /* StoneBridgeWall.swift */; };
+		18189CDC26CA44D0003C117E /* BridgeCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18189CDB26CA44D0003C117E /* BridgeCorner.swift */; };
+		18189CDE26CA4519003C117E /* BridgeEdge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18189CDD26CA4519003C117E /* BridgeEdge.swift */; };
+		18189CE026CA455A003C117E /* BridgeWall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18189CDF26CA455A003C117E /* BridgeWall.swift */; };
+		18189CE326CA4827003C117E /* BridgePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18189CE226CA4827003C117E /* BridgePath.swift */; };
+		18189CE526CA4876003C117E /* StoneBridgePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18189CE426CA4876003C117E /* StoneBridgePath.swift */; };
 		182B470E26A961D0004D58E8 /* BuildingRoof.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B470D26A961D0004D58E8 /* BuildingRoof.swift */; };
 		182B471026A97999004D58E8 /* FlatRoof.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B470F26A97999004D58E8 /* FlatRoof.swift */; };
 		182B471226A9ACA3004D58E8 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B471126A9ACA3004D58E8 /* Array.swift */; };
@@ -130,6 +141,17 @@
 		18101D9426777F3700424CDC /* Vector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vector.swift; sourceTree = "<group>"; };
 		18101D9726779AB100424CDC /* PalmTreeTrunk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalmTreeTrunk.swift; sourceTree = "<group>"; };
 		18124DBE26C92EB4003DB31D /* StairType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StairType.swift; sourceTree = "<group>"; };
+		18189CCB26CA4186003C117E /* BridgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgeView.swift; sourceTree = "<group>"; };
+		18189CCD26CA41BF003C117E /* BridgeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgeModel.swift; sourceTree = "<group>"; };
+		18189CD026CA422C003C117E /* Bridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bridge.swift; sourceTree = "<group>"; };
+		18189CD526CA43E2003C117E /* StoneBridgeCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoneBridgeCorner.swift; sourceTree = "<group>"; };
+		18189CD726CA43E8003C117E /* StoneBridgeEdge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoneBridgeEdge.swift; sourceTree = "<group>"; };
+		18189CD926CA43EF003C117E /* StoneBridgeWall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoneBridgeWall.swift; sourceTree = "<group>"; };
+		18189CDB26CA44D0003C117E /* BridgeCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgeCorner.swift; sourceTree = "<group>"; };
+		18189CDD26CA4519003C117E /* BridgeEdge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgeEdge.swift; sourceTree = "<group>"; };
+		18189CDF26CA455A003C117E /* BridgeWall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgeWall.swift; sourceTree = "<group>"; };
+		18189CE226CA4827003C117E /* BridgePath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgePath.swift; sourceTree = "<group>"; };
+		18189CE426CA4876003C117E /* StoneBridgePath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoneBridgePath.swift; sourceTree = "<group>"; };
 		182B470D26A961D0004D58E8 /* BuildingRoof.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingRoof.swift; sourceTree = "<group>"; };
 		182B470F26A97999004D58E8 /* FlatRoof.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatRoof.swift; sourceTree = "<group>"; };
 		182B471126A9ACA3004D58E8 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
@@ -345,6 +367,62 @@
 			path = Tree;
 			sourceTree = "<group>";
 		};
+		18189CCA26CA4175003C117E /* Bridge */ = {
+			isa = PBXGroup;
+			children = (
+				18189CCB26CA4186003C117E /* BridgeView.swift */,
+			);
+			path = Bridge;
+			sourceTree = "<group>";
+		};
+		18189CCF26CA421F003C117E /* Bridges */ = {
+			isa = PBXGroup;
+			children = (
+				18189CE126CA480B003C117E /* Path */,
+				18189CD426CA43C0003C117E /* Corner */,
+				18189CD326CA43BE003C117E /* Edge */,
+				18189CD226CA43BC003C117E /* Wall */,
+				18189CD026CA422C003C117E /* Bridge.swift */,
+			);
+			path = Bridges;
+			sourceTree = "<group>";
+		};
+		18189CD226CA43BC003C117E /* Wall */ = {
+			isa = PBXGroup;
+			children = (
+				18189CD926CA43EF003C117E /* StoneBridgeWall.swift */,
+				18189CDF26CA455A003C117E /* BridgeWall.swift */,
+			);
+			path = Wall;
+			sourceTree = "<group>";
+		};
+		18189CD326CA43BE003C117E /* Edge */ = {
+			isa = PBXGroup;
+			children = (
+				18189CD726CA43E8003C117E /* StoneBridgeEdge.swift */,
+				18189CDD26CA4519003C117E /* BridgeEdge.swift */,
+			);
+			path = Edge;
+			sourceTree = "<group>";
+		};
+		18189CD426CA43C0003C117E /* Corner */ = {
+			isa = PBXGroup;
+			children = (
+				18189CD526CA43E2003C117E /* StoneBridgeCorner.swift */,
+				18189CDB26CA44D0003C117E /* BridgeCorner.swift */,
+			);
+			path = Corner;
+			sourceTree = "<group>";
+		};
+		18189CE126CA480B003C117E /* Path */ = {
+			isa = PBXGroup;
+			children = (
+				18189CE226CA4827003C117E /* BridgePath.swift */,
+				18189CE426CA4876003C117E /* StoneBridgePath.swift */,
+			);
+			path = Path;
+			sourceTree = "<group>";
+		};
 		182B470C26A961C1004D58E8 /* Roofs */ = {
 			isa = PBXGroup;
 			children = (
@@ -511,6 +589,7 @@
 				18CE0C7C26A1757C00BE70CC /* BuildingModel.swift */,
 				189199F626C265060067F558 /* WallModel.swift */,
 				1877B0DE26C921FE00A068C0 /* StairsModel.swift */,
+				18189CCD26CA41BF003C117E /* BridgeModel.swift */,
 			);
 			path = "Scene Models";
 			sourceTree = "<group>";
@@ -681,6 +760,7 @@
 		18E1A7632673A62300A44C15 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				18189CCF26CA421F003C117E /* Bridges */,
 				1877B0D926C91DA800A068C0 /* Stairs */,
 				189199E926C151730067F558 /* Walls */,
 				18C49C09268C4E0A0068F6D1 /* Pentomino.swift */,
@@ -699,6 +779,7 @@
 		18E1A7642673A62700A44C15 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				18189CCA26CA4175003C117E /* Bridge */,
 				1877B0E026C9223C00A068C0 /* Stairs */,
 				189199E626C1511F0067F558 /* Walls */,
 				18C49C0D268C95140068F6D1 /* Noise */,
@@ -806,6 +887,7 @@
 				18E1A7682673A65B00A44C15 /* Tree.swift in Sources */,
 				189199F026C25E920067F558 /* Corner.swift in Sources */,
 				18BD2A13267A46C60048FDD1 /* Chonk.swift in Sources */,
+				18189CDC26CA44D0003C117E /* BridgeCorner.swift in Sources */,
 				18BD2A31267C84220048FDD1 /* ChestnutTreeView.swift in Sources */,
 				18E1A7722673AA0A00A44C15 /* RockView.swift in Sources */,
 				18124DBF26C92EB4003DB31D /* StairType.swift in Sources */,
@@ -820,6 +902,7 @@
 				18E1A7782673AAF100A44C15 /* Rock.swift in Sources */,
 				1877B0E226C9224C00A068C0 /* StairsView.swift in Sources */,
 				18BD2A33267C84220048FDD1 /* PineTreeView.swift in Sources */,
+				18189CE026CA455A003C117E /* BridgeWall.swift in Sources */,
 				1802C20E268A0C8800328C8C /* Causeway.swift in Sources */,
 				18C49C2A2691E2F50068F6D1 /* PineFoliage.swift in Sources */,
 				18BD2A32267C84220048FDD1 /* PoplarTreeView.swift in Sources */,
@@ -830,6 +913,7 @@
 				18C49C0C268C865B0068F6D1 /* ModelPropertiesView.swift in Sources */,
 				18E1A7702673A9FE00A44C15 /* BushView.swift in Sources */,
 				18BD2A1E267C793B0048FDD1 /* BeechTree.swift in Sources */,
+				18189CCE26CA41BF003C117E /* BridgeModel.swift in Sources */,
 				18BD2A18267B339F0048FDD1 /* PalmTreeChonk.swift in Sources */,
 				18E1A7762673AADF00A44C15 /* Bush.swift in Sources */,
 				18E1A7742673AA1F00A44C15 /* Building.swift in Sources */,
@@ -837,6 +921,7 @@
 				189199F226C25E990067F558 /* Edge.swift in Sources */,
 				18C49C11268C95450068F6D1 /* Noise.swift in Sources */,
 				1800D0A82674C68200146738 /* TreeSpeciesView.swift in Sources */,
+				18189CDA26CA43EF003C117E /* StoneBridgeWall.swift in Sources */,
 				1833890A26B8059C00B3D2BC /* SpruceTreeView.swift in Sources */,
 				18B37DBB2689AA5C00640E16 /* SDFShape.swift in Sources */,
 				18BD2A432680AF140048FDD1 /* PalmTreeFoliageView.swift in Sources */,
@@ -853,6 +938,7 @@
 				18BD2A1A267B37B20048FDD1 /* PalmTreeChonkView.swift in Sources */,
 				18BD2A30267C84220048FDD1 /* OakTreeView.swift in Sources */,
 				18BD226D26BD66E300C428A6 /* BuildingWindow.swift in Sources */,
+				18189CD126CA422C003C117E /* Bridge.swift in Sources */,
 				189199E826C151290067F558 /* WallView.swift in Sources */,
 				18E1A7572673A5F100A44C15 /* ContentView.swift in Sources */,
 				18C49C23268DAA350068F6D1 /* StumpView.swift in Sources */,
@@ -870,6 +956,7 @@
 				18B37DBA2689AA5C00640E16 /* SDFGrid.swift in Sources */,
 				189199F426C25EA50067F558 /* Wall.swift in Sources */,
 				18C49C1A268DA1950068F6D1 /* Trunk.swift in Sources */,
+				18189CD826CA43E8003C117E /* StoneBridgeEdge.swift in Sources */,
 				1877B0DD26C9205400A068C0 /* StoneStairs.swift in Sources */,
 				1800D0AC2674C99200146738 /* PalmTreeTrunkView.swift in Sources */,
 				18CE0C7626A1672900BE70CC /* BuildingArchitectureView.swift in Sources */,
@@ -879,21 +966,26 @@
 				18BD2A2F267C84220048FDD1 /* WalnutTreeView.swift in Sources */,
 				18B37DB32687360800640E16 /* RockModel.swift in Sources */,
 				18BD2A412680AD1D0048FDD1 /* PalmTreeFoliage.swift in Sources */,
+				18189CE326CA4827003C117E /* BridgePath.swift in Sources */,
 				18B0464C26C64E84007FDF8B /* PicketCorner.swift in Sources */,
 				18BD2A34267C84220048FDD1 /* PalmTreeView.swift in Sources */,
 				182B471226A9ACA3004D58E8 /* Array.swift in Sources */,
 				18A83E1C2699CA72007409FD /* SDFGroup.swift in Sources */,
 				189199F726C265060067F558 /* WallModel.swift in Sources */,
 				18C49C1C268DA1A30068F6D1 /* Stump.swift in Sources */,
+				18189CD626CA43E2003C117E /* StoneBridgeCorner.swift in Sources */,
 				18BD2A27267C7C400048FDD1 /* PoplarTree.swift in Sources */,
+				18189CE526CA4876003C117E /* StoneBridgePath.swift in Sources */,
 				1800D0A22674BEF000146738 /* ModelView.swift in Sources */,
 				1833890526B804CF00B3D2BC /* SpruceTree.swift in Sources */,
 				18B37DC62689B4B400640E16 /* Asset.swift in Sources */,
 				189199EB26C1517E0067F558 /* Walls.swift in Sources */,
 				18CE0C7B26A16C9700BE70CC /* BuildingWall.swift in Sources */,
+				18189CCC26CA4186003C117E /* BridgeView.swift in Sources */,
 				18D36F4A26B2971100164204 /* BuildingCorner.swift in Sources */,
 				18BD2A25267C7C400048FDD1 /* ChestnutTree.swift in Sources */,
 				1877B0DF26C921FE00A068C0 /* StairsModel.swift in Sources */,
+				18189CDE26CA4519003C117E /* BridgeEdge.swift in Sources */,
 				18671EE526AAB805002C56D9 /* SaltboxRoof.swift in Sources */,
 				182B471026A97999004D58E8 /* FlatRoof.swift in Sources */,
 				1802C209268A0ADD00328C8C /* RockCategoryView.swift in Sources */,
