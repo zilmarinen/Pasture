@@ -16,7 +16,7 @@ class BuildingModel: SCNNode, Responder, Shadable, Soilable {
     
     public var category: Int { SceneGraphCategory.buildingChunk.rawValue }
     
-    public var program: SCNProgram? { scene?.meadow.buildings.program }
+    public var program: SCNProgram? { scene?.map.buildings.program }
     public var uniforms: [Uniform]? { nil }
     
     public var textures: [Texture]? {

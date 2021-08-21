@@ -20,16 +20,11 @@ struct PastureApp: App {
         
         do {
             
-            let meadow = try JSONDecoder().decode(Meadow.self, from: asset.data)
+            let map = try JSONDecoder().decode(Map.self, from: asset.data)
         
-            scene = MDWScene(meadow: meadow)
+            scene = MDWScene(map: map)
         
-            scene.hero.controller.spawn(at: Coordinate(x: 2, y: 0, z: 2))
-            scene.hero.isHidden = true
-            
-            let device = MTLCreateSystemDefaultDevice()
-            
-            scene.library = try device?.makeDefaultLibrary(bundle: Meadow.bundle)
+            scene.protagonist.isHidden = true
         }
         catch {
             

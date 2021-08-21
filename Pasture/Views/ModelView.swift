@@ -17,11 +17,11 @@ struct ModelView: View {
     
     var body: some View {
         
-        let nodes = scene.meadow.bridges.childNodes +
-                    scene.meadow.buildings.childNodes +
-                    scene.meadow.foliage.childNodes +
-                    scene.meadow.stairs.childNodes +
-                    scene.meadow.walls.childNodes
+        let nodes = scene.map.bridges.childNodes +
+                    scene.map.buildings.childNodes +
+                    scene.map.foliage.childNodes +
+                    scene.map.stairs.childNodes +
+                    scene.map.walls.childNodes
         
         for node in nodes {
             
@@ -34,7 +34,7 @@ struct ModelView: View {
             
             let node = BridgeModel(model: model)
             
-            scene.meadow.bridges.addChildNode(node)
+            scene.map.bridges.addChildNode(node)
             
             node.clean()
             
@@ -42,19 +42,19 @@ struct ModelView: View {
             
             let node = BuildingModel(model: model)
             
-            scene.meadow.buildings.addChildNode(node)
+            scene.map.buildings.addChildNode(node)
             
             node.clean()
             
         case .bush:
 
-            scene.meadow.foliage.addChildNode(TreeModel(model: model.tree))
+            scene.map.foliage.addChildNode(TreeModel(model: model.tree))
             
         case .rock(let model):
             
             let node = RockModel(model: model)
             
-            scene.meadow.foliage.addChildNode(node)
+            scene.map.foliage.addChildNode(node)
             
             node.clean()
             
@@ -62,7 +62,7 @@ struct ModelView: View {
             
             let node = StairsModel(model: model)
             
-            scene.meadow.stairs.addChildNode(node)
+            scene.map.stairs.addChildNode(node)
             
             node.clean()
             
@@ -70,7 +70,7 @@ struct ModelView: View {
             
             let node = TreeModel(model: model)
             
-            scene.meadow.foliage.addChildNode(node)
+            scene.map.foliage.addChildNode(node)
             
             node.clean()
             
@@ -78,7 +78,7 @@ struct ModelView: View {
             
             let node = WallModel(model: model)
             
-            scene.meadow.walls.addChildNode(node)
+            scene.map.walls.addChildNode(node)
             
             node.clean()
         }

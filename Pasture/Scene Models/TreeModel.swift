@@ -16,7 +16,7 @@ class TreeModel: SCNNode, Responder, Shadable, Soilable {
     
     public var category: Int { SceneGraphCategory.foliageChunk.rawValue }
     
-    public var program: SCNProgram? { scene?.meadow.foliage.program }
+    public var program: SCNProgram? { scene?.map.foliage.program }
     public var uniforms: [Uniform]? { nil }
     
     public var textures: [Texture]? {

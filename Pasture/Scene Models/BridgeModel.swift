@@ -16,7 +16,7 @@ class BridgeModel: SCNNode, Responder, Shadable, Soilable {
     
     public var category: Int { SceneGraphCategory.stairChunk.rawValue }
     
-    public var program: SCNProgram? { scene?.meadow.stairs.program }
+    public var program: SCNProgram? { scene?.map.stairs.program }
     public var uniforms: [Uniform]? { nil }
     public var textures: [Texture]? { nil }
     
