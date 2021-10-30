@@ -3,10 +3,19 @@
     "pins": [
       {
         "package": "Euclid",
-        "repositoryURL": "https://github.com/nicklockwood/Euclid.git",
+        "repositoryURL": "https://github.com/zilmarinen/Euclid.git",
         "state": {
-          "branch": null,
-          "revision": "2accfd5ed005ee5ef4812ab2ea630bbb9d76286e",
+          "branch": "feature/vertex_color_component",
+          "revision": "566357da6bc94a89bd9db7f3fb429a91584091e4",
+          "version": null
+        }
+      },
+      {
+        "package": "PeakOperation",
+        "repositoryURL": "git@github.com:3Squared/PeakOperation.git",
+        "state": {
+          "branch": "develop",
+          "revision": "35811e5f3dc539a185601c6b3d54e0a9f9481cb1",
           "version": null
         }
       }

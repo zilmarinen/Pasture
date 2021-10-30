@@ -18,9 +18,9 @@ class Walls: Codable, Hashable, ObservableObject {
         case style
     }
     
-    @Published var style: WallTileMaterial = .concrete
+    @Published var style: WallMaterial = .concrete
     
-    init(style: WallTileMaterial) {
+    init(style: WallMaterial) {
         
         self.style = style
     }
@@ -29,7 +29,7 @@ class Walls: Codable, Hashable, ObservableObject {
         
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
-        style = try container.decode(WallTileMaterial.self, forKey: .style)
+        style = try container.decode(WallMaterial.self, forKey: .style)
     }
     
     func encode(to encoder: Encoder) throws {

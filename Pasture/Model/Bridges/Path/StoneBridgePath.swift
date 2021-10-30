@@ -26,7 +26,7 @@ struct StoneBridgePath: Prop {
         
         let corners = Ordinal.Coordinates.map { position + Vector(0, 0.001, 0) + (size * Vector(Double($0.x), 0, Double($0.z))) }
         
-        guard let face = polygon(vectors: corners.reversed(), uvs: floorTextureCoordinates.uvs) else { return [] }
+        guard let face = polygon(vectors: corners.reversed(), uvs: floorTextureCoordinates.corners) else { return [] }
         
         var polygons = [face]
         
@@ -39,7 +39,7 @@ struct StoneBridgePath: Prop {
             let v2 = corners[o1.rawValue] - Vector(0, Constants.depth, 0)
             let v3 = corners[o0.rawValue] - Vector(0, Constants.depth, 0)
             
-            guard let face = polygon(vectors: [v0, v1, v2, v3], uvs: wallTextureCoordinates.uvs) else { continue }
+            guard let face = polygon(vectors: [v0, v1, v2, v3], uvs: wallTextureCoordinates.corners) else { continue }
             
             polygons.append(face)
         }

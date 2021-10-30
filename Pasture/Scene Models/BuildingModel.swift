@@ -8,7 +8,7 @@ import Euclid
 import Meadow
 import SceneKit
 
-class BuildingModel: SCNNode, Responder, Shadable, Soilable {
+class BuildingModel: SCNNode, Responder, Soilable {
     
     public var ancestor: SoilableParent? { return parent as? SoilableParent }
     
@@ -16,7 +16,7 @@ class BuildingModel: SCNNode, Responder, Shadable, Soilable {
     
     public var category: Int { SceneGraphCategory.buildingChunk.rawValue }
     
-    public var program: SCNProgram? { scene?.map.buildings.program }
+    //public var program: SCNProgram? { scene?.map.buildings.program }
     public var uniforms: [Uniform]? { nil }
     
     public var textures: [Texture]? {
@@ -47,7 +47,7 @@ class BuildingModel: SCNNode, Responder, Shadable, Soilable {
         let mesh = Mesh(model.build(position: .zero))
         
         self.geometry = SCNGeometry(mesh)
-        self.geometry?.program = program
+        //self.geometry?.program = program
         
         if let uniforms = uniforms {
             

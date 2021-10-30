@@ -10,7 +10,7 @@ import Meadow
 
 struct Corner: Prop {
     
-    let style: WallTileMaterial
+    let style: WallMaterial
     
     let cardinals: [Cardinal]
     

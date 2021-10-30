@@ -65,11 +65,11 @@ struct StoneBridgeCorner: Prop {
             
             let upperCorners = wallCorners.map { $0 + Vector(0, Constants.height, 0) }
             
-            guard let top = polygon(vectors: upperCorners.reversed(), uvs: wallTextureCoordinates.uvs),
-                  let front = polygon(vectors: [wallCorners[o3.rawValue], wallCorners[o2.rawValue], upperCorners[o2.rawValue], upperCorners[o3.rawValue]], uvs: wallTextureCoordinates.uvs),
-                  let back = polygon(vectors: [upperCorners[o0.rawValue], upperCorners[o1.rawValue], wallCorners[o1.rawValue], wallCorners[o0.rawValue]], uvs: wallTextureCoordinates.uvs),
-                  let lhs = polygon(vectors: [wallCorners[o0.rawValue], wallCorners[o3.rawValue], upperCorners[o3.rawValue], upperCorners[o0.rawValue]], uvs: wallTextureCoordinates.uvs),
-                  let rhs = polygon(vectors: [wallCorners[o2.rawValue], wallCorners[o1.rawValue], upperCorners[o1.rawValue], upperCorners[o2.rawValue]], uvs: wallTextureCoordinates.uvs) else { return path.polygons }
+            guard let top = polygon(vectors: upperCorners.reversed(), uvs: wallTextureCoordinates.corners),
+                  let front = polygon(vectors: [wallCorners[o3.rawValue], wallCorners[o2.rawValue], upperCorners[o2.rawValue], upperCorners[o3.rawValue]], uvs: wallTextureCoordinates.corners),
+                  let back = polygon(vectors: [upperCorners[o0.rawValue], upperCorners[o1.rawValue], wallCorners[o1.rawValue], wallCorners[o0.rawValue]], uvs: wallTextureCoordinates.corners),
+                  let lhs = polygon(vectors: [wallCorners[o0.rawValue], wallCorners[o3.rawValue], upperCorners[o3.rawValue], upperCorners[o0.rawValue]], uvs: wallTextureCoordinates.corners),
+                  let rhs = polygon(vectors: [wallCorners[o2.rawValue], wallCorners[o1.rawValue], upperCorners[o1.rawValue], upperCorners[o2.rawValue]], uvs: wallTextureCoordinates.corners) else { return path.polygons }
             
             let wall = Mesh([top, front, back, lhs, rhs])
             
@@ -103,12 +103,12 @@ struct StoneBridgeCorner: Prop {
             
             let (v6, v7, v8, v9, v10, v11) = (v0 + height, v1 + height, v2 + height, v3 + height, v4 + height, v5 + height)
             
-            guard let tlhs = polygon(vectors: [v11, v10, v7, v6], uvs: wallTextureCoordinates.uvs),
-                  let trhs = polygon(vectors: [v10, v9, v8, v7], uvs: wallTextureCoordinates.uvs),
-                  let ilhs = polygon(vectors: [v5, v4, v10, v11], uvs: wallTextureCoordinates.uvs),
-                  let irhs = polygon(vectors: [v4, v3, v9, v10], uvs: wallTextureCoordinates.uvs),
-                  let olhs = polygon(vectors: [v6, v7, v1, v0], uvs: wallTextureCoordinates.uvs),
-                  let orhs = polygon(vectors: [v7, v8, v2, v1], uvs: wallTextureCoordinates.uvs) else { return path.polygons }
+            guard let tlhs = polygon(vectors: [v11, v10, v7, v6], uvs: wallTextureCoordinates.corners),
+                  let trhs = polygon(vectors: [v10, v9, v8, v7], uvs: wallTextureCoordinates.corners),
+                  let ilhs = polygon(vectors: [v5, v4, v10, v11], uvs: wallTextureCoordinates.corners),
+                  let irhs = polygon(vectors: [v4, v3, v9, v10], uvs: wallTextureCoordinates.corners),
+                  let olhs = polygon(vectors: [v6, v7, v1, v0], uvs: wallTextureCoordinates.corners),
+                  let orhs = polygon(vectors: [v7, v8, v2, v1], uvs: wallTextureCoordinates.corners) else { return path.polygons }
             
             let wall = Mesh([tlhs, trhs, ilhs, irhs, olhs, orhs])
             

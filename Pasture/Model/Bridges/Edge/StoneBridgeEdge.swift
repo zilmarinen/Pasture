@@ -49,9 +49,9 @@ struct StoneBridgeEdge: Prop {
             v3 = upperCorners[o3.rawValue]
         }
         
-        guard let top = polygon(vectors: [v3, v2, v1, v0], uvs: wallTextureCoordinates.uvs),
-              let front = polygon(vectors: [wallCorners[o3.rawValue], wallCorners[o2.rawValue], v2, v3], uvs: wallTextureCoordinates.uvs),
-              let back = polygon(vectors: [v0, v1, wallCorners[o1.rawValue], wallCorners[o0.rawValue]], uvs: wallTextureCoordinates.uvs) else { return path.polygons }
+        guard let top = polygon(vectors: [v3, v2, v1, v0], uvs: wallTextureCoordinates.corners),
+              let front = polygon(vectors: [wallCorners[o3.rawValue], wallCorners[o2.rawValue], v2, v3], uvs: wallTextureCoordinates.corners),
+              let back = polygon(vectors: [v0, v1, wallCorners[o1.rawValue], wallCorners[o0.rawValue]], uvs: wallTextureCoordinates.corners) else { return path.polygons }
         
         let wall = Mesh([top, front, back])
         

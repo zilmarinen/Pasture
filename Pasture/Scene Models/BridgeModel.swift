@@ -8,7 +8,7 @@ import Euclid
 import Meadow
 import SceneKit
 
-class BridgeModel: SCNNode, Responder, Shadable, Soilable {
+class BridgeModel: SCNNode, Responder, Soilable {
     
     public var ancestor: SoilableParent? { return parent as? SoilableParent }
     
@@ -16,7 +16,7 @@ class BridgeModel: SCNNode, Responder, Shadable, Soilable {
     
     public var category: Int { SceneGraphCategory.stairChunk.rawValue }
     
-    public var program: SCNProgram? { scene?.map.stairs.program }
+    //public var program: SCNProgram? { scene?.map.stairs.program }
     public var uniforms: [Uniform]? { nil }
     public var textures: [Texture]? { nil }
     
@@ -41,7 +41,7 @@ class BridgeModel: SCNNode, Responder, Shadable, Soilable {
         let mesh = Mesh(model.build(position: Vector(x: 0, y: World.Constants.slope, z: 0)))
         
         self.geometry = SCNGeometry(mesh)
-        self.geometry?.program = program
+        //self.geometry?.program = program
         
         if let uniforms = uniforms {
             

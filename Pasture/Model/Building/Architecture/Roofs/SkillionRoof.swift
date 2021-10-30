@@ -59,14 +59,14 @@ struct SkillionRoof: Prop {
         let fasciaShell = BuildingShell(configuration: configuration, architecture: architecture, layers: 1, height: (World.Constants.slope * 4), inset: (inset / 2.0), angled: architecture.angled, cornerStyle: .plain, cutaways: false, uvs: (fasciaTextureCoordinates, fasciaTextureCoordinates, roofTextureCoordinates))
         let wallShell = BuildingShell(configuration: configuration, architecture: architecture, layers: 1, height: (World.Constants.slope * 4), inset: inset, angled: architecture.angled, cornerStyle: architecture.masonryStyle, cutaways: false, uvs: (wallTextureCoordinates, cornerTextureCoordinates, roofTextureCoordinates))
         
-        var shingles = roof(vertices: outerCorners, uvs: roofTextureCoordinates.uvs)
+        var shingles = roof(vertices: outerCorners, uvs: roofTextureCoordinates.corners)
         
         shingles = shingles.intersect(Mesh(shingleShell.build(position: position - Vector(0, height, 0))))
         
-        var fascia = roof(vertices: fasciaCorners.map { $0 - Vector(0, height / 2, 0) }, uvs: fasciaTextureCoordinates.uvs)
+        var fascia = roof(vertices: fasciaCorners.map { $0 - Vector(0, height / 2, 0) }, uvs: fasciaTextureCoordinates.corners)
         fascia = fascia.intersect(Mesh(fasciaShell.build(position: position - Vector(0, height * 2, 0))))
         
-        var walls = walls(vertices: wallCorners.map { $0 - Vector(0, height, 0) }, uvs: wallTextureCoordinates.uvs)
+        var walls = walls(vertices: wallCorners.map { $0 - Vector(0, height, 0) }, uvs: wallTextureCoordinates.corners)
         walls = walls.intersect(Mesh(wallShell.build(position: position - Vector(0, height, 0))))
         
         return walls.union(shingles.union(fascia)).polygons

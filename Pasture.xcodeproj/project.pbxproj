@@ -14,7 +14,6 @@
 		1802C209268A0ADD00328C8C /* RockCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1802C208268A0ADD00328C8C /* RockCategoryView.swift */; };
 		1802C20B268A0C5800328C8C /* CausewayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1802C20A268A0C5800328C8C /* CausewayView.swift */; };
 		1802C20E268A0C8800328C8C /* Causeway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1802C20D268A0C8800328C8C /* Causeway.swift */; };
-		18101D8B2677727300424CDC /* Euclid in Frameworks */ = {isa = PBXBuildFile; productRef = 18101D8A2677727300424CDC /* Euclid */; };
 		18101D9526777F3700424CDC /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18101D9426777F3700424CDC /* Vector.swift */; };
 		18101D9826779AB100424CDC /* PalmTreeTrunk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18101D9726779AB100424CDC /* PalmTreeTrunk.swift */; };
 		18124DBF26C92EB4003DB31D /* StairType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18124DBE26C92EB4003DB31D /* StairType.swift */; };
@@ -41,6 +40,7 @@
 		1833890C26B805CB00B3D2BC /* SpruceTreeFoliageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1833890B26B805CB00B3D2BC /* SpruceTreeFoliageView.swift */; };
 		1856AEA8269701EC0030E563 /* PineTreeFoliageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1856AEA7269701EC0030E563 /* PineTreeFoliageView.swift */; };
 		1861C6752689C0450004B292 /* SDFLineSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1861C6742689C0450004B292 /* SDFLineSegment.swift */; };
+		1865BE5926F8843E0062EDED /* Ordinal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1865BE5826F8843E0062EDED /* Ordinal.swift */; };
 		18671EE526AAB805002C56D9 /* SaltboxRoof.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18671EE426AAB805002C56D9 /* SaltboxRoof.swift */; };
 		1877B0DB26C91DBE00A068C0 /* Stairs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1877B0DA26C91DBE00A068C0 /* Stairs.swift */; };
 		1877B0DD26C9205400A068C0 /* StoneStairs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1877B0DC26C9205400A068C0 /* StoneStairs.swift */; };
@@ -164,6 +164,7 @@
 		1833890B26B805CB00B3D2BC /* SpruceTreeFoliageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpruceTreeFoliageView.swift; sourceTree = "<group>"; };
 		1856AEA7269701EC0030E563 /* PineTreeFoliageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PineTreeFoliageView.swift; sourceTree = "<group>"; };
 		1861C6742689C0450004B292 /* SDFLineSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDFLineSegment.swift; sourceTree = "<group>"; };
+		1865BE5826F8843E0062EDED /* Ordinal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ordinal.swift; sourceTree = "<group>"; };
 		18671EE426AAB805002C56D9 /* SaltboxRoof.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaltboxRoof.swift; sourceTree = "<group>"; };
 		1877B0DA26C91DBE00A068C0 /* Stairs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stairs.swift; sourceTree = "<group>"; };
 		1877B0DC26C9205400A068C0 /* StoneStairs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoneStairs.swift; sourceTree = "<group>"; };
@@ -260,7 +261,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18101D8B2677727300424CDC /* Euclid in Frameworks */,
 				18B37DB02684A23700640E16 /* Meadow in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -352,6 +352,7 @@
 				182B471126A9ACA3004D58E8 /* Array.swift */,
 				182B4FB426B166B50038A875 /* GridPattern.swift */,
 				18124DBE26C92EB4003DB31D /* StairType.swift */,
+				1865BE5826F8843E0062EDED /* Ordinal.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -821,7 +822,6 @@
 			);
 			name = Pasture;
 			packageProductDependencies = (
-				18101D8A2677727300424CDC /* Euclid */,
 				18B37DAF2684A23700640E16 /* Meadow */,
 			);
 			productName = Pasture;
@@ -853,7 +853,6 @@
 			);
 			mainGroup = 18E1A7462673A5F100A44C15;
 			packageReferences = (
-				18101D892677727300424CDC /* XCRemoteSwiftPackageReference "Euclid" */,
 			);
 			productRefGroup = 18E1A7502673A5F100A44C15 /* Products */;
 			projectDirPath = "";
@@ -996,6 +995,7 @@
 				18E1A7662673A64300A44C15 /* Model.swift in Sources */,
 				18101D9826779AB100424CDC /* PalmTreeTrunk.swift in Sources */,
 				189199FB26C26C2D0067F558 /* ConcreteEdge.swift in Sources */,
+				1865BE5926F8843E0062EDED /* Ordinal.swift in Sources */,
 				18BD2A3A267CAF5C0048FDD1 /* PalmTreeFrond.swift in Sources */,
 				1833890726B8050900B3D2BC /* SpruceTreeFoliage.swift in Sources */,
 			);
@@ -1204,23 +1204,7 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		18101D892677727300424CDC /* XCRemoteSwiftPackageReference "Euclid" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/nicklockwood/Euclid.git";
-			requirement = {
-				kind = revision;
-				revision = 2accfd5ed005ee5ef4812ab2ea630bbb9d76286e;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
 /* Begin XCSwiftPackageProductDependency section */
-		18101D8A2677727300424CDC /* Euclid */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 18101D892677727300424CDC /* XCRemoteSwiftPackageReference "Euclid" */;
-			productName = Euclid;
-		};
 		18B37DAF2684A23700640E16 /* Meadow */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Meadow;

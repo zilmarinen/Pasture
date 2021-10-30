@@ -37,8 +37,8 @@ struct BuildingShell: Prop {
         
         let size = Vector(World.Constants.volumeSize, 0.0, World.Constants.volumeSize)
         
-        let roofUVs = uvs.roof.uvs.map { Vector($0.x, $0.y) }.inset(axis: .y, corner: inset, edge: inset)
-        let wallUVs = uvs.edge.uvs.map { Vector($0.x, $0.y) }.inset(axis: .y, corner: inset, edge: inset)
+        let roofUVs = uvs.roof.corners.map { Vector($0.x, $0.y) }.inset(axis: .y, corner: inset, edge: inset)
+        let wallUVs = uvs.edge.corners.map { Vector($0.x, $0.y) }.inset(axis: .y, corner: inset, edge: inset)
         
         let vertices = Ordinal.Coordinates.map { (size * Vector(Double($0.x), 0, Double($0.z))) }.inset(axis: .z, corner: inset, edge: inset)
         
@@ -65,8 +65,8 @@ struct BuildingShell: Prop {
                 
                 let normal = Vector(cardinal.normal.x, cardinal.normal.y, cardinal.normal.z)
                 
-                var v0 = pattern.value(for: c0) == .empty ? e0 : vertices.corners.inner[o0.rawValue]
-                var v1 = pattern.value(for: c1) == .empty ? e1 : vertices.corners.inner[o1.rawValue]
+                var v0 = pattern.value(for: c0) == .empty ? e0 : vertices.corners.inner[o0.corner]
+                var v1 = pattern.value(for: c1) == .empty ? e1 : vertices.corners.inner[o1.corner]
                 
                 var startUV = wallUVs.corners.outer[0]
                 var endUV = wallUVs.corners.outer[2]

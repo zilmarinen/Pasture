@@ -21,6 +21,8 @@ struct BridgeWall: Prop {
             let corner = StoneBridgeWall()
             
             return corner.build(position: position)
+            
+        default: return []
         }
     }
 }

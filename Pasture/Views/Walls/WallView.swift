@@ -20,20 +20,12 @@ struct WallView: View {
             
                 Picker("Style", selection: $walls.style) {
             
-                    ForEach(WallTileMaterial.allCases) { item in
+                    ForEach(WallMaterial.allCases) { item in
             
                         Text(item.id.capitalized).tag(item)
                     }
                 }
             }
         }
-    }
-}
-
-struct WallView_Previews: PreviewProvider {
-    
-    static var previews: some View {
-        
-        WallView(walls: .constant(.default))
     }
 }

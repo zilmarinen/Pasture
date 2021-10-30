@@ -52,19 +52,19 @@ struct BuildingDoor: Prop {
             let v4 = v1 + Vector(0, height - ((v0 - v1).length / 4.0), 0)
             let v5 = v0 + Vector(0, height - ((v0 - v1).length / 4.0), 0)
             let p0 = v2.lerp(v3, 0.5)
-            let puv = uvs.uvs[0].lerp(uvs.uvs[1], 0.5)
+            let puv = uvs.corners[0].lerp(uvs.corners[1], 0.5)
             
-            let faceUVs = [uvs.uvs[0], puv, uvs.uvs[1], uvs.uvs[2], uvs.uvs[3]]
+            let faceUVs = [uvs.corners[0], puv, uvs.corners[1], uvs.corners[2], uvs.corners[3]]
             
             let (v6, v7, v8, v9, p1) = (v0 + offset, v1 + offset, v4 + offset, v5 + offset, p0 + offset)
             
             guard let front = polygon(vectors: [v5, p0, v4, v1, v0], uvs: faceUVs),
                   let back = polygon(vectors: [v6, v7, v8, p1, v9], uvs: faceUVs),
-                  let lhs = polygon(vectors: [v4, v8, v7, v1], uvs: uvs.uvs),
-                  let rhs = polygon(vectors: [v0, v6, v9, v5], uvs: uvs.uvs),
-                  let tlhs = polygon(vectors: [p0, p1, v8, v4], uvs: uvs.uvs),
-                  let trhs = polygon(vectors: [v9, p1, p0, v5], uvs: uvs.uvs),
-                  let bottom = polygon(vectors: [v0, v1, v7, v6], uvs: uvs.uvs) else { return [] }
+                  let lhs = polygon(vectors: [v4, v8, v7, v1], uvs: uvs.corners),
+                  let rhs = polygon(vectors: [v0, v6, v9, v5], uvs: uvs.corners),
+                  let tlhs = polygon(vectors: [p0, p1, v8, v4], uvs: uvs.corners),
+                  let trhs = polygon(vectors: [v9, p1, p0, v5], uvs: uvs.corners),
+                  let bottom = polygon(vectors: [v0, v1, v7, v6], uvs: uvs.corners) else { return [] }
             
             return [front, back, lhs, rhs, tlhs, trhs, bottom]
             
@@ -85,10 +85,10 @@ struct BuildingDoor: Prop {
             var topFaces: [Euclid.Polygon] = []
             
             let uvRadius = (uvs.end.x - uvs.start.x) / 2.0
-            let uv0 = uvs.uvs[0].lerp(uvs.uvs[3], 0.5)
-            let uv1 = uvs.uvs[1].lerp(uvs.uvs[2], 0.5)
+            let uv0 = uvs.corners[0].lerp(uvs.corners[3], 0.5)
+            let uv1 = uvs.corners[1].lerp(uvs.corners[2], 0.5)
             let puv = uv0.lerp(uv1, 0.5)
-            var faceUVs = [uv1, uvs.uvs[2], uvs.uvs[3]]
+            var faceUVs = [uv1, uvs.corners[2], uvs.corners[3]]
             
             var sweep: Vector? = nil
             
@@ -109,7 +109,7 @@ struct BuildingDoor: Prop {
                     
                     let face = needsFlipping ? [sweep + offset, p1 + offset + p3, p1 + p3, sweep] : [sweep, p1 + p3, p1 + offset + p3, sweep + offset]
                     
-                    guard let polygon = polygon(vectors: face, uvs: uvs.uvs) else { break }
+                    guard let polygon = polygon(vectors: face, uvs: uvs.corners) else { break }
                     
                     topFaces.append(polygon)
                 }
@@ -121,7 +121,7 @@ struct BuildingDoor: Prop {
                 
                 let face = needsFlipping ? [sweep + offset, v8, v4, sweep] : [sweep, v5, v9, sweep + offset]
                 
-                if let polygon = polygon(vectors: face, uvs: uvs.uvs) {
+                if let polygon = polygon(vectors: face, uvs: uvs.corners) {
                 
                     topFaces.append(polygon)
                 }
@@ -129,9 +129,9 @@ struct BuildingDoor: Prop {
             
             guard let front = polygon(vectors: needsFlipping ? frontFace : frontFace.reversed(), uvs: faceUVs),
                   let back = polygon(vectors: needsFlipping ? backFace.reversed() : backFace, uvs: faceUVs),
-                  let lhs = polygon(vectors: [v4, v8, v7, v1], uvs: uvs.uvs),
-                  let rhs = polygon(vectors: [v0, v6, v9, v5], uvs: uvs.uvs),
-                  let bottom = polygon(vectors: [v0, v1, v7, v6], uvs: uvs.uvs) else { return [] }
+                  let lhs = polygon(vectors: [v4, v8, v7, v1], uvs: uvs.corners),
+                  let rhs = polygon(vectors: [v0, v6, v9, v5], uvs: uvs.corners),
+                  let bottom = polygon(vectors: [v0, v1, v7, v6], uvs: uvs.corners) else { return [] }
             
             return [front, back, lhs, rhs, bottom] + topFaces
             
@@ -139,12 +139,12 @@ struct BuildingDoor: Prop {
             
             let (v4, v5, v6, v7) = (v0 + offset, v1 + offset, v2 + offset, v3 + offset)
             
-            guard let front = polygon(vectors: [v3, v2, v1, v0], uvs: uvs.uvs),
-                  let back = polygon(vectors: [v4, v5, v6, v7], uvs: uvs.uvs),
-                  let lhs = polygon(vectors: [v2, v6, v5, v1], uvs: uvs.uvs),
-                  let rhs = polygon(vectors: [v0, v4, v7, v3], uvs: uvs.uvs),
-                  let top = polygon(vectors: [v3, v7, v6, v2], uvs: uvs.uvs),
-                  let bottom = polygon(vectors: [v0, v1, v5, v4], uvs: uvs.uvs) else { return [] }
+            guard let front = polygon(vectors: [v3, v2, v1, v0], uvs: uvs.corners),
+                  let back = polygon(vectors: [v4, v5, v6, v7], uvs: uvs.corners),
+                  let lhs = polygon(vectors: [v2, v6, v5, v1], uvs: uvs.corners),
+                  let rhs = polygon(vectors: [v0, v4, v7, v3], uvs: uvs.corners),
+                  let top = polygon(vectors: [v3, v7, v6, v2], uvs: uvs.corners),
+                  let bottom = polygon(vectors: [v0, v1, v5, v4], uvs: uvs.corners) else { return [] }
             
             return [front, back, lhs, rhs, top, bottom]
         }

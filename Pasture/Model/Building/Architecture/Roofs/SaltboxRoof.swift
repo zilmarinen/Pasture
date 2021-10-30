@@ -76,25 +76,25 @@ struct SaltboxRoof: Prop {
             let (o0, o1) = cardinal.ordinals
             let normal = Vector(cardinal.normal.x, cardinal.normal.y, cardinal.normal.z)
             
-            fasciaCorners[o0.rawValue] = fasciaCorners[o0.rawValue] + (-normal * (inset / 2.0))
-            fasciaCorners[o1.rawValue] = fasciaCorners[o1.rawValue] + (-normal * (inset / 2.0))
+            fasciaCorners[o0.corner] = fasciaCorners[o0.corner] + (-normal * (inset / 2.0))
+            fasciaCorners[o1.corner] = fasciaCorners[o1.corner] + (-normal * (inset / 2.0))
             
-            wallCorners[o0.rawValue] = wallCorners[o0.rawValue] + (-normal * inset)
-            wallCorners[o1.rawValue] = wallCorners[o1.rawValue] + (-normal * inset)
+            wallCorners[o0.corner] = wallCorners[o0.corner] + (-normal * inset)
+            wallCorners[o1.corner] = wallCorners[o1.corner] + (-normal * inset)
         }
         
         let shingleShell = BuildingShell(configuration: configuration, architecture: architecture, layers: 1, height: (World.Constants.slope * 4), inset: 0, angled: architecture.angled, cornerStyle: .plain, cutaways: false, uvs: (shingleTextureCoordinates, shingleTextureCoordinates, roofTextureCoordinates))
         let fasciaShell = BuildingShell(configuration: configuration, architecture: architecture, layers: 1, height: (World.Constants.slope * 4), inset: (inset / 2.0), angled: architecture.angled, cornerStyle: .plain, cutaways: false, uvs: (fasciaTextureCoordinates, fasciaTextureCoordinates, roofTextureCoordinates))
         let wallShell = BuildingShell(configuration: configuration, architecture: architecture, layers: 1, height: (World.Constants.slope * 4), inset: inset, angled: architecture.angled, cornerStyle: architecture.masonryStyle, cutaways: false, uvs: (wallTextureCoordinates, cornerTextureCoordinates, roofTextureCoordinates))
         
-        var shingles = roof(vertices: outerCorners, uvs: roofTextureCoordinates.uvs)
+        var shingles = roof(vertices: outerCorners, uvs: roofTextureCoordinates.corners)
         
         shingles = shingles.intersect(Mesh(shingleShell.build(position: position - Vector(0, height, 0))))
         
-        var fascia = roof(vertices: fasciaCorners.map { $0 - Vector(0, height / 2, 0) }, uvs: fasciaTextureCoordinates.uvs)
+        var fascia = roof(vertices: fasciaCorners.map { $0 - Vector(0, height / 2, 0) }, uvs: fasciaTextureCoordinates.corners)
         fascia = fascia.intersect(Mesh(fasciaShell.build(position: position - Vector(0, height * 2, 0))))
         
-        var walls = walls(vertices: wallCorners.map { $0 - Vector(0, height, 0) }, uvs: wallTextureCoordinates.uvs)
+        var walls = walls(vertices: wallCorners.map { $0 - Vector(0, height, 0) }, uvs: wallTextureCoordinates.corners)
         walls = walls.intersect(Mesh(wallShell.build(position: position - Vector(0, height, 0))))
         
         return walls.union(shingles.union(fascia)).polygons
@@ -151,10 +151,10 @@ struct SaltboxRoof: Prop {
             
             let (o0, o1) = cardinal.ordinals
             
-            let v0 = vertices[o1.rawValue]
-            let v1 = vertices[o0.rawValue]
-            let v2 = lowerVertices[o0.rawValue]
-            let v3 = lowerVertices[o1.rawValue]
+            let v0 = vertices[o1.corner]
+            let v1 = vertices[o0.corner]
+            let v2 = lowerVertices[o0.corner]
+            let v3 = lowerVertices[o1.corner]
             
             guard let face = polygon(vectors: [v0, v1, v2, v3], uvs: uvs) else { continue }
             

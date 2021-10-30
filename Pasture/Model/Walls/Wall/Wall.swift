@@ -10,7 +10,7 @@ import Meadow
 
 struct Wall: Prop {
     
-    let style: WallTileMaterial
+    let style: WallMaterial
     
     let external: Bool
     

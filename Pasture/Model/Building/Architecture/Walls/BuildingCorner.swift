@@ -87,16 +87,16 @@ struct BuildingCorner: Prop {
             v3 += position
             v4 += position
             
-            guard let p0 = polygon(vectors: [v1, v0, v0 + y, v1 + y], uvs: textureCoordinates.uvs),
-                  let p1 = polygon(vectors: [v2, v1, v1 + y, v2 + y], uvs: textureCoordinates.uvs),
-                  let p2 = polygon(vectors: [position, v2, v2 + y, position + y], uvs: textureCoordinates.uvs),
-                  let p3 = polygon(vectors: [v3, position, position + y, v3 + y], uvs: textureCoordinates.uvs),
-                  let p4 = polygon(vectors: [v4, v3, v3 + y, v4 + y], uvs: textureCoordinates.uvs),
-                  let p5 = polygon(vectors: [v0, v4, v4 + y, v0 + y], uvs: textureCoordinates.uvs),
-                  let ulhs = polygon(vectors: [position + y, v2 + y, v1 + y, v0 + y], uvs: textureCoordinates.uvs),
-                  let urhs = polygon(vectors: [v4 + y, v3 + y, position + y, v0 + y], uvs: textureCoordinates.uvs),
-                  let llhs = polygon(vectors: [v0, v1, v2, position], uvs: textureCoordinates.uvs),
-                  let lrhs = polygon(vectors: [v0, position, v3, v4], uvs: textureCoordinates.uvs) else { return polygons }
+            guard let p0 = polygon(vectors: [v1, v0, v0 + y, v1 + y], uvs: textureCoordinates.corners),
+                  let p1 = polygon(vectors: [v2, v1, v1 + y, v2 + y], uvs: textureCoordinates.corners),
+                  let p2 = polygon(vectors: [position, v2, v2 + y, position + y], uvs: textureCoordinates.corners),
+                  let p3 = polygon(vectors: [v3, position, position + y, v3 + y], uvs: textureCoordinates.corners),
+                  let p4 = polygon(vectors: [v4, v3, v3 + y, v4 + y], uvs: textureCoordinates.corners),
+                  let p5 = polygon(vectors: [v0, v4, v4 + y, v0 + y], uvs: textureCoordinates.corners),
+                  let ulhs = polygon(vectors: [position + y, v2 + y, v1 + y, v0 + y], uvs: textureCoordinates.corners),
+                  let urhs = polygon(vectors: [v4 + y, v3 + y, position + y, v0 + y], uvs: textureCoordinates.corners),
+                  let llhs = polygon(vectors: [v0, v1, v2, position], uvs: textureCoordinates.corners),
+                  let lrhs = polygon(vectors: [v0, position, v3, v4], uvs: textureCoordinates.corners) else { return polygons }
             
             polygons.append(contentsOf: [ulhs, urhs, llhs, lrhs, p0, p1, p2, p3, p4, p5])
             
@@ -134,31 +134,31 @@ struct BuildingCorner: Prop {
                 
                 if layer % 2 == 0 {
                     
-                    guard let p0 = polygon(vectors: [v1 + y0, v0 + y0, v0 + y1, v1 + y1], uvs: textureCoordinates.uvs),
-                          let p1 = polygon(vectors: [v2 + y0, v1 + y0, v1 + y1, v2 + y1], uvs: textureCoordinates.uvs),
-                          let p2 = polygon(vectors: [y0, v2 + y0, v2 + y1, y1], uvs: textureCoordinates.uvs),
-                          let p3 = polygon(vectors: [v7 + y0, y0, y1, v7 + y1], uvs: textureCoordinates.uvs),
-                          let p4 = polygon(vectors: [v8 + y0, v7 + y0, v7 + y1, v8 + y1], uvs: textureCoordinates.uvs),
-                          let p5 = polygon(vectors: [v0 + y0, v8 + y0, v8 + y1, v0 + y1], uvs: textureCoordinates.uvs),
-                          let ulhs = polygon(vectors: [y1, v2 + y1, v1 + y1, v0 + y1], uvs: textureCoordinates.uvs),
-                          let urhs = polygon(vectors: [v8 + y1, v7 + y1, y1, v0 + y1], uvs: textureCoordinates.uvs),
-                          let llhs = polygon(vectors: [v0 + y0, v1 + y0, v2 + y0, y0], uvs: textureCoordinates.uvs),
-                          let lrhs = polygon(vectors: [v0 + y0, y0, v7 + y0, v8 + y0], uvs: textureCoordinates.uvs) else { return polygons }
+                    guard let p0 = polygon(vectors: [v1 + y0, v0 + y0, v0 + y1, v1 + y1], uvs: textureCoordinates.corners),
+                          let p1 = polygon(vectors: [v2 + y0, v1 + y0, v1 + y1, v2 + y1], uvs: textureCoordinates.corners),
+                          let p2 = polygon(vectors: [y0, v2 + y0, v2 + y1, y1], uvs: textureCoordinates.corners),
+                          let p3 = polygon(vectors: [v7 + y0, y0, y1, v7 + y1], uvs: textureCoordinates.corners),
+                          let p4 = polygon(vectors: [v8 + y0, v7 + y0, v7 + y1, v8 + y1], uvs: textureCoordinates.corners),
+                          let p5 = polygon(vectors: [v0 + y0, v8 + y0, v8 + y1, v0 + y1], uvs: textureCoordinates.corners),
+                          let ulhs = polygon(vectors: [y1, v2 + y1, v1 + y1, v0 + y1], uvs: textureCoordinates.corners),
+                          let urhs = polygon(vectors: [v8 + y1, v7 + y1, y1, v0 + y1], uvs: textureCoordinates.corners),
+                          let llhs = polygon(vectors: [v0 + y0, v1 + y0, v2 + y0, y0], uvs: textureCoordinates.corners),
+                          let lrhs = polygon(vectors: [v0 + y0, y0, v7 + y0, v8 + y0], uvs: textureCoordinates.corners) else { return polygons }
                     
                     polygons.append(contentsOf: [ulhs, urhs, llhs, lrhs, p0, p1, p2, p3, p4, p5])
                 }
                 else {
                     
-                    guard let p0 = polygon(vectors: [v5 + y0, v0 + y0, v0 + y1, v5 + y1], uvs: textureCoordinates.uvs),
-                          let p1 = polygon(vectors: [v6 + y0, v5 + y0, v5 + y1, v6 + y1], uvs: textureCoordinates.uvs),
-                          let p2 = polygon(vectors: [y0, v6 + y0, v6 + y1, y1], uvs: textureCoordinates.uvs),
-                          let p3 = polygon(vectors: [v3 + y0, y0, y1, v3 + y1], uvs: textureCoordinates.uvs),
-                          let p4 = polygon(vectors: [v4 + y0, v3 + y0, v3 + y1, v4 + y1], uvs: textureCoordinates.uvs),
-                          let p5 = polygon(vectors: [v0 + y0, v4 + y0, v4 + y1, v0 + y1], uvs: textureCoordinates.uvs),
-                          let ulhs = polygon(vectors: [y1, v6 + y1, v5 + y1, v0 + y1], uvs: textureCoordinates.uvs),
-                          let urhs = polygon(vectors: [v4 + y1, v3 + y1, y1, v0 + y1], uvs: textureCoordinates.uvs),
-                          let llhs = polygon(vectors: [v0 + y0, v5 + y0, v6 + y0, y0], uvs: textureCoordinates.uvs),
-                          let lrhs = polygon(vectors: [v0 + y0, y0, v3 + y0, v4 + y0], uvs: textureCoordinates.uvs) else { return polygons }
+                    guard let p0 = polygon(vectors: [v5 + y0, v0 + y0, v0 + y1, v5 + y1], uvs: textureCoordinates.corners),
+                          let p1 = polygon(vectors: [v6 + y0, v5 + y0, v5 + y1, v6 + y1], uvs: textureCoordinates.corners),
+                          let p2 = polygon(vectors: [y0, v6 + y0, v6 + y1, y1], uvs: textureCoordinates.corners),
+                          let p3 = polygon(vectors: [v3 + y0, y0, y1, v3 + y1], uvs: textureCoordinates.corners),
+                          let p4 = polygon(vectors: [v4 + y0, v3 + y0, v3 + y1, v4 + y1], uvs: textureCoordinates.corners),
+                          let p5 = polygon(vectors: [v0 + y0, v4 + y0, v4 + y1, v0 + y1], uvs: textureCoordinates.corners),
+                          let ulhs = polygon(vectors: [y1, v6 + y1, v5 + y1, v0 + y1], uvs: textureCoordinates.corners),
+                          let urhs = polygon(vectors: [v4 + y1, v3 + y1, y1, v0 + y1], uvs: textureCoordinates.corners),
+                          let llhs = polygon(vectors: [v0 + y0, v5 + y0, v6 + y0, y0], uvs: textureCoordinates.corners),
+                          let lrhs = polygon(vectors: [v0 + y0, y0, v3 + y0, v4 + y0], uvs: textureCoordinates.corners) else { return polygons }
                     
                     polygons.append(contentsOf: [ulhs, urhs, llhs, lrhs, p0, p1, p2, p3, p4, p5])
                 }

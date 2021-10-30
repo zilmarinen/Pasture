@@ -46,7 +46,7 @@ struct ConcreteCorner: Prop {
             polygons.append(polygon)
         }
         
-        guard let polygon = polygon(vectors: upperCorners.reversed(), uvs: roofTextureCoordinates.uvs) else { return polygons }
+        guard let polygon = polygon(vectors: upperCorners.reversed(), uvs: roofTextureCoordinates.corners) else { return polygons }
         
         return polygons + [polygon]
     }

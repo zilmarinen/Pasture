@@ -75,6 +75,8 @@ extension Bridge: Prop {
             let p = Mesh(path.build(position: position + Vector(3, 0, 0)))
             
             return cl.polygons + cr.polygons + cd.polygons + el.polygons + er.polygons + w.polygons + p.polygons
+            
+        default: return []
         }
     }
 }

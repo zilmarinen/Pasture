@@ -29,6 +29,8 @@ struct BridgeEdge: Prop {
             let corner = StoneBridgeEdge(side: side)
             
             return corner.build(position: position)
+            
+        default: return []
         }
     }
 }

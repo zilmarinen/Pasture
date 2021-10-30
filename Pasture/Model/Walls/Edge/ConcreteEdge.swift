@@ -63,25 +63,25 @@ struct ConcreteEdge: Prop {
             
         case .left:
             
-            guard let ulhs = polygon(vectors: [upperCorners[o3.rawValue], v1, v0, upperCorners[o0.rawValue]], uvs: roofTextureCoordinates.uvs),
-                  let urhs = polygon(vectors: [v3, middleCorners[o2.rawValue], middleCorners[o1.rawValue], v2], uvs: roofTextureCoordinates.uvs),
+            guard let ulhs = polygon(vectors: [upperCorners[o3.rawValue], v1, v0, upperCorners[o0.rawValue]], uvs: roofTextureCoordinates.corners),
+                  let urhs = polygon(vectors: [v3, middleCorners[o2.rawValue], middleCorners[o1.rawValue], v2], uvs: roofTextureCoordinates.corners),
                   let flhs = polygon(vectors: [lowerCorners[o3.rawValue], v5, v1, upperCorners[o3.rawValue]], uvs: uvs),
                   let frhs = polygon(vectors: [v5, lowerCorners[o2.rawValue], middleCorners[o2.rawValue], v3], uvs: uvs),
                   let blhs = polygon(vectors: [upperCorners[o0.rawValue], v0, v4, lowerCorners[o0.rawValue]], uvs: uvs),
                   let brhs = polygon(vectors: [v2, middleCorners[o1.rawValue], lowerCorners[o1.rawValue], v4], uvs: uvs),
-                  let face = polygon(vectors: [v0, v1, v3, v2], uvs: roofTextureCoordinates.uvs) else { return [] }
+                  let face = polygon(vectors: [v0, v1, v3, v2], uvs: roofTextureCoordinates.corners) else { return [] }
             
             return [ulhs, urhs, flhs, frhs, blhs, brhs, face]
         
         case .right:
             
-            guard let ulhs = polygon(vectors: [middleCorners[o3.rawValue], v3, v2, middleCorners[o0.rawValue]], uvs: roofTextureCoordinates.uvs),
-                  let urhs = polygon(vectors: [v1, upperCorners[o2.rawValue], upperCorners[o1.rawValue], v0], uvs: roofTextureCoordinates.uvs),
+            guard let ulhs = polygon(vectors: [middleCorners[o3.rawValue], v3, v2, middleCorners[o0.rawValue]], uvs: roofTextureCoordinates.corners),
+                  let urhs = polygon(vectors: [v1, upperCorners[o2.rawValue], upperCorners[o1.rawValue], v0], uvs: roofTextureCoordinates.corners),
                   let flhs = polygon(vectors: [lowerCorners[o3.rawValue], v5, v3, middleCorners[o3.rawValue]], uvs: uvs),
                   let frhs = polygon(vectors: [v5, lowerCorners[o2.rawValue], upperCorners[o2.rawValue], v1], uvs: uvs),
                   let blhs = polygon(vectors: [middleCorners[o0.rawValue], v2, v4, lowerCorners[o0.rawValue]], uvs: uvs),
                   let brhs = polygon(vectors: [v0, upperCorners[o1.rawValue], lowerCorners[o1.rawValue], v4], uvs: uvs),
-                  let face = polygon(vectors: [v2, v3, v1, v0], uvs: roofTextureCoordinates.uvs) else { return [] }
+                  let face = polygon(vectors: [v2, v3, v1, v0], uvs: roofTextureCoordinates.corners) else { return [] }
             
             return [ulhs, urhs, flhs, frhs, blhs, brhs, face]
         }

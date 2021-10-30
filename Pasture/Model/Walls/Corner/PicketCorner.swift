@@ -99,12 +99,12 @@ struct PicketCorner: Prop {
         
         let (v4, v5, v6, v7) = (v0 + height, v1 + height, v2 + height, v3 + height)
         
-        guard let top = polygon(vectors: [v4, v5, v6, v7], uvs: uvs.uvs),
-              let front = polygon(vectors: [v0, v1, v5, v4], uvs: uvs.uvs),
-              let back = polygon(vectors: [v2, v3, v7, v6], uvs: uvs.uvs),
-              let bottom = polygon(vectors: [v3, v2, v1, v0], uvs: uvs.uvs),
-              let lhs = polygon(vectors: [v4, v7, v3, v0], uvs: uvs.uvs),
-              let rhs = polygon(vectors: [v1, v2, v6, v5], uvs: uvs.uvs) else { return [] }
+        guard let top = polygon(vectors: [v4, v5, v6, v7], uvs: uvs.corners),
+              let front = polygon(vectors: [v0, v1, v5, v4], uvs: uvs.corners),
+              let back = polygon(vectors: [v2, v3, v7, v6], uvs: uvs.corners),
+              let bottom = polygon(vectors: [v3, v2, v1, v0], uvs: uvs.corners),
+              let lhs = polygon(vectors: [v4, v7, v3, v0], uvs: uvs.corners),
+              let rhs = polygon(vectors: [v1, v2, v6, v5], uvs: uvs.corners) else { return [] }
         
         return [top, front, back, bottom, lhs, rhs]
     }
@@ -123,13 +123,13 @@ struct PicketCorner: Prop {
         let (v4, v5, v6, v7) = (position + cornerHeight, v1 + cornerHeight, v2 + cornerHeight, v3 + cornerHeight)
         let (v8, v9) = (position.lerp(v1, 0.5) + peakHeight, v3.lerp(v2, 0.5) + peakHeight)
         
-        let faceUVs = [uvs.uvs[0], uvs.uvs[0].lerp(uvs.uvs[1], 0.5), uvs.uvs[1], uvs.uvs[2], uvs.uvs[3]]
+        let faceUVs = [uvs.corners[0], uvs.corners[0].lerp(uvs.corners[1], 0.5), uvs.corners[1], uvs.corners[2], uvs.corners[3]]
         
-        guard let tlhs = polygon(vectors: [v7, v9, v8, v4], uvs: uvs.uvs),
-              let trhs = polygon(vectors: [v9, v6, v5, v8], uvs: uvs.uvs),
-              let lhs = polygon(vectors: [position, v3, v7, v4], uvs: uvs.uvs),
-              let rhs = polygon(vectors: [v5, v6, v2, v1], uvs: uvs.uvs),
-              let bottom = polygon(vectors: [position, v1, v2, v3], uvs: uvs.uvs),
+        guard let tlhs = polygon(vectors: [v7, v9, v8, v4], uvs: uvs.corners),
+              let trhs = polygon(vectors: [v9, v6, v5, v8], uvs: uvs.corners),
+              let lhs = polygon(vectors: [position, v3, v7, v4], uvs: uvs.corners),
+              let rhs = polygon(vectors: [v5, v6, v2, v1], uvs: uvs.corners),
+              let bottom = polygon(vectors: [position, v1, v2, v3], uvs: uvs.corners),
               let front = polygon(vectors: [v6, v9, v7, v3, v2], uvs: faceUVs),
               let back = polygon(vectors: [v4, v8, v5, v1, position], uvs: faceUVs) else { return [] }
         
@@ -164,8 +164,8 @@ struct PicketCorner: Prop {
             polygons.append(polygon)
         }
         
-        guard let top = polygon(vectors: upperCorners.reversed(), uvs: uvs.uvs),
-              let bottom = polygon(vectors: lowerCorners, uvs: uvs.uvs) else { return polygons }
+        guard let top = polygon(vectors: upperCorners.reversed(), uvs: uvs.corners),
+              let bottom = polygon(vectors: lowerCorners, uvs: uvs.corners) else { return polygons }
         
         return polygons + [top, bottom]
     }

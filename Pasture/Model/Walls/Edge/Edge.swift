@@ -16,7 +16,7 @@ struct Edge: Prop {
         case right
     }
     
-    let style: WallTileMaterial
+    let style: WallMaterial
     
     let side: Side
     

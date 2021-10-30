@@ -32,8 +32,8 @@ extension Array where Element == Vector {
             let (o0, o1) = cardinal.ordinals
             let normal = axis == .y ? Vector(cardinal.normal.x, cardinal.normal.z, cardinal.normal.y) : Vector(cardinal.normal.x, cardinal.normal.y, cardinal.normal.z)
             
-            corners[o0.rawValue] = corners[o0.rawValue] + (-normal * corner)
-            corners[o1.rawValue] = corners[o1.rawValue] + (-normal * corner)
+            corners[o0.corner] = corners[o0.corner] + (-normal * corner)
+            corners[o1.corner] = corners[o1.corner] + (-normal * corner)
         }
         
         let maxEdge = Swift.max(0, Swift.min(corner, edge))
@@ -43,8 +43,8 @@ extension Array where Element == Vector {
             let (o0, o1) = cardinal.ordinals
             let normal = axis == .y ? Vector(cardinal.normal.x, cardinal.normal.z, cardinal.normal.y) : Vector(cardinal.normal.x, cardinal.normal.y, cardinal.normal.z)
             
-            let v0 = corners[o0.rawValue]
-            let v1 = corners[o1.rawValue]
+            let v0 = corners[o0.corner]
+            let v1 = corners[o1.corner]
             
             edges.outer[cardinal] = (v0 + (normal * maxEdge), v1 + (normal * maxEdge))
             edges.inner[cardinal] = (v0.lerp(v1, edge), v1.lerp(v0, edge))

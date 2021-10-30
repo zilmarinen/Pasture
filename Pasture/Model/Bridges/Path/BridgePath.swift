@@ -23,6 +23,8 @@ struct BridgePath: Prop {
             let corner = StoneBridgePath(cardinals: cardinals)
             
             return corner.build(position: position)
+            
+        default: return []
         }
     }
 }

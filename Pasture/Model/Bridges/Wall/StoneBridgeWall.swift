@@ -61,7 +61,7 @@ struct StoneBridgeWall: Prop {
         
         let path = Mesh(StoneBridgePath(cardinals: [cardinal]).build(position: position))
         
-        guard let polygon = polygon(vectors: upperCorners.reversed(), uvs: wallTextureCoordinates.uvs) else { return path.polygons }
+        guard let polygon = polygon(vectors: upperCorners.reversed(), uvs: wallTextureCoordinates.corners) else { return path.polygons }
         
         let wall = Mesh(polygons + [polygon])
         
