@@ -4,36 +4,27 @@
 //  Created by Zack Brown on 11/06/2021.
 //
 
-import Meadow
-import Metal
-import MetalKit
 import SwiftUI
 
 @main
 struct PastureApp: App {
     
-    var body: some SwiftUI.Scene {
-        
-        guard let asset = NSDataAsset(name: "workspace") else { fatalError("Unable to load workspace scene") }
-        
-        var scene: MDWScene
-        
-        do {
+    enum Constants {
             
-            let map = try JSONDecoder().decode(Map.self, from: asset.data)
+            static let padding = 8.0
+            static let cornerRadius = 8.0
+            
+            static let edgeInsets = EdgeInsets(top: 2, leading: padding, bottom: 2, trailing: padding)
         
-            scene = MDWScene(map: map)
-        
-            scene.protagonist.isHidden = true
+            static let toolWidth = 280.0
+            static let editorWidth = 350.0
         }
-        catch {
-            
-            fatalError("Unable to load workspace scene: \(error)")
-        }
+    
+    var body: some Scene {
         
-        return DocumentGroup(newDocument: PastureDocument()) { file in
+        WindowGroup() {
             
-            ContentView(document: file.$document, scene: scene)
+            AppView(model: .init())
         }
     }
 }
